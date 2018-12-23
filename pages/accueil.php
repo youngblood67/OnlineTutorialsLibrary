@@ -1,29 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Online tutorials Homepage</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../public/css/bootstrap/bootstrap.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../public/css/shop-homepage.css" rel="stylesheet">
-
-</head>
-
-<body>
-
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">Online Tutorials</a>
+        <a class="navbar-brand" href="#">Tutos en ligne</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -206,20 +184,3 @@
     <!-- /.row -->
 
 </div>
-<!-- /.container -->
-
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
-    </div>
-    <!-- /.container -->
-</footer>
-
-<!-- Bootstrap core JavaScript -->
-<script src="../public/js/jquery/jquery.min.js"></script>
-<script src="../public/js/bootstrap/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
-
