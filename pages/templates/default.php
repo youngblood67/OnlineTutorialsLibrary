@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tutos en ligne</title>
+    <title>TutosVideos</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../public/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -16,14 +16,14 @@
     <!-- Custom styles for this template -->
     <link href="../public/css/shop-homepage.css" rel="stylesheet">
 
+    <!-- My css files -->
+    <?= $css ?>
+
 </head>
 
 <body>
 
-
-    <?= $content; ?>
-
-
+<?= $content; ?>
 
 
 <!-- Footer -->
