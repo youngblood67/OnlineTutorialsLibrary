@@ -33,7 +33,7 @@ drop table if exists VIDEO_THEME;
 /*==============================================================*/
 create table BASKET
 (
-   IDBASKET             int not null,
+   IDBASKET             int not null AUTO_INCREMENT,
    IDUSER               int not null,
    DATEPURCHASE         datetime,
    primary key (IDBASKET)
@@ -44,7 +44,7 @@ create table BASKET
 /*==============================================================*/
 create table COMMENT
 (
-   IDCOMMENT            int not null,
+   IDCOMMENT            int not null AUTO_INCREMENT,
    IDVIDEO              int not null,
    IDUSER               int not null,
    CONTENT              text,
@@ -68,7 +68,7 @@ create table ONLINEVISUALIZATION
 /*==============================================================*/
 create table SUBSCRIPTION
 (
-   IDSUBSCRIPTION       int not null,
+   IDSUBSCRIPTION       int not null AUTO_INCREMENT,
    PRICE                float,
    DURATION             int,
    TYPE                 int,
@@ -81,7 +81,7 @@ create table SUBSCRIPTION
 /*==============================================================*/
 create table TAG
 (
-   IDTAG                int not null,
+   IDTAG                int not null AUTO_INCREMENT,
    TITLE                varchar(200),
    primary key (IDTAG)
 );
@@ -91,7 +91,7 @@ create table TAG
 /*==============================================================*/
 create table THEME
 (
-   IDTHEME              int not null,
+   IDTHEME              int not null AUTO_INCREMENT,
    TITLE                varchar(200),
    DESCRIPTION          text,
    primary key (IDTHEME)
@@ -102,7 +102,7 @@ create table THEME
 /*==============================================================*/
 create table USER
 (
-   IDUSER               int not null,
+   IDUSER               int not null AUTO_INCREMENT,
    IDUSERSUBSCRIPTION   int,
    LASTNAME             varchar(50),
    FIRSTNAME            varchar(50),
@@ -117,7 +117,7 @@ create table USER
 /*==============================================================*/
 create table USERSUBSCRIPTION
 (
-   IDUSERSUBSCRIPTION   int not null,
+   IDUSERSUBSCRIPTION   int not null AUTO_INCREMENT,
    IDSUBSCRIPTION       int not null,
    IDUSER               int not null,
    STARTDATE            datetime,
@@ -129,11 +129,13 @@ create table USERSUBSCRIPTION
 /*==============================================================*/
 create table VIDEO
 (
-   IDVIDEO              int not null,
-   TITLE                varchar(200),
+   IDVIDEO              int not null AUTO_INCREMENT,
+   TITLE                varchar(200) not null,
    DURATION             int,
    PRICE                float,
    DESCRIPTION          text,
+   LINK					        varchar(200) not null,
+   AUTEUR               varchar(200),
    primary key (IDVIDEO)
 );
 
