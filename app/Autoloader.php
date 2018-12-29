@@ -11,7 +11,7 @@ namespace App;
 
 class Autoloader
 {
-    static function autoload($className)
+    private static function autoload($className)
     {
         if (strpos($className, __NAMESPACE__ . '\\') === 0) {
             $className = str_replace(__NAMESPACE__ . '\\', '', $className);
@@ -20,7 +20,7 @@ class Autoloader
         }
     }
 
-    static function register()
+    public static function register()
     {
 
         spl_autoload_register(array(__CLASS__, 'autoload'));

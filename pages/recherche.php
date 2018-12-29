@@ -41,15 +41,20 @@
 
         <div class="col-lg-9">
             <div id="listing" class="row">
-<!--                ajout twig-->
+                <ul>
+                    <?php foreach ($db->query('SELECT * FROM video') as $vid): ?>
+
+                       <li><a href="<?= $vid->link; ?>"> <?= $vid->title; ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
         </div>
 
-        </div>
-        <!-- /.col-lg-9 -->
-
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-9 -->
+
+</div>
+<!-- /.row -->
 
 </div>
 <!-- /.container -->
