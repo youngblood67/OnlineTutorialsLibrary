@@ -8,8 +8,16 @@
 
 namespace App\Tables;
 
+use App\App;
+
 class Video
 {
+    private static $table = "video";
+
+    public static function getLast($nb = 5){
+        return App::getDatabase()->query("SELECT * FROM ".self::$table." ORDER BY idVideo DESC LIMIT {$nb}", __CLASS__);
+    }
+
     public function getUrl()
     {
         return $this->url;

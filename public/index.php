@@ -1,4 +1,6 @@
 <?php
+
+
 require '../app/Autoloader.php';
 
 App\Autoloader::register();
@@ -12,6 +14,8 @@ if (isset($_GET['p'])) {
 }
 
 $css = "";
+
+
 
 ob_start();
 

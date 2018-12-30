@@ -31,9 +31,9 @@
 
             <h1 class="my-4">Recherche</h1>
             <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+                <?php foreach (\App\Tables\Theme::getAll() as $theme): ?>
+                    <a href="#" class="list-group-item"><?= $theme->title ?></a>
+                <?php endforeach; ?>
             </div>
 
         </div>
@@ -42,7 +42,7 @@
         <div class="col-lg-9">
             <div id="listing" class="row justify-content-center">
 
-                <?php foreach (App\App::getDatabase()->query('SELECT * FROM video ORDER BY idVideo DESC LIMIT 5', 'App\Tables\Video') as $vid): ?>
+                <?php foreach (\App\Tables\Video::getLast(3) as $vid): ?>
                     <div class="div-video">
                         <a href="<?= $vid->getUrl(); ?>">
                             <div class="video"><?= $vid->getTitle(); ?></div>
