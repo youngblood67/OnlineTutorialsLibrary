@@ -1,3 +1,11 @@
+TRUNCATE TABLE tag;
+TRUNCATE TABLE video_tag;
+TRUNCATE TABLE theme;
+TRUNCATE TABLE video_theme;
+TRUNCATE TABLE video;
+/********************************* VIDEOS **************************************/
+
+/* videos Youtube PHP*/
 INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'La POO en PHP (1/31) : Présentation', '78', '0', 'Présentation de la formation', 'https://www.youtube.com/embed/r_NiFqLvfsc', 'Grafikart');
 INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'La POO en PHP (2/31) : Les objets, c''est quoi ?', '433', '0', '...', 'https://www.youtube.com/embed/cD2o7YudR3k', 'Grafikart');
 INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'La POO en PHP (3/31) : Notre première classe', '1277', '0', '...', 'https://www.youtube.com/embed/xmoOvoiPNhU', 'Grafikart');
@@ -14,12 +22,26 @@ INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `ur
 INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'La POO en PHP (14/31) : TP : Création des classes Table', '2344', '0', '...', 'https://www.youtube.com/embed/3pACUHqop9U', 'Grafikart');
 INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'La POO en PHP (15/31) : TP : Problèmes d''organisation', '119', '0', '...', 'https://www.youtube.com/embed/8ylOLaKPkB8', 'Grafikart');
 
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'PHP');
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'Programmation');
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'POO');
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'informatique');
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'développement');
+/* videos Youtube JAVASCRIPT*/
 
+INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [1/65] - Présentation du cours JavaScript', '108', '0', 'Présentation de la formation', 'https://www.youtube.com/embed/VZLflMqC6dI', 'Pierre Giraud');
+INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [2/65] - Introduction au JavaScript', '200', '0', '...', 'https://www.youtube.com/embed/lDO14MA0C_o', 'Pierre Giraud');
+INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [3/65] - Environnement de travail', '92', '0', '...', 'https://www.youtube.com/embed/dNIJUmjZeMI', 'Pierre Giraud');
+INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [4/65] - Où écrire le code JavaScript', '576', '0', '...', 'https://www.youtube.com/embed/gpdierJ5-kw', 'Pierre Giraud');
+INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [5/65] - Syntaxe, indentation et commentaires', '450', '0', '...', 'https://www.youtube.com/embed/AtUwagcoDL8', 'Pierre Giraud');
+
+/*********************************** TAG *****************************************/
+
+INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'prog');
+INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'objet');
+INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'poo');
+INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'php');
+INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'javascript');
+
+
+/************************************ VIDEO_TAG ************************************/
+
+/* videos Youtube PHP*/
 INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('1', '1');
 INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('1', '2');
 INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('1', '3');
@@ -84,23 +106,14 @@ INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('4', '13');
 INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('4', '14');
 INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('4', '15');
 
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '1');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '2');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '3');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '4');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '5');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '6');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '7');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '8');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '9');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '10');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '11');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '12');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '13');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '14');
-INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '15');
+/* videos Youtube JAVASCRIPT*/
 
-INSERT INTO `theme` (`idTheme`, `title`, `description`) VALUES (NULL, 'Informatique', NULL);
+/**************************************** THEME *********************************/
+
+INSERT INTO `theme` (`idTheme`, `title`, `description`) VALUES (NULL, 'PHP', NULL);
+INSERT INTO `theme` (`idTheme`, `title`, `description`) VALUES (NULL, 'JAVASCRIPT', NULL);
+
+/**************************************** VIDEO_THEME **************************************/
 
 INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('1', '1');
 INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('2', '1');

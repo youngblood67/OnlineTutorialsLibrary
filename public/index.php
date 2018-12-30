@@ -13,10 +13,6 @@ if (isset($_GET['p'])) {
 
 $css = "";
 
-// Initialisation des objets
-$db = new \App\Database("db_tutos_videos");
-
-
 ob_start();
 
 if ($p === 'accueil') {

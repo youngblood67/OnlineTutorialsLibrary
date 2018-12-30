@@ -16,6 +16,8 @@
     <!-- Custom styles for this template -->
     <link href="../public/css/shop-homepage.css" rel="stylesheet">
 
+    <link href="../public/css/style-general.css" rel="stylesheet">
+
     <!-- My css files -->
     <?= $css ?>
 

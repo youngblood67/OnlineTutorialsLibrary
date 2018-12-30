@@ -1,24 +1,26 @@
-#listing{
-    padding-top: 30px;
-    min-height: 500px;
+#listing {
+    margin: 30px auto;
+   
 }
 
-a:link
-{
-    text-decoration:none;
+.div-video{
+    padding-bottom: 20px;
 }
 
-#listing ul li{
-    padding: 10px;
+a:link {
+    text-decoration: none;
+}
+
+.video {
+    padding: 10px 20px;
     color: #e8edf4;
     border: 1px solid #e8edf4;
     background-color: #333b47;
-    margin: 5px;
+    margin: 15px auto;
     border-radius: 5% / 70%;
-    list-style: none;
     text-align: center;
 }
 
-#listing li:hover{
+.video:hover {
     background-color: #9fc7aa;
 }

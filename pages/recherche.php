@@ -41,14 +41,19 @@
 
         <div class="col-lg-9">
             <div id="listing" class="row justify-content-center">
-                <ul>
-                    <?php foreach ($db->query('SELECT * FROM video','App\Tables\Video') as $vid): ?>
 
-                       <a href="<?= $vid->getUrl(); ?>"> <li><?= $vid->getTitle(); ?></li>
-                       </a>
-                        <iframe width="560" height="315" src="<?= $vid->getUrl(); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <?php endforeach; ?>
-                </ul>
+                <?php foreach (App\App::getDatabase()->query('SELECT * FROM video ORDER BY idVideo DESC LIMIT 5', 'App\Tables\Video') as $vid): ?>
+                    <div class="div-video">
+                        <a href="<?= $vid->getUrl(); ?>">
+                            <div class="video"><?= $vid->getTitle(); ?></div>
+                        </a>
+                        <iframe style="margin-bottom: 10px" width="560" height="315" src="<?= $vid->getUrl(); ?>"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                <?php endforeach; ?>
+
             </div>
         </div>
 
