@@ -11,11 +11,9 @@ namespace App\Tables;
 
 use App\App;
 
-class Theme
+class Theme extends Table
 {
-    private static $table = "theme";
+    protected static $table = "theme";
 
-    public static function getAll(){
-        return App::getDatabase()->query("SELECT * FROM ".self::$table,__CLASS__);
-    }
+
 }

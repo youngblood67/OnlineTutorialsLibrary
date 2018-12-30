@@ -10,21 +10,12 @@ namespace App\Tables;
 
 use App\App;
 
-class Video
+class Video extends Table
 {
-    private static $table = "video";
+    protected static $table = "video";
 
     public static function getLast($nb = 5){
         return App::getDatabase()->query("SELECT * FROM ".self::$table." ORDER BY idVideo DESC LIMIT {$nb}", __CLASS__);
     }
 
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    public function getTitle()
-    {
-        return $this->title;
-    }
 }

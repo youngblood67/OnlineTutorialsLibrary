@@ -44,10 +44,10 @@
 
                 <?php foreach (\App\Tables\Video::getLast(3) as $vid): ?>
                     <div class="div-video">
-                        <a href="<?= $vid->getUrl(); ?>">
-                            <div class="video"><?= $vid->getTitle(); ?></div>
+                        <a href="<?= $vid->url; ?>">
+                            <div class="video"><?= $vid->title; ?></div>
                         </a>
-                        <iframe style="margin-bottom: 10px" width="560" height="315" src="<?= $vid->getUrl(); ?>"
+                        <iframe style="margin-bottom: 10px" width="560" height="315" src="<?= $vid->url; ?>"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
