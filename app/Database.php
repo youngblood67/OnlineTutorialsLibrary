@@ -29,17 +29,17 @@ class Database
     private function getPDO()
     {
         if ($this->pdo === null) {
-            $pdo = new PDO('mysql:dbname='.$this->db_name.';host='.$this->db_host.';charset=utf8', $this->db_user, $this->db_pass);
+            $pdo = new PDO('mysql:dbname=' . $this->db_name . ';host=' . $this->db_host . ';charset=utf8', $this->db_user, $this->db_pass);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo = $pdo;
         }
         return $pdo;
     }
 
-    public function query($statement)
+    public function query($statement, $className)
     {
         $req = $this->getPDO()->query($statement);
-        $datas = $req->fetchAll(PDO::FETCH_OBJ);
+        $datas = $req->fetchAll(PDO::FETCH_CLASS, $className);
         return $datas;
     }
 

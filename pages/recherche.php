@@ -41,11 +41,12 @@
 
         <div class="col-lg-9">
             <div id="listing" class="row">
-                <ul>
-                    <?php foreach ($db->query('SELECT * FROM video') as $vid): ?>
+                <ul style="margin: 10px 5px">
+                    <?php foreach ($db->query('SELECT * FROM video','App\Tables\Video') as $vid): ?>
 
                        <a href="<?= $vid->link; ?>"> <li><?= $vid->title; ?></li>
                        </a>
+                        <iframe width="560" height="315" src="<?= $vid->link; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <?php endforeach; ?>
                 </ul>
             </div>
