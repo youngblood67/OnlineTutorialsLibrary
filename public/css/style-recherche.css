@@ -3,3 +3,23 @@
     min-height: 500px;
     /*background-color: #9fcdff;*/
 }
+
+a:link
+{
+    text-decoration:none;
+}
+
+#listing li{
+    background-color: #9fcdff;
+    padding: 10px;
+    border: 1px solid darkgray;
+    border-radius: 10% / 40%;
+    list-style: none;
+    margin: 2px;
+    text-align: center;
+
+}
+
+#listing li:hover{
+    background-color: #9fc7aa;
+}

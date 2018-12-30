@@ -44,7 +44,8 @@
                 <ul>
                     <?php foreach ($db->query('SELECT * FROM video') as $vid): ?>
 
-                       <li><a href="<?= $vid->link; ?>"> <?= $vid->title; ?></a></li>
+                       <a href="<?= $vid->link; ?>"> <li><?= $vid->title; ?></li>
+                       </a>
                     <?php endforeach; ?>
                 </ul>
             </div>
