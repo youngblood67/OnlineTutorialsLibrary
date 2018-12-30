@@ -44,9 +44,9 @@
                 <ul style="margin: 10px 5px">
                     <?php foreach ($db->query('SELECT * FROM video','App\Tables\Video') as $vid): ?>
 
-                       <a href="<?= $vid->link; ?>"> <li><?= $vid->title; ?></li>
+                       <a href="<?= $vid->getUrl(); ?>"> <li><?= $vid->getTitle(); ?></li>
                        </a>
-                        <iframe width="560" height="315" src="<?= $vid->link; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="<?= $vid->getUrl(); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <?php endforeach; ?>
                 </ul>
             </div>

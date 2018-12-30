@@ -10,5 +10,13 @@ namespace App\Tables;
 
 class Video
 {
+    public function getUrl()
+    {
+        return $this->url;
+    }
 
+    public function getTitle()
+    {
+        return $this->title;
+    }
 }

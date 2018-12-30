@@ -134,7 +134,7 @@ create table VIDEO
    duration             int,
    price                float,
    description          text,
-   link					        varchar(200) not null,
+   url					        varchar(200) not null,
    author               varchar(200),
    primary key (idVideo)
 );
