@@ -40,8 +40,8 @@
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
-            <div id="listing" class="row">
-                <ul style="margin: 10px 5px">
+            <div id="listing" class="row justify-content-center">
+                <ul>
                     <?php foreach ($db->query('SELECT * FROM video','App\Tables\Video') as $vid): ?>
 
                        <a href="<?= $vid->getUrl(); ?>"> <li><?= $vid->getTitle(); ?></li>

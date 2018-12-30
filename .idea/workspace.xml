@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b72502a3-383d-4464-8186-850771d3b639" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_db/LoadDatabase.sql" beforeDir="false" afterPath="$PROJECT_DIR$/_db/LoadDatabase.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Tables/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Tables/Video.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/recherche.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/recherche.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style-recherche.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style-recherche.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,20 +44,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/recherche.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="46" column="80" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
-              <folding>
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="324">
+              <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_db/GenerateLibraryTables.sql">
+        <entry file="file://$PROJECT_DIR$/public/css/style-recherche.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="136" column="6" selection-start-line="136" selection-start-column="6" selection-end-line="136" selection-end-column="6" />
+            <state relative-caret-position="272">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -68,15 +64,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
               <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_db/LoadDatabase.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="82" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -138,16 +125,16 @@
         <option value="$PROJECT_DIR$/pages/hello.html" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/_db/loadDatabase.sql" />
-        <option value="$PROJECT_DIR$/public/css/style-recherche.css" />
         <option value="$PROJECT_DIR$/app/Database.php" />
-        <option value="$PROJECT_DIR$/pages/recherche.php" />
         <option value="$PROJECT_DIR$/app/Tables/Video.php" />
         <option value="$PROJECT_DIR$/_db/LoadDatabase.sql" />
         <option value="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" />
+        <option value="$PROJECT_DIR$/pages/recherche.php" />
+        <option value="$PROJECT_DIR$/public/css/style-recherche.css" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="567" />
     <option name="width" value="697" />
     <option name="height" value="745" />
@@ -248,12 +235,12 @@
       <workItem from="1545694834876" duration="1764000" />
       <workItem from="1545852590667" duration="1332000" />
       <workItem from="1545901634208" duration="6030000" />
-      <workItem from="1546116551453" duration="4875000" />
+      <workItem from="1546116551453" duration="7188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24810000" />
+    <option name="totallyTimeSpent" value="27123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -388,13 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style-recherche.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Autoloader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -406,16 +386,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
           <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/recherche.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="46" column="80" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -437,6 +407,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
           <caret line="136" column="6" selection-start-line="136" selection-start-column="6" selection-end-line="136" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/recherche.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style-recherche.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
         </state>
       </provider>
     </entry>
