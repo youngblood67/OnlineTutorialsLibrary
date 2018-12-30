@@ -14,16 +14,23 @@ class Table
 {
     protected static $table;
 
-    private static function getTable(){
-        if(self::$table === null){
-            self::$table = get_called_class();
-            self::$table = strtolower(explode("\\",self::$table)[2]);
+    /**
+     * Dans le cas où le nom de la table n'est pas défini dans la classe enfant alors le nom de la table est créé à partir du nom de la classe enfant
+     *
+     * @return string le nom de la table
+     */
+    private static function getTable()
+    {
+        if (static::$table === null) {
+            static::$table = get_called_class();
+            static::$table = strtolower(explode("\\", static::$table)[2]);
         }
-        return self::$table;
+        return static::$table;
     }
 
     public static function getAll()
     {
-        return App::getDatabase()->query("SELECT * FROM " . self::getTable(), __CLASS__);
+
+        return App::getDatabase()->query("SELECT * FROM " . static::getTable(), __CLASS__);
     }
 }
