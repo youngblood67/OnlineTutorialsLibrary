@@ -31,6 +31,6 @@ class Table
     public static function getAll()
     {
 
-        return App::getDatabase()->query("SELECT * FROM " . static::getTable(), __CLASS__);
+        return App::getDatabase()->query("SELECT * FROM " . static::getTable(), get_called_class());
     }
 }
