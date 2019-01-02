@@ -10,19 +10,24 @@ namespace App;
 
 class App
 {
-    const DB_NAME = "db_tutos_videos";
-    const DB_USER = 'root';
-    const DB_PASS = '';
-    const DB_HOST = 'localhost';
+    private static $_database;
+    private static $_instance;
 
 
-    private static $database;
+
+    public static function getInstance(){
+        if(is_null(self::$_instance)){
+            self::$_instance = new App();
+        }
+        return self::$_instance;
+    }
 
     public static function getDatabase()
     {
-        if (self::$database === null) {
-            self::$database = new Database(self::DB_NAME, self::DB_USER, self::DB_PASS, self::DB_HOST);
+        if (self::$_database === null) {
+            self::$_database = new Database(Config::getInstance()->get('db_name'), Config::getInstance()->get('db_user'), Config::getInstance()->get('db_pass'), Config::getInstance()->get('db_host'));
         }
-        return self::$database;
+        return self::$_database;
     }
+
 }
