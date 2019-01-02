@@ -1,9 +1,9 @@
 <?php
-
-
+session_start();
 require '../app/Autoloader.php';
-
 App\Autoloader::register();
+
+$config = \App\Config::getInstance();
 
 // Récupération des paramètres
 
@@ -14,6 +14,7 @@ if (isset($_GET['p'])) {
 }
 
 $css = "";
+
 
 
 
