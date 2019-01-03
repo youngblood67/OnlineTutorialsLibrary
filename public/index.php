@@ -22,10 +22,10 @@ ob_start();
 
 if ($p === 'accueil') {
     $css = '<link href="../public/css/style-accueil.css" rel="stylesheet">';
-    require '../pages/accueil.php';
+    require '../pages/home.php';
 }else if ($p === 'recherche') {
     $css = '<link href="../public/css/style-recherche.css" rel="stylesheet">';
-    require '../pages/recherche.php';
+    require '../pages/search.php';
 }else if ($p === 'video') {
     $css = '<link href="../public/css/style-video.css" rel="stylesheet">';
     require '../pages/videos/video.php';

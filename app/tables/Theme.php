@@ -13,7 +13,7 @@ use App\App;
 
 class Theme extends Table
 {
-    protected static $_table = "theme";
+    protected $table = "theme";
 
 
 }

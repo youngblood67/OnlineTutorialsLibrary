@@ -9,21 +9,24 @@
 namespace App\Tables;
 
 use App\App;
+use App\Database;
 
 class Video extends Table
 {
-    protected static $_table = "video";
+    protected $table = "video";
 
-    public static function getLast($nb = 100)
+
+    public function getLast($nb = 100)
     {
-        return App::getDatabase()->query("SELECT * FROM ".self::$_table." ORDER BY idVideo DESC LIMIT {$nb}", __CLASS__);
+
+        return $this->db->query("SELECT * FROM ".$this->table." ORDER BY idVideo DESC LIMIT {$nb}", __CLASS__);
     }
 
-    public static function getLastByTheme($idTheme = 1,$nb = 100)
+    public function getLastByTheme($idTheme = 1,$nb = 100)
     {
-        return App::getDatabase()->query("
+        return $this->db->query("
             SELECT v.title as vidTitle, v.url as url
-            FROM ".self::$_table." v, video_theme vt, theme t
+            FROM ".$this->table." v, video_theme vt, theme t
             WHERE v.idVideo = vt.idVideo 
             AND vt.idTheme = t.idTheme
             AND t.idTheme = {$idTheme}

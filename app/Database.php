@@ -18,7 +18,7 @@ class Database
     private $db_host;
     private $pdo;
 
-    public function __construct($db_name, $db_user = 'root', $db_pass = '', $db_host = 'localhost')
+    public function __construct($db_name = 'db_tutos_videos', $db_user = 'root', $db_pass = '', $db_host = 'localhost')
     {
         $this->db_name = $db_name;
         $this->db_user = $db_user;
@@ -26,12 +26,11 @@ class Database
         $this->db_host = $db_host;
     }
 
-    private function getPDO()
+    public function getPDO()
     {
         if ($this->pdo === null) {
-            $pdo = new PDO("mysql:dbname={$this->db_name};host={$this->db_host};charset=utf8", $this->db_user, $this->db_pass);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->pdo = $pdo;
+            $this->pdo = new PDO("mysql:dbname={$this->db_name};host={$this->db_host};charset=utf8", $this->db_user, $this->db_pass);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         return $this->pdo;
     }
@@ -39,8 +38,14 @@ class Database
     public function query($statement, $className)
     {
         $req = $this->getPDO()->query($statement);
+
         $datas = $req->fetchAll(PDO::FETCH_CLASS, $className);
         return $datas;
+    }
+
+    public function closeConnection()
+    {
+        $this->pdo = null;
     }
 
 }

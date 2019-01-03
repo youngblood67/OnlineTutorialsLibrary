@@ -108,7 +108,6 @@ create table USER
    firstname            varchar(50),
    password            varchar(50),
    email             varchar(50),
-   pseudo               varchar(50),
    primary key (idUser)
 );
 
