@@ -106,7 +106,7 @@ create table USER
    idUserSubscription   int,
    lastname            varchar(50),
    firstname            varchar(50),
-   password            varchar(50),
+   password            varchar(200),
    email             varchar(50),
    primary key (idUser)
 );

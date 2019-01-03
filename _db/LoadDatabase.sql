@@ -3,6 +3,7 @@ TRUNCATE TABLE video_tag;
 TRUNCATE TABLE theme;
 TRUNCATE TABLE video_theme;
 TRUNCATE TABLE video;
+
 /********************************* VIDEOS **************************************/
 
 /* videos Youtube PHP*/
