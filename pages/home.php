@@ -1,3 +1,6 @@
+
+
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -17,6 +20,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../public/index.php?p=recherche">Recherche</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../public/index.php?p=inscription">Inscription</a>
+                </li>
+                
             </ul>
         </div>
     </div>
@@ -78,7 +85,7 @@
                                 <a href="#">Item One</a>
                             </h4>
                             <h5>$24.99</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                            <p class="card-text"> éééééééééééééééééééééééééééééééLorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
                                 aspernatur!</p>
                         </div>
                         <div class="card-footer">
