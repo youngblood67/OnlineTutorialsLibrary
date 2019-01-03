@@ -30,10 +30,10 @@ if ($p === 'accueil') {
     $css = '<link href="../public/css/style-video.css" rel="stylesheet">';
     require '../pages/videos/video.php';
 }
-else if ($p === 'inscription') {
+/*else if ($p === 'inscription') {
     $css = '<link href="../public/css/style-createUser.css" rel="stylesheet">';
     require '../pages/users/createUser.php';
-}
+}*/
 
         $content = ob_get_clean();
 

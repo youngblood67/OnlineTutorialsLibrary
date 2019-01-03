@@ -24,6 +24,30 @@
 </head>
 
 <body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"><?= \App\Config::getInstance()->get('site_title') ?></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../public/index.php?p=accueil">Accueil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../public/index.php?p=recherche">Recherche</a>
+                </li>
+                
+            </ul>
+            <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#subscribeModal">Inscription</button>
+        </div>
+    </div>
+</nav>
 
 <?= $content; ?>
 
@@ -35,6 +59,26 @@
     </div>
     <!-- /.container -->
 </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="subscribeModalLabel">Inscrivez-vous !</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php
+            include '../pages/users/createUser.php';
+        ?>
+      </div>
+     
+    </div>
+  </div>
+</div>
 
 <!-- Bootstrap core JavaScript -->
 <script src="../public/js/jquery/jquery.min.js"></script>

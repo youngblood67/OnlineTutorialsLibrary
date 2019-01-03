@@ -2,6 +2,8 @@
 require '../app/Autoloader.php';
 App\Autoloader::register();
 
+use App\Tables\User;
+
 if (isset($_POST["lastname"])) {
     $lastname = $_POST["lastname"];
 }
