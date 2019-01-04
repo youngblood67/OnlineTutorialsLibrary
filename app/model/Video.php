@@ -6,10 +6,7 @@
  * Time: 09:52
  */
 
-namespace App\Tables;
-
-use App\App;
-use App\Database;
+namespace App\Model;
 
 class Video extends Table
 {

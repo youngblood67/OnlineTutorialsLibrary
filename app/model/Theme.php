@@ -6,10 +6,8 @@
  * Time: 22:05
  */
 
-namespace App\Tables;
+namespace App\Model;
 
-
-use App\App;
 
 class Theme extends Table
 {

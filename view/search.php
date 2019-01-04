@@ -9,7 +9,6 @@ if (isset($_GET['idTheme'])) {
 ?>
 
 
-
 <!-- Page Content -->
 <div class="container">
 
@@ -17,7 +16,7 @@ if (isset($_GET['idTheme'])) {
 
         <div class="col-lg-3">
             <?php
-            $theme = new \App\Tables\Theme();
+            $theme = new \App\Model\Theme();
             ?>
             <h1 class="my-4">Recherche</h1>
             <div class="list-group">
@@ -30,23 +29,26 @@ if (isset($_GET['idTheme'])) {
         </div>
         <!-- /.col-lg-3 -->
         <?php
-            $video = new \App\Tables\Video;
+        $video = new \App\Model\Video();
         ?>
         <div class="col-lg-9">
             <div id="listing" class="row justify-content-center">
                 <?php if ($idTheme === 0): ?>
+
                     <?php foreach ($video->getLast(10) as $vid): ?>
                         <div class="div-video">
                             <a href="<?= $vid->url; ?>">
                                 <div class="video"><?= $vid->title; ?></div>
                             </a>
-                            <iframe style="margin-bottom: 10px" width="560" height="315" src="<?= $vid->url; ?>"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
+                            <div class="text-center">
+                                <a href="<?= $vid->url ?>">
+                                    <img width="50%" alt="thumbnail"
+                                         src="<?= $vid->thumbnail; ?>"/>
+                            </a></div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
+
                     <?php foreach ($video->getLastByTheme($idTheme, 10) as $vid): ?>
                         <div class="div-video">
                             <a href="<?= $vid->url; ?>">

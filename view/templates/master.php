@@ -11,12 +11,12 @@
     <title>TutosVideos</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../public/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="../public/ressources/css/bootstrap/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../public/css/shop-homepage.css" rel="stylesheet">
+    <link href="../public/ressources/css/shop-homepage.css" rel="stylesheet">
 
-    <link href="../public/css/style-general.css" rel="stylesheet">
+    <link href="../public/ressources/css/style-general.css" rel="stylesheet">
 
     <!-- My css files -->
     <?= $css ?>
@@ -35,11 +35,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item" <?= $activeHome ?> >
                     <a class="nav-link" href="../public/index.php?p=accueil">Accueil
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" <?= $activeSearch ?> >
                     <a class="nav-link" href="../public/index.php?p=recherche">Recherche</a>
                 </li>
                 
@@ -72,7 +72,7 @@
       </div>
       <div class="modal-body">
         <?php
-            include '../pages/users/createUser.php';
+            include '../view/users/createUser.php';
         ?>
       </div>
      
@@ -81,8 +81,8 @@
 </div>
 
 <!-- Bootstrap core JavaScript -->
-<script src="../public/js/jquery/jquery.min.js"></script>
-<script src="../public/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../public/ressources/js/jquery/jquery.min.js"></script>
+<script src="../public/ressources/js/bootstrap/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
