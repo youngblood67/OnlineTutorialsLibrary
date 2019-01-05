@@ -14,11 +14,21 @@ footer {
     background-color: #545b62
 }
 
+#connection-error:hover {
+    background-color: red;
+    color: white;
+}
+
 #deconnection {
     color: #4745ff;
     padding: 10px;
     border-radius: 0.25rem;
     border: 1px solid #6161ff;
     background-color: #545b62;
+}
+
+#deconnection:hover {
+    background-color: #6161ff;
+    color: white;
 }
 
