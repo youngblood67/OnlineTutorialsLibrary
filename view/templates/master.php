@@ -36,11 +36,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item" <?= $activeHome ?> >
+                <li class="nav-item <?= $activeHome ?>"  >
                     <a class="nav-link" href="../public/index.php?p=accueil">Accueil
                     </a>
                 </li>
-                <li class="nav-item" <?= $activeSearch ?> >
+                <li class="nav-item <?= $activeSearch ?> " >
                     <a class="nav-link" href="../public/index.php?p=recherche">Recherche</a>
                 </li>
 
