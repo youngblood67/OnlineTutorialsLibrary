@@ -23,6 +23,6 @@ class Table
     public function getAll()
     {
 
-        return $this->db->query("SELECT * FROM " . $this->table, get_called_class());
+        return $this->db->queryAll("SELECT * FROM " . $this->table, get_called_class());
     }
 }

@@ -17,7 +17,9 @@ $error = "";
 if (!isset($_SESSION['con'])) {
     if (User::connection($email, $password)) {
         $_SESSION['con'] = "loggedOn";
-        $_SESSION['email'] = $email;
+        $_SESSION['email'] = User::getUserByEmail($email)[0]->email;
+        $_SESSION['firstname'] = User::getUserByEmail($email)[0]->firstname;
+        $_SESSION['lastname'] = User::getUserByEmail($email)[0]->lastname;
     }else{
         $error = "&error=1";
     }

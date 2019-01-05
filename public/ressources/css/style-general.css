@@ -32,3 +32,10 @@ footer {
     color: white;
 }
 
+#isConnected {
+    color: #9fcdff;
+    padding: 5px 15px;
+    border-radius: 0.25rem;
+    border: 1px solid #9fcdff;
+    background-color: #545b62
+}

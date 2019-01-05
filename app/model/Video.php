@@ -16,12 +16,12 @@ class Video extends Table
     public function getLast($nb = 100)
     {
 
-        return $this->db->query("SELECT * FROM ".$this->table." ORDER BY idVideo DESC LIMIT {$nb}", __CLASS__);
+        return $this->db->queryAll("SELECT * FROM ".$this->table." ORDER BY idVideo DESC LIMIT {$nb}", __CLASS__);
     }
 
     public function getLastByTheme($idTheme = 1,$nb = 100)
     {
-        return $this->db->query("
+        return $this->db->queryAll("
             SELECT v.title as vidTitle, v.url as url
             FROM ".$this->table." v, video_theme vt, theme t
             WHERE v.idVideo = vt.idVideo 

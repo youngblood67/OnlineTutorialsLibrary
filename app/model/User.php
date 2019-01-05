@@ -33,12 +33,16 @@ class User extends Table
     public static function connection($email, $pass)
     {
         $db = new Database();
-        $query = $db->query("SELECT * FROM user where email = '" . $email . "'", __CLASS__);
+        $query = $db->queryAll("SELECT * FROM user where email = '" . $email . "'", __CLASS__);
         $passwordInDb = $query[0]->password;
         return password_verify($pass, $passwordInDb);
 
-
     }
 
+   public static function getUserByEmail($email){
+       $db = new Database();
+       $query = $db->queryAll("SELECT * FROM user where email = '" . $email . "'", __CLASS__);
+       return $query;
+   }
 
 }

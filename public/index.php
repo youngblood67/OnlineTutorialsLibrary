@@ -32,6 +32,10 @@ if (isset($_GET['con'])) {
     }
 }
 
+if(isset($_SESSION['lastname'])&& isset($_SESSION['firstname'])){
+    $msg = "<div id='isConnected'>".$_SESSION['firstname']."</div>";
+}
+
 
 ob_start();
 

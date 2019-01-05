@@ -35,7 +35,7 @@ class Database
         return $this->pdo;
     }
 
-    public function query($statement, $className)
+    public function queryAll($statement, $className)   //faudrait créer aussi un querySingle pour éviter les fetchAll puis $query[0]->$s
     {
         $req = $this->getPDO()->query($statement);
 
