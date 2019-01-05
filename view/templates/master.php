@@ -28,6 +28,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#"><?= \App\Config::getInstance()->get('site_title') ?></a>
+        <?= $msg ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +46,7 @@
 
 
             </ul>
-            <?php if ($_SESSION['con'] === "loggedOff"): ?>
+            <?php if (!isset($_SESSION['con'])): ?>
                 <button style="margin-right: 10px;" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
                         data-target="#subscribeModal">Inscription
                 </button>
@@ -100,7 +101,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="subscribeModalLabel">Inscrivez-vous !</h5>
+                <h5 class="modal-title" id="subscribeModalLabel">Connectez-vous !</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

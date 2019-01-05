@@ -5,18 +5,33 @@ App\Autoloader::register();
 
 $config = \App\Config::getInstance();
 
-// Récupération des paramètres
+// Initialisation des variables
+$css = "";      // stocke la feuille de style spécifique à la page en fonction de $p
+$activeHome = "";  //  permet de rendre le lien actif
+$activeSearch = "";  // " "
+$msg = ""; // stocke les messages d'erreur ou de déconnexion
 
+// Récupération des paramètres
 if (isset($_GET['p'])) {
     $p = $_GET['p'];
 } else {
     $p = 'accueil';
 }
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+    if ($error === "1") {
+        $msg = "<div id='connection-error' class='alert-danger' data-toggle='modal'
+             data-target='#connexionModal'>Erreur de connexion ou mauvais mot de passe</div>";
+    }
+}
+if (isset($_GET['con'])) {
+    $con = $_GET['con'];
+    if ($con === "deconnexion") {
+        $msg = "<div id='deconnection' class='alert-warning' data-toggle='modal'
+             data-target='#connexionModal'>Vous vous êtes déconnectés</div>";
+    }
+}
 
-echo $_SESSION['con'];
-$css = "";
-$activeHome = "";
-$activeSearch = "";
 
 ob_start();
 

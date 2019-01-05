@@ -58,7 +58,7 @@
                                 <a href="#">Item One</a>
                             </h4>
                             <h5>$24.99</h5>
-                            <p class="card-text"> éééééééééééééééééééééééééééééééLorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
+                            <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam
                                 aspernatur!</p>
                         </div>
                         <div class="card-footer">

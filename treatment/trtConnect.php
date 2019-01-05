@@ -13,9 +13,13 @@ if (isset($_POST["password"])) {
     $password = $_POST["password"];
 }
 
-if ($_SESSION['con'] == "loggedOff") {
+$error = "";
+if (!isset($_SESSION['con'])) {
     if (User::connection($email, $password)) {
         $_SESSION['con'] = "loggedOn";
+        $_SESSION['email'] = $email;
+    }else{
+        $error = "&error=1";
     }
-    header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil');
+    header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil'.$error);
 }

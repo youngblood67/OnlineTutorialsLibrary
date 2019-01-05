@@ -4,6 +4,7 @@ require '../app/Autoloader.php';
 App\Autoloader::register();
 
 if ($_SESSION['con'] == "loggedOn") {
-    $_SESSION['con'] = "loggedOff";
-    header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil');
+    session_unset();
+    session_destroy();
+    header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil&con=deconnexion');
 }
