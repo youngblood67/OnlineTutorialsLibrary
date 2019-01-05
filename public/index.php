@@ -13,30 +13,38 @@ if (isset($_GET['p'])) {
     $p = 'accueil';
 }
 
-            $css = "";
+if (isset($_GET['con'])) {
+    $con = $_GET['con'];
+} else {
+    $con = 'notLogged';
+}
 
-
-
-
+$css = "";
+$activeHome = "";
+$activeSearch = "";
+//$activeVideo = ""
+;
 ob_start();
 
 if ($p === 'accueil') {
-    $css = '<link href="../public/css/style-accueil.css" rel="stylesheet">';
-    require '../pages/home.php';
-}else if ($p === 'recherche') {
-    $css = '<link href="../public/css/style-recherche.css" rel="stylesheet">';
-    require '../pages/search.php';
-}else if ($p === 'video') {
-    $css = '<link href="../public/css/style-video.css" rel="stylesheet">';
-    require '../pages/videos/video.php';
-}
-else if ($p === 'inscription') {
-    $css = '<link href="../public/css/style-createUser.css" rel="stylesheet">';
-    require '../pages/users/createUser.php';
+    $css = '<link href="../public/ressources/css/style-accueil.css" rel="stylesheet">';
+    $activeHome = "active";
+    require '../view/home.php';
+} else if ($p === 'recherche') {
+    $css = '<link href="../public/ressources/css/style-recherche.css" rel="stylesheet">';
+    $activeSearch = "active";
+    require '../view/search.php';
+} else if ($p === 'video') {
+    $css = '<link href="../public/ressources/css/style-video.css" rel="stylesheet">';
+//    $activeVideo = "active";
+    require '../view/videos/video.php';
+} else if ($p === 'inscription') {
+    $css = '<link href="../public/ressources/css/style-createUser.css" rel="stylesheet">';
+    require '../view/users/createUser.php';
 }
 
-        $content = ob_get_clean();
+$content = ob_get_clean();
 
-require '../pages/templates/default.php';
+require '../view/templates/master.php';
 
 ?>

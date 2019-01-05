@@ -14,6 +14,7 @@ use App\Database;
 class User extends Table
 {
     protected static $_table = "user";
+    protected $db;
 
     public function addUser($lastname, $firstname, $password, $email)
     {
@@ -29,7 +30,13 @@ class User extends Table
 
     }
 
-    public function verifPassword($pass1, $pass2){
+    public static function connection($email, $pass)
+    {
+        $db = new Database();
+        $query = $db->query("SELECT * FROM user where email = '" . $email . "'", __CLASS__);
+        $passwordInDb = $query[0]->password;
+        return password_verify($pass, $passwordInDb);
+
 
     }
 

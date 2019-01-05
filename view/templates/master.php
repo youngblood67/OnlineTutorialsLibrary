@@ -42,9 +42,23 @@
                 <li class="nav-item" <?= $activeSearch ?> >
                     <a class="nav-link" href="../public/index.php?p=recherche">Recherche</a>
                 </li>
-                
+
+
             </ul>
-            <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#subscribeModal">Inscription</button>
+            <?php if ($con === "refused" || $con === "notLogged"): ?>
+                <button style="margin-right: 10px;" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
+                        data-target="#subscribeModal">Inscription
+                </button>
+                <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#connexionModal">
+                    Connexion
+                </button>
+            <?php elseif ($con === "ok"): ?>
+                <a href="../public/index.php?p=accueil&con=notLogged">
+                    <button class="btn btn-outline-warning my-2 my-sm-0">
+                        Déconnexion
+                    </button>
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </nav>
@@ -61,23 +75,44 @@
 </footer>
 
 <!-- Modal -->
-<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="subscribeModalLabel">Inscrivez-vous !</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <?php
-            include '../view/users/createUser.php';
-        ?>
-      </div>
-     
+<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="subscribeModalLabel">Inscrivez-vous !</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php
+                include '../view/users/createUser.php';
+                ?>
+            </div>
+
+        </div>
     </div>
-  </div>
+</div>
+
+<div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="subscribeModalLabel">Inscrivez-vous !</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php
+                include '../view/users/connectUser.php';
+                ?>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 <!-- Bootstrap core JavaScript -->
