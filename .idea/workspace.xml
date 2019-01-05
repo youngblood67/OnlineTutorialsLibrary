@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b72502a3-383d-4464-8186-850771d3b639" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/ressources/css/style-general.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/css/style-general.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treatment/trtConnect.php" beforeDir="false" afterPath="$PROJECT_DIR$/treatment/trtConnect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/treatment/trtDeconnect.php" beforeDir="false" afterPath="$PROJECT_DIR$/treatment/trtDeconnect.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/master.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/master.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +98,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="48">
@@ -113,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/ressources/css/style-general.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="510">
+              <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -196,8 +190,8 @@
         <option value="$PROJECT_DIR$/treatment/trtConnect.php" />
         <option value="$PROJECT_DIR$/treatment/trtDeconnect.php" />
         <option value="$PROJECT_DIR$/view/templates/master.php" />
-        <option value="$PROJECT_DIR$/public/ressources/css/style-general.css" />
         <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/public/ressources/css/style-general.css" />
       </list>
     </option>
   </component>
@@ -347,12 +341,12 @@
       <workItem from="1546196397819" duration="26371000" />
       <workItem from="1546502849879" duration="11504000" />
       <workItem from="1546529816829" duration="11749000" />
-      <workItem from="1546684870444" duration="10147000" />
+      <workItem from="1546684870444" duration="10379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96537000" />
+    <option name="totallyTimeSpent" value="96769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -616,17 +610,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/css/style-general.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="11" column="60" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/css/style-general.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
         </state>
       </provider>
     </entry>
