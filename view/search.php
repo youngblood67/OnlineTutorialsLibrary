@@ -5,7 +5,6 @@ if (isset($_GET['idTheme'])) {
 } else {
     $idTheme = 0;
 }
-//echo "<h1>{$cat}</h1>";
 ?>
 
 

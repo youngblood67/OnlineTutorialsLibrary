@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require '../app/Autoloader.php';
 App\Autoloader::register();
@@ -12,9 +13,9 @@ if (isset($_POST["password"])) {
     $password = $_POST["password"];
 }
 
-if (User::connection($email, $password)) {
-    $con = "ok";
-} else {
-    $con = "refused";
-};
-header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil&con=' . $con);
+if ($_SESSION['con'] == "loggedOff") {
+    if (User::connection($email, $password)) {
+        $_SESSION['con'] = "loggedOn";
+    }
+    header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil');
+}

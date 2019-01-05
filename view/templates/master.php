@@ -45,15 +45,15 @@
 
 
             </ul>
-            <?php if ($con === "refused" || $con === "notLogged"): ?>
+            <?php if ($_SESSION['con'] === "loggedOff"): ?>
                 <button style="margin-right: 10px;" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
                         data-target="#subscribeModal">Inscription
                 </button>
                 <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#connexionModal">
                     Connexion
                 </button>
-            <?php elseif ($con === "ok"): ?>
-                <a href="../public/index.php?p=accueil&con=notLogged">
+            <?php elseif ($_SESSION['con'] === "loggedOn"): ?>
+                <a href="../treatment/trtDeconnect.php">
                     <button class="btn btn-outline-warning my-2 my-sm-0">
                         Déconnexion
                     </button>

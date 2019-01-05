@@ -1,23 +1,22 @@
-
-
-
-
-
 <!-- Page Content -->
 <div class="container">
 
     <div class="row">
-
         <div class="col-lg-3">
-
+            <?php
+            $theme = new \App\Model\Theme();
+            ?>
             <h1 class="my-4">Accueil</h1>
+
             <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+                <?php foreach ($theme->getAll() as $theme): ?>
+                    <a href="../public/index.php?p=recherche&idTheme=<?= $theme->idTheme ?>"
+                       class="list-group-item"><?= $theme->title ?></a>
+                <?php endforeach; ?>
             </div>
 
         </div>
+
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">

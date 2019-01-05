@@ -13,17 +13,11 @@ if (isset($_GET['p'])) {
     $p = 'accueil';
 }
 
-if (isset($_GET['con'])) {
-    $con = $_GET['con'];
-} else {
-    $con = 'notLogged';
-}
-
+echo $_SESSION['con'];
 $css = "";
 $activeHome = "";
 $activeSearch = "";
-//$activeVideo = ""
-;
+
 ob_start();
 
 if ($p === 'accueil') {
@@ -34,13 +28,6 @@ if ($p === 'accueil') {
     $css = '<link href="../public/ressources/css/style-recherche.css" rel="stylesheet">';
     $activeSearch = "active";
     require '../view/search.php';
-} else if ($p === 'video') {
-    $css = '<link href="../public/ressources/css/style-video.css" rel="stylesheet">';
-//    $activeVideo = "active";
-    require '../view/videos/video.php';
-} else if ($p === 'inscription') {
-    $css = '<link href="../public/ressources/css/style-createUser.css" rel="stylesheet">';
-    require '../view/users/createUser.php';
 }
 
 $content = ob_get_clean();
