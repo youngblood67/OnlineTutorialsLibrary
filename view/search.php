@@ -15,8 +15,8 @@ if (isset($_GET['idTheme'])) {
 
        <?php
 
-        $user = new \App\Model\User();
-        var_dump($user->isSubscribed("philippeschaeffer67@gmail.com"));
+
+
 
        ?>
 

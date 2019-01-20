@@ -17,11 +17,12 @@ $error = "";
 if (!isset($_SESSION['con'])) {
     if (User::connection($email, $password)) {
         $_SESSION['con'] = "loggedOn";
-        $_SESSION['email'] = User::getUserByEmail($email)[0]->email;
-        $_SESSION['firstname'] = User::getUserByEmail($email)[0]->firstname;
-        $_SESSION['lastname'] = User::getUserByEmail($email)[0]->lastname;
-    }else{
+        $_SESSION['email'] = User::getUser($email)->email;
+        $_SESSION['firstname'] = User::getUser($email)->firstname;
+        $_SESSION['lastname'] = User::getUser($email)->lastname;
+        $_SESSION['status'] = User::getStatus($email);
+    } else {
         $error = "&error=1";
     }
-    header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil'.$error);
+    header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil' . $error);
 }

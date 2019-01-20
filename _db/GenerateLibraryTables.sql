@@ -103,7 +103,6 @@ create table THEME
 create table USER
 (
    idUser               int not null AUTO_INCREMENT,
-   idUserSubscription   int,
    lastname            varchar(50),
    firstname            varchar(50),
    password            varchar(200),
@@ -117,8 +116,8 @@ create table USER
 create table USERSUBSCRIPTION
 (
    idUserSubscription   int not null AUTO_INCREMENT,
-   idSubscription       int not null,
    idUser               int not null,
+   idSubscription       int not null,
    startDate            datetime,
    primary key (idUserSubscription)
 );

@@ -36,11 +36,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item <?= $activeHome ?>"  >
+                <li class="nav-item <?= $activeHome ?>">
                     <a class="nav-link" href="../public/index.php?p=accueil">Accueil
                     </a>
                 </li>
-                <li class="nav-item <?= $activeSearch ?> " >
+                <li class="nav-item <?= $activeSearch ?> ">
                     <a class="nav-link" href="../public/index.php?p=recherche">Recherche</a>
                 </li>
 
@@ -53,11 +53,13 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#connexionModal">
                     Connexion
                 </button>
-            <?php elseif ($_SESSION['con'] === "loggedOn"): ?>
+            <?php elseif ($_SESSION['con'] === "loggedOn") : ?>
+                <?php if (!((isset($_SESSION['status']) && (intval($_SESSION['status']) >= 1))))  : ?>
                     <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-right:10px;"
-                    data-toggle="modal" data-target="#subscriptionTypeModal">
+                            data-toggle="modal" data-target="#subscriptionTypeModal">
                         Abonnement
                     </button>
+                <?php endif; ?>
                 <a href="../treatment/trtDeconnect.php">
                     <button class="btn btn-outline-warning my-2 my-sm-0">
                         Déconnexion
@@ -131,7 +133,7 @@
                 </button>
             </div>
             <div class="modal-body">
-            
+
                 <?php
                 include '../view/users/chooseSubscription.php';
                 ?>

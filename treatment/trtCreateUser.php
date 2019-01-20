@@ -20,5 +20,9 @@ if (isset($_POST["password"])) {
 $user = new User();
 $user->addUser($lastname, $firstname, $password, $email);
 
-header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil');
+
+
+
+header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil' . $error);
+
 

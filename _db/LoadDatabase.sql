@@ -150,3 +150,9 @@ INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('17', '2');
 INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('18', '2');
 INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('19', '2');
 INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('20', '2');
+
+
+/*****************************ABONNEMENTS**********************************************/
+INSERT INTO `subscription` (`price`, `duration`, `type`, `nbDaysTrial`) VALUES ('10', '30','1',null);
+INSERT INTO `subscription` (`price`, `duration`, `type`, `nbDaysTrial`) VALUES ('20', '60','2',null);
+INSERT INTO `subscription` (`price`, `duration`, `type`, `nbDaysTrial`) VALUES ('30', '90','3',null);

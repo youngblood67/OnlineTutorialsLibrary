@@ -32,11 +32,13 @@ if (isset($_GET['con'])) {
     }
 }
 
+var_dump($_SESSION);
+
 if (isset($_SESSION['lastname']) && isset($_SESSION['firstname'])) {
-    if (!isset($_SESSION['isSubscribed'])) {
-        $msg = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>membre</span></div>";
-    } else {
-        $msg = "<br id='isConnected'>" . $_SESSION['firstname'] . "</div>";
+    if (isset($_SESSION['status'])) {
+        $msg = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>abonné cat. ".$_SESSION['status']."</span></div>";
+    }else{
+        $msg = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>membre simple</span></div>";
     }
 }else{
     $msg = "<div id='isInvited'>invité</div>";
