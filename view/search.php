@@ -13,6 +13,13 @@ if (isset($_GET['idTheme'])) {
 
     <div class="row">
 
+       <?php
+
+        $user = new \App\Model\User();
+        var_dump($user->isSubscribed("philippeschaeffer67@gmail.com"));
+
+       ?>
+
         <div class="col-lg-3">
             <?php
             $theme = new \App\Model\Theme();
@@ -43,20 +50,22 @@ if (isset($_GET['idTheme'])) {
                                 <a href="<?= $vid->url ?>">
                                     <img width="50%" alt="thumbnail"
                                          src="<?= $vid->thumbnail; ?>"/>
-                            </a></div>
+                                </a></div>
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
 
                     <?php foreach ($video->getLastByTheme($idTheme, 10) as $vid): ?>
                         <div class="div-video">
+
                             <a href="<?= $vid->url; ?>">
                                 <div class="video"><?= $vid->vidTitle; ?></div>
                             </a>
-                            <iframe style="margin-bottom: 10px" width="560" height="315" src="<?= $vid->url; ?>"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
+                            <div class="text-center">
+                                <a href="<?= $vid->url ?>">
+                                    <img width="50%" alt="thumbnail"
+                                         src="<?= $vid->thumbnail; ?>"/>
+                                </a></div>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>

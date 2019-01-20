@@ -22,7 +22,7 @@ class Video extends Table
     public function getLastByTheme($idTheme = 1,$nb = 100)
     {
         return $this->db->queryAll("
-            SELECT v.title as vidTitle, v.url as url
+            SELECT v.title as vidTitle, v.url as url, v.thumbnail as thumbnail
             FROM ".$this->table." v, video_theme vt, theme t
             WHERE v.idVideo = vt.idVideo 
             AND vt.idTheme = t.idTheme

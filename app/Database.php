@@ -35,12 +35,22 @@ class Database
         return $this->pdo;
     }
 
-    public function queryAll($statement, $className)   //faudrait créer aussi un querySingle pour éviter les fetchAll puis $query[0]->$s
+    public function queryAll($sql, $className)
     {
-        $req = $this->getPDO()->query($statement);
+        $req = $this->getPDO()->query($sql);
 
         $datas = $req->fetchAll(PDO::FETCH_CLASS, $className);
+        $this->closeConnection();
         return $datas;
+    }
+
+    public function querySingle($sql, $className)
+    {
+        $req = $this->getPDO()->query($sql);
+
+        $datas = $req->fetchAll(PDO::FETCH_CLASS, $className);
+        $this->closeConnection();
+        return $datas[0];
     }
 
     public function closeConnection()

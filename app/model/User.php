@@ -13,14 +13,14 @@ use App\Database;
 
 class User extends Table
 {
-    protected static $_table = "user";
+    protected $table = "user";
     protected $db;
 
     public function addUser($lastname, $firstname, $password, $email)
     {
         $db = new Database();
         $pass_hache = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $db->getPDO()->prepare("INSERT INTO user (lastname, firstname, password, email) VALUES (:lastname, :firstname, :password, :email)");
+        $stmt = $db->getPDO()->prepare("INSERT INTO ".$this->table."  (lastname, firstname, password, email) VALUES (:lastname, :firstname, :password, :email)");
         $stmt->bindParam(':lastname', $lastname);
         $stmt->bindParam(':firstname', $firstname);
         $stmt->bindParam(':password', $pass_hache);
@@ -30,11 +30,17 @@ class User extends Table
 
     }
 
+    public function isSubscribed($email){
+        $db = new Database();
+        $query = $db->queryAll("SELECT * FROM user ", __CLASS__);
+        return $query;
+    }
+
     public static function connection($email, $pass)
     {
         $db = new Database();
-        $query = $db->queryAll("SELECT * FROM user where email = '" . $email . "'", __CLASS__);
-        $passwordInDb = $query[0]->password;
+        $query = $db->querySingle("SELECT * FROM user where email = '" . $email . "'", __CLASS__);
+        $passwordInDb = $query->password;
         return password_verify($pass, $passwordInDb);
 
     }

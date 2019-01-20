@@ -39,3 +39,17 @@ footer {
     border: 1px solid #9fcdff;
     background-color: #545b62
 }
+
+#isInvited{
+    color: #e4f0df;
+    padding: 5px 15px;
+    border-radius: 0.25rem;
+    border: 1px solid #9fcdff;
+    background-color: #545b62
+}
+
+.mini-logo{
+    font-size: 10px;
+    margin-left: 5px;
+    font-style: italic;
+}
