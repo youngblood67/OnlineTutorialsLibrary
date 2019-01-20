@@ -47,8 +47,8 @@ create table COMMENT
    idComment            int not null AUTO_INCREMENT,
    idVideo              int not null,
    idUser               int not null,
-   content              text,
-   rating              int,
+   contentComment              text,
+   ratingComment              int,
    primary key (idComment)
 );
 
@@ -69,9 +69,9 @@ create table ONLINEVISUALIZATION
 create table SUBSCRIPTION
 (
    idSubscription       int not null AUTO_INCREMENT,
-   price                float,
-   duration             int,
-   type                 int,
+   priceSubscription                float,
+   durationSubscription             int,
+   typeSubscription                 int,
    nbDaysTrial          int,
    primary key (idSubscription)
 );
@@ -82,7 +82,7 @@ create table SUBSCRIPTION
 create table TAG
 (
    idTag                int not null AUTO_INCREMENT,
-   title               varchar(200),
+   titleTag               varchar(200),
    primary key (idTag)
 );
 
@@ -92,8 +92,7 @@ create table TAG
 create table THEME
 (
    idTheme              int not null AUTO_INCREMENT,
-   title                varchar(200),
-   description          text,
+   titleTheme                varchar(200),
    primary key (idTheme)
 );
 
@@ -128,13 +127,13 @@ create table USERSUBSCRIPTION
 create table VIDEO
 (
    idVideo              int not null AUTO_INCREMENT,
-   title                varchar(200) not null,
-   duration             int,
-   price                float,
-   description          text,
-   url					        varchar(200) not null,
-   thumbnail            varchar(200),
-   author               varchar(200),
+   titleVideo                varchar(200) not null,
+   durationVideo             int,
+   priceVideo                float,
+   descriptionVideo          text,
+   urlVideo					        varchar(200) not null,
+   thumbnailVideo            varchar(200),
+   authorVideo               varchar(200),
    primary key (idVideo)
 );
 
@@ -182,9 +181,6 @@ alter table ONLINEVISUALIZATION add constraint FK_ONLINEVISUALIZATION foreign ke
 
 alter table ONLINEVISUALIZATION add constraint FK_ONLINEVISUALIZATION2 foreign key (idVideo)
       references VIDEO (idVideo) on delete restrict on update restrict;
-
-alter table USER add constraint FK_USER_USERSUBSCRIPTION2 foreign key (idUserSubscription)
-      references USERSUBSCRIPTION (idUserSubscription) on delete restrict on update restrict;
 
 alter table USERSUBSCRIPTION add constraint FK_USERSUBSCRIPTION_SUBSCRIPTION foreign key (idSubscription)
       references SUBSCRIPTION (idSubscription) on delete restrict on update restrict;

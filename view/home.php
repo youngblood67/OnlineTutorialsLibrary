@@ -11,7 +11,7 @@
             <div class="list-group">
                 <?php foreach ($theme->getAll() as $theme): ?>
                     <a href="../public/index.php?p=recherche&idTheme=<?= $theme->idTheme ?>"
-                       class="list-group-item"><?= $theme->title ?></a>
+                       class="list-group-item"><?= $theme->titleTheme ?></a>
                 <?php endforeach; ?>
             </div>
 

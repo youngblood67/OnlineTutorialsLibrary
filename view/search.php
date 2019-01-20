@@ -28,7 +28,7 @@ if (isset($_GET['idTheme'])) {
             <div class="list-group">
                 <?php foreach ($theme->getAll() as $theme): ?>
                     <a href="../public/index.php?p=recherche&idTheme=<?= $theme->idTheme ?>"
-                       class="list-group-item"><?= $theme->title ?></a>
+                       class="list-group-item"><?= $theme->titleTheme ?></a>
                 <?php endforeach; ?>
             </div>
 
@@ -36,20 +36,20 @@ if (isset($_GET['idTheme'])) {
         <!-- /.col-lg-3 -->
         <?php
         $video = new \App\Model\Video();
+
         ?>
         <div class="col-lg-9">
             <div id="listing" class="row justify-content-center">
                 <?php if ($idTheme === 0): ?>
-
                     <?php foreach ($video->getLast(10) as $vid): ?>
                         <div class="div-video">
-                            <a href="<?= $vid->url; ?>">
-                                <div class="video"><?= $vid->title; ?></div>
+                            <a href="index.php?p=videos&idVideo=<?= $vid->idVideo ?>">
+                                <div class="video"><?= $vid->titleVideo; ?></div>
                             </a>
                             <div class="text-center">
-                                <a href="<?= $vid->url ?>">
+                                <a href="index.php?p=videos&idVideo=<?= $vid->idVideo ?>">
                                     <img width="50%" alt="thumbnail"
-                                         src="<?= $vid->thumbnail; ?>"/>
+                                         src="<?= $vid->thumbnailVideo; ?>"/>
                                 </a></div>
                         </div>
                     <?php endforeach; ?>
@@ -58,11 +58,11 @@ if (isset($_GET['idTheme'])) {
                     <?php foreach ($video->getLastByTheme($idTheme, 10) as $vid): ?>
                         <div class="div-video">
 
-                            <a href="<?= $vid->url; ?>">
-                                <div class="video"><?= $vid->vidTitle; ?></div>
+                            <a href="index.php?p=videos&idVideo=<?= $vid->idVideo ?>">
+                                <div class="video"><?= $vid->titleVideo; ?></div>
                             </a>
                             <div class="text-center">
-                                <a href="<?= $vid->url ?>">
+                                <a href="index.php?p=videos&idVideo=<?= $vid->idVideo ?>">
                                     <img width="50%" alt="thumbnail"
                                          src="<?= $vid->thumbnail; ?>"/>
                                 </a></div>

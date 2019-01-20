@@ -29,6 +29,7 @@
     <div class="container">
         <a class="navbar-brand" href="#"><?= \App\Config::getInstance()->get('site_title') ?></a>
         <?= $msg ?>
+        <?= $infoCon ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">

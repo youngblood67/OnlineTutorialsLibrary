@@ -7,37 +7,37 @@ TRUNCATE TABLE video;
 /********************************* VIDEOS **************************************/
 
 /* videos Youtube PHP*/
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (1/31) : Présentation', '78', '0', 'Présentation de la formation', 'https://www.youtube.com/embed/r_NiFqLvfsc','https://img.youtube.com/vi/r_NiFqLvfsc/sddefault.jpg' ,'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (2/31) : Les objets, c''est quoi ?', '433', '0', '...', 'https://www.youtube.com/embed/cD2o7YudR3k','https://img.youtube.com/vi/cD2o7YudR3k/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (3/31) : Notre première classe', '1277', '0', '...', 'https://www.youtube.com/embed/xmoOvoiPNhU','https://img.youtube.com/vi/xmoOvoiPNhU/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (4/31) : La visibilité public / private', '420', '0', '...', 'https://www.youtube.com/embed/zZ_tVAPfGAA','https://img.youtube.com/vi/zZ_tVAPfGAA/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (5/31) : Un exemple concret : Form', '675', '0', '...', 'https://www.youtube.com/embed/rTGmcdFAWqw', 'https://img.youtube.com/vi/rTGmcdFAWqw/sddefault.jpg','Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (6/31) : Bien documenter ses classes', '302', '0', '...', 'https://www.youtube.com/embed/KAL1vJtHces','https://img.youtube.com/vi/KAL1vJtHces/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (7/31) : Propriétés et Méthodes statiques', '640', '0', '...', 'https://www.youtube.com/embed/KAL1vJtHces', 'https://img.youtube.com/vi/KAL1vJtHces/sddefault.jpg','Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (8/31) : L''héritage', '452', '0', '...', 'https://www.youtube.com/embed/ccuoGgWz5Do','https://img.youtube.com/vi/ccuoGgWz5Do/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (9/31) : Exemple d''héritage', '329', '0', '...', 'https://www.youtube.com/embed/GCjDC5-a8fM','https://img.youtube.com/vi/GCjDC5-a8fM/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (10/31) : L''autoloading', '382', '0', '...', 'https://www.youtube.com/embed/BzJltEYYbMo','https://img.youtube.com/vi/BzJltEYYbMo/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (11/31) : Les namespaces', '904', '0', '...', 'https://www.youtube.com/embed/dV4jgx5b4gk','https://img.youtube.com/vi/dV4jgx5b4gk/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (12/31) : TP : La structure', '700', '0', '...', 'https://www.youtube.com/embed/sqiP39cH5K4','https://img.youtube.com/vi/sqiP39cH5K4/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (13/31) : TP : Connexion à la base de donnée', '2284', '0', '...', 'https://www.youtube.com/embed/weE2adYHPG0','https://img.youtube.com/vi/weE2adYHPG0/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (14/31) : TP : Création des classes Table', '2344', '0', '...', 'https://www.youtube.com/embed/3pACUHqop9U','https://img.youtube.com/vi/3pACUHqop9U/sddefault.jpg', 'Grafikart');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'La POO en PHP (15/31) : TP : Problèmes d''organisation', '119', '0', '...', 'https://www.youtube.com/embed/8ylOLaKPkB8', 'https://img.youtube.com/vi/8ylOLaKPkB8/sddefault.jpg','Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (1/31) : Présentation', '78', '0', 'Présentation de la formation', 'https://www.youtube.com/embed/r_NiFqLvfsc','https://img.youtube.com/vi/r_NiFqLvfsc/sddefault.jpg' ,'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (2/31) : Les objets, c''est quoi ?', '433', '0', '...', 'https://www.youtube.com/embed/cD2o7YudR3k','https://img.youtube.com/vi/cD2o7YudR3k/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (3/31) : Notre première classe', '1277', '0', '...', 'https://www.youtube.com/embed/xmoOvoiPNhU','https://img.youtube.com/vi/xmoOvoiPNhU/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (4/31) : La visibilité public / private', '420', '0', '...', 'https://www.youtube.com/embed/zZ_tVAPfGAA','https://img.youtube.com/vi/zZ_tVAPfGAA/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (5/31) : Un exemple concret : Form', '675', '0', '...', 'https://www.youtube.com/embed/rTGmcdFAWqw', 'https://img.youtube.com/vi/rTGmcdFAWqw/sddefault.jpg','Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (6/31) : Bien documenter ses classes', '302', '0', '...', 'https://www.youtube.com/embed/KAL1vJtHces','https://img.youtube.com/vi/KAL1vJtHces/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (7/31) : Propriétés et Méthodes statiques', '640', '0', '...', 'https://www.youtube.com/embed/KAL1vJtHces', 'https://img.youtube.com/vi/KAL1vJtHces/sddefault.jpg','Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (8/31) : L''héritage', '452', '0', '...', 'https://www.youtube.com/embed/ccuoGgWz5Do','https://img.youtube.com/vi/ccuoGgWz5Do/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (9/31) : Exemple d''héritage', '329', '0', '...', 'https://www.youtube.com/embed/GCjDC5-a8fM','https://img.youtube.com/vi/GCjDC5-a8fM/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (10/31) : L''autoloading', '382', '0', '...', 'https://www.youtube.com/embed/BzJltEYYbMo','https://img.youtube.com/vi/BzJltEYYbMo/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (11/31) : Les namespaces', '904', '0', '...', 'https://www.youtube.com/embed/dV4jgx5b4gk','https://img.youtube.com/vi/dV4jgx5b4gk/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (12/31) : TP : La structure', '700', '0', '...', 'https://www.youtube.com/embed/sqiP39cH5K4','https://img.youtube.com/vi/sqiP39cH5K4/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (13/31) : TP : Connexion à la base de donnée', '2284', '0', '...', 'https://www.youtube.com/embed/weE2adYHPG0','https://img.youtube.com/vi/weE2adYHPG0/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (14/31) : TP : Création des classes Table', '2344', '0', '...', 'https://www.youtube.com/embed/3pACUHqop9U','https://img.youtube.com/vi/3pACUHqop9U/sddefault.jpg', 'Grafikart');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (15/31) : TP : Problèmes d''organisation', '119', '0', '...', 'https://www.youtube.com/embed/8ylOLaKPkB8', 'https://img.youtube.com/vi/8ylOLaKPkB8/sddefault.jpg','Grafikart');
 
 /* videos Youtube JAVASCRIPT*/
 
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [1/65] - Présentation du cours JavaScript', '108', '0', 'Présentation de la formation', 'https://www.youtube.com/embed/VZLflMqC6dI','https://img.youtube.com/vi/VZLflMqC6dI/sddefault.jpg', 'Pierre Giraud');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [2/65] - Introduction au JavaScript', '200', '0', '...', 'https://www.youtube.com/embed/lDO14MA0C_o','https://img.youtube.com/vi/lDO14MA0C_o/sddefault.jpg', 'Pierre Giraud');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [3/65] - Environnement de travail', '92', '0', '...', 'https://www.youtube.com/embed/dNIJUmjZeMI','https://img.youtube.com/vi/dNIJUmjZeMI/sddefault.jpg', 'Pierre Giraud');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [4/65] - Où écrire le code JavaScript', '576', '0', '...', 'https://www.youtube.com/embed/gpdierJ5-kw', 'https://img.youtube.com/vi/gpdierJ5-kw/sddefault.jpg','Pierre Giraud');
-INSERT INTO `video` (`idVideo`, `title`, `duration`, `price`, `description`, `url`,`thumbnail`, `author`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [5/65] - Syntaxe, indentation et commentaires', '450', '0', '...', 'https://www.youtube.com/embed/AtUwagcoDL8', 'https://img.youtube.com/vi/AtUwagcoDL8/sddefault.jpg','Pierre Giraud');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [1/65] - Présentation du cours JavaScript', '108', '0', 'Présentation de la formation', 'https://www.youtube.com/embed/VZLflMqC6dI','https://img.youtube.com/vi/VZLflMqC6dI/sddefault.jpg', 'Pierre Giraud');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [2/65] - Introduction au JavaScript', '200', '0', '...', 'https://www.youtube.com/embed/lDO14MA0C_o','https://img.youtube.com/vi/lDO14MA0C_o/sddefault.jpg', 'Pierre Giraud');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [3/65] - Environnement de travail', '92', '0', '...', 'https://www.youtube.com/embed/dNIJUmjZeMI','https://img.youtube.com/vi/dNIJUmjZeMI/sddefault.jpg', 'Pierre Giraud');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [4/65] - Où écrire le code JavaScript', '576', '0', '...', 'https://www.youtube.com/embed/gpdierJ5-kw', 'https://img.youtube.com/vi/gpdierJ5-kw/sddefault.jpg','Pierre Giraud');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [5/65] - Syntaxe, indentation et commentaires', '450', '0', '...', 'https://www.youtube.com/embed/AtUwagcoDL8', 'https://img.youtube.com/vi/AtUwagcoDL8/sddefault.jpg','Pierre Giraud');
 
 /*********************************** TAG *****************************************/
 
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'prog');
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'objet');
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'poo');
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'php');
-INSERT INTO `tag` (`idTag`, `title`) VALUES (NULL, 'javascript');
+INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'prog');
+INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'objet');
+INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'poo');
+INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'php');
+INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'javascript');
 
 
 /************************************ VIDEO_TAG ************************************/
@@ -124,8 +124,8 @@ INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '20');
 
 /**************************************** THEME *********************************/
 
-INSERT INTO `theme` (`idTheme`, `title`, `description`) VALUES (NULL, 'PHP', NULL);
-INSERT INTO `theme` (`idTheme`, `title`, `description`) VALUES (NULL, 'JAVASCRIPT', NULL);
+INSERT INTO `theme` (`idTheme`, `titleTheme`) VALUES (NULL, 'PHP');
+INSERT INTO `theme` (`idTheme`, `titleTheme`) VALUES (NULL, 'JAVASCRIPT');
 
 /**************************************** VIDEO_THEME **************************************/
 
@@ -153,6 +153,6 @@ INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('20', '2');
 
 
 /*****************************ABONNEMENTS**********************************************/
-INSERT INTO `subscription` (`price`, `duration`, `type`, `nbDaysTrial`) VALUES ('10', '30','1',null);
-INSERT INTO `subscription` (`price`, `duration`, `type`, `nbDaysTrial`) VALUES ('20', '60','2',null);
-INSERT INTO `subscription` (`price`, `duration`, `type`, `nbDaysTrial`) VALUES ('30', '90','3',null);
+INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `nbDaysTrial`) VALUES ('10', '30','1',null);
+INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `nbDaysTrial`) VALUES ('20', '60','2',null);
+INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `nbDaysTrial`) VALUES ('30', '90','3',null);

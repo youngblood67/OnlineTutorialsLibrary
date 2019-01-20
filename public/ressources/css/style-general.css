@@ -26,6 +26,10 @@ footer {
     border: 1px solid #6161ff;
     background-color: #545b62;
 }
+.info-con{
+    position: relative;
+    left:20px;
+}
 
 #deconnection:hover {
     background-color: #6161ff;

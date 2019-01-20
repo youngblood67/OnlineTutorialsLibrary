@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../app/Autoloader.php';
 App\Autoloader::register();
 
@@ -20,6 +21,11 @@ if (isset($_POST["password"])) {
 $user = new User();
 $user->addUser($lastname, $firstname, $password, $email);
 
+$_SESSION['con'] = "loggedOn";
+$_SESSION['email'] = User::getUser($email)->email;
+$_SESSION['firstname'] = User::getUser($email)->firstname;
+$_SESSION['lastname'] = User::getUser($email)->lastname;
+$_SESSION['status'] = '0';
 
 
 
