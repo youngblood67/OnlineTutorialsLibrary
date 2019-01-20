@@ -54,6 +54,10 @@
                     Connexion
                 </button>
             <?php elseif ($_SESSION['con'] === "loggedOn"): ?>
+                    <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-right:10px;"
+                    data-toggle="modal" data-target="#subscriptionTypeModal">
+                        Abonnement
+                    </button>
                 <a href="../treatment/trtDeconnect.php">
                     <button class="btn btn-outline-warning my-2 my-sm-0">
                         Déconnexion
@@ -81,7 +85,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="subscribeModalLabel">Inscrivez-vous !</h5>
+                <h4 class="modal-title" id="subscribeModalLabel">Inscrivez-vous !</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -101,7 +105,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="subscribeModalLabel">Connectez-vous !</h5>
+                <h4 class="modal-title" id="subscribeModalLabel">Connectez-vous !</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -109,6 +113,27 @@
             <div class="modal-body">
                 <?php
                 include '../view/users/connectUser.php';
+                ?>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="subscriptionTypeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="subscribeModalLabel">Choisissez votre abonnement !</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            
+                <?php
+                include '../view/users/chooseSubscription.php';
                 ?>
             </div>
 
