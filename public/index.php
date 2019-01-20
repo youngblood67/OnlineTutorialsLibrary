@@ -5,6 +5,12 @@ App\Autoloader::register();
 
 $config = \App\Config::getInstance();
 
+if(isset($_SESSION['email'])){
+    $_SESSION['status'] = \App\Model\User::getStatus($_SESSION['email']);
+}else{
+    $_SESSION['status'] = "";
+}
+
 // Initialisation des variables
 $css = "";      // stocke la feuille de style spécifique à la page en fonction de $p
 $activeHome = "";  //  permet de rendre le lien actif
@@ -33,7 +39,7 @@ if (isset($_GET['con'])) {
     }
 }
 
-//var_dump($_SESSION);
+
 
 if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
     if (isset($_SESSION['status']) && intval($_SESSION['status']) > 0) {
@@ -44,7 +50,6 @@ if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
 } else {
     $msg = "<div id='isInvited'>invité</div>";
 }
-
 
 
 
