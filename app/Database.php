@@ -50,7 +50,8 @@ class Database
 
         $datas = $req->fetchAll(PDO::FETCH_CLASS, $className);
         $this->closeConnection();
-        return $datas[0];
+        if(empty($datas))return null;
+        else return $datas[0];
     }
 
     public function closeConnection()

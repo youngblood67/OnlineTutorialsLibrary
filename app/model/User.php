@@ -61,19 +61,25 @@ class User extends Table
 
     }
 
-    public static function getStatus($email)
+    public static function getStatus($email = "none")
     {
-        $idUser = self::getUser($email)->idUser;
-        //verifier si $idUSer est dans usersubscription si oui alors retourne typeSubscription else return 0
-        $db = new Database();
-        if (self::isSubscribed($email)) {
-            $query = $db->querySingle("SELECT *
+        if (self::getUser($email) != null) {
+            $idUser = self::getUser($email)->idUser;
+
+            //verifier si $idUSer est dans usersubscription si oui alors retourne typeSubscription else return 0
+            $db = new Database();
+            if (self::isSubscribed($email)) {
+                $query = $db->querySingle("SELECT *
             FROM user u,usersubscription us, subscription s
             WHERE u.idUser = us.idUser
             AND s.idSubscription = us.idSubscription
             AND u.idUser = {$idUser}", __CLASS__);
-            return $query->typeSubscription;
-        } else return 0;
+                return $query->typeSubscription;
+            }
+        } else {
+           session_destroy();
+            return 0;
+        }
 
 
     }
