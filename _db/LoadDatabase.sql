@@ -23,13 +23,21 @@ INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `de
 INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (14/31) : TP : Création des classes Table', '2344', '0', '...', 'https://www.youtube.com/embed/3pACUHqop9U','https://img.youtube.com/vi/3pACUHqop9U/sddefault.jpg', 'Grafikart');
 INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'La POO en PHP (15/31) : TP : Problèmes d''organisation', '119', '0', '...', 'https://www.youtube.com/embed/8ylOLaKPkB8', 'https://img.youtube.com/vi/8ylOLaKPkB8/sddefault.jpg','Grafikart');
 
-/* videos Youtube JAVASCRIPT*/
+/* videos Youtube JAVASCRIPT */
 
 INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [1/65] - Présentation du cours JavaScript', '108', '0', 'Présentation de la formation', 'https://www.youtube.com/embed/VZLflMqC6dI','https://img.youtube.com/vi/VZLflMqC6dI/sddefault.jpg', 'Pierre Giraud');
 INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [2/65] - Introduction au JavaScript', '200', '0', '...', 'https://www.youtube.com/embed/lDO14MA0C_o','https://img.youtube.com/vi/lDO14MA0C_o/sddefault.jpg', 'Pierre Giraud');
 INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [3/65] - Environnement de travail', '92', '0', '...', 'https://www.youtube.com/embed/dNIJUmjZeMI','https://img.youtube.com/vi/dNIJUmjZeMI/sddefault.jpg', 'Pierre Giraud');
 INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [4/65] - Où écrire le code JavaScript', '576', '0', '...', 'https://www.youtube.com/embed/gpdierJ5-kw', 'https://img.youtube.com/vi/gpdierJ5-kw/sddefault.jpg','Pierre Giraud');
 INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS COMPLET JAVASCRIPT [5/65] - Syntaxe, indentation et commentaires', '450', '0', '...', 'https://www.youtube.com/embed/AtUwagcoDL8', 'https://img.youtube.com/vi/AtUwagcoDL8/sddefault.jpg','Pierre Giraud');
+
+/* videos payante stockage données Android sur disque*/
+
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS STOCKAGE ANDROID [1/5] - Les préférences', '606', '15', 'Présentation de la formation Android', 'http://localhost/onlinetutorialslibrary/videos/notfree/08_1_preferences.mp4','http://http://localhost/onlinetutorialslibrary/videos/notfree/08_1_preferences.PNG', 'Alphorm.com');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS STOCKAGE ANDROID [2/5] - Le stockage interne', '596', '15', '...', 'http://localhost/onlinetutorialslibrary/videos/notfree/08_2_stockage_interne.mp4','http://http://localhost/onlinetutorialslibrary/videos/notfree/08_2_stockage_interne.PNG', 'Alphorm.com');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS STOCKAGE ANDROID [3/5] - Le stockage externe', '725', '15', '...', 'http://localhost/onlinetutorialslibrary/videos/notfree/08_3_stockage_externe.mp4','http://http://localhost/onlinetutorialslibrary/videos/notfree/08_3_stockage_externe.PNG', 'Alphorm.com');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS STOCKAGE ANDROID [4/5] - Les bases SQLite', '850', '15', '...', 'http://localhost/onlinetutorialslibrary/videos/notfree/08_4_les_bases_SQLite.mp4', 'http://localhost/onlinetutorialslibrary/videos/notfree/08_4_les_bases_SQLite.PNG','Alphorm.com');
+INSERT INTO `video` (`idVideo`, `titleVideo`, `durationVideo`, `priceVideo`, `descriptionVideo`, `urlVideo`,`thumbnailVideo`, `authorVideo`) VALUES (NULL, 'COURS STOCKAGE ANDROID [5/5] - Interface pour les préférences', '753', '15', '...', 'http://localhost/onlinetutorialslibrary/videos/notfree/08_5_interface_pour_les_preferences.mp4', 'http://http://localhost/onlinetutorialslibrary/videos/notfree/08_5_interface_pour_les_preferences.PNG','Alphorm.com');
 
 /*********************************** TAG *****************************************/
 
@@ -38,6 +46,7 @@ INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'objet');
 INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'poo');
 INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'php');
 INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'javascript');
+INSERT INTO `tag` (`idTag`, `titleTag`) VALUES (NULL, 'android');
 
 
 /************************************ VIDEO_TAG ************************************/
@@ -121,11 +130,19 @@ INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '18');
 INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '19');
 INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('5', '20');
 
+/* videos disque ANDROID */
+
+INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('6', '21');
+INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('6', '22');
+INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('6', '23');
+INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('6', '24');
+INSERT INTO `video_tag` (`idTag`, `idVideo`) VALUES ('6', '25');
 
 /**************************************** THEME *********************************/
 
 INSERT INTO `theme` (`idTheme`, `titleTheme`) VALUES (NULL, 'PHP');
 INSERT INTO `theme` (`idTheme`, `titleTheme`) VALUES (NULL, 'JAVASCRIPT');
+INSERT INTO `theme` (`idTheme`, `titleTheme`) VALUES (NULL, 'ANDROID');
 
 /**************************************** VIDEO_THEME **************************************/
 
@@ -151,6 +168,11 @@ INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('18', '2');
 INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('19', '2');
 INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('20', '2');
 
+INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('21', '3');
+INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('22', '3');
+INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('23', '3');
+INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('24', '3');
+INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('25', '3');
 
 /*****************************ABONNEMENTS**********************************************/
 INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `nbDaysTrial`) VALUES ('10', '30','1',null);
