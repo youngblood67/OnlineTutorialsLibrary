@@ -5,6 +5,7 @@
                 
                 $video = new \App\Model\Video();
                 $headList = $video->getLast(3);
+                $showModal="";
                 //var_dump($headList[0]->getVideoThumbnail($headList[0]->urlVideo));
             ?>
 
@@ -46,7 +47,7 @@
         </div>
 
         <div class="container">
-
+                        <?php var_dump($showModal);  ?>
             <div class="row">
                 <?php 
                 if(isset($_GET['searchInput'])){
@@ -59,12 +60,19 @@
                 ?>
                 <?php
                     $linkToVideo = "index.php?p=videos&idVideo=".$vid->idVideo;
+                    if(!isset($_SESSION['con'])){
+                        $showModal = "$('#connexionModal').modal('show'); return false;";
+                    }
+                    else{
+                        $showModal = "";
+                    }
+                    
                 ?>
 
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card h-100">
                         <a href="<?= $linkToVideo ?>"><img class="card-img-top"
-                                src="<?= $vid->getVideoThumbnail($vid->urlVideo)?>" alt=""></a>
+                                src="<?= $vid->getVideoThumbnail($vid->urlVideo)?>" alt="" onclick="<?= $showModal ?>"></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="<?= $linkToVideo ?>"><?= $vid->titleVideo ?></a>

@@ -25,7 +25,7 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 
         <a class="navbar-brand"
             href="../public/index.php?p=accueil"><?= \App\Config::getInstance()->get('site_title') ?></a>
@@ -73,6 +73,7 @@
     </nav>
 
     <?= $content; ?>
+    
 
 
     <!-- Footer -->
@@ -104,12 +105,12 @@
         </div>
     </div>
 
-    <div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
+    <div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="connexionModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="subscribeModalLabel">Connectez-vous !</h4>
+                    <h4 class="modal-title" id="connexionModalLabel">Connectez-vous !</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -124,12 +125,12 @@
         </div>
     </div>
 
-    <div class="modal fade" id="subscriptionTypeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
+    <div class="modal fade" id="subscriptionTypeModal" tabindex="-1" role="dialog" aria-labelledby="subscriptionTypeModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="subscribeModalLabel">Choisissez votre abonnement !</h4>
+                    <h4 class="modal-title" id="subscriptionTypeModalLabel">Choisissez votre abonnement !</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -145,6 +146,28 @@
         </div>
     </div>
 
+    <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="commentModalLabel">Laissez un commentaire !</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <?php
+                include '../view/users/comment.php';
+                ?>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/ressources/js/script.js"></script>
     <!-- Bootstrap core JavaScript -->
     <script src="../public/ressources/js/jquery/jquery.min.js"></script>
     <script src="../public/ressources/js/bootstrap/bootstrap.bundle.min.js"></script>
