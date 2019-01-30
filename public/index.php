@@ -69,6 +69,8 @@ if ($p === 'accueil') {
     }
     $css = '<link href="../public/ressources/css/style-videos.css" rel="stylesheet">';
     require '../view/videos/videos.php';
+} else if ($p === 'search') {
+    require '../view/home.php';
 }
 $content = ob_get_clean();
 

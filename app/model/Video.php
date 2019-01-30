@@ -43,4 +43,34 @@ class Video extends Table
             LIMIT {$nb}
         ",__CLASS__);
     }
+
+    public function getVideoThumbnail($videoUrl)
+    {
+        $videoSplit =explode("/", $videoUrl);
+        $videoId = $videoSplit[4];
+        return "http://img.youtube.com/vi/".$videoId."/hqdefault.jpg";
+
+    }
+
+    public function getSearchContent($searchContent)
+    {
+        $searchSplitWords = explode(" ", $searchContent);
+         
+        $req = "SELECT * FROM ".$this->table." 
+        WHERE ";
+        
+        for($i=0; $i<count($searchSplitWords); $i++)
+        {
+            if($i==0){
+                $req.="titleVideo LIKE '%{$searchSplitWords[$i]}%'";
+            }
+            else {
+                $req.=" AND titleVideo LIKE '%{$searchSplitWords[$i]}%'";
+            }
+            
+        }
+        
+        return $this->db->queryAll($req, __CLASS__);
+        
+    }
 }

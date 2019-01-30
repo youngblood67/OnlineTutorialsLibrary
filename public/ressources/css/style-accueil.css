@@ -1,11 +1,26 @@
 
 .description_box {
-    background-color: gray;
+    background-image: linear-gradient(to right, #2784C2, #2784C2);
+    color: aliceblue;
     
     
 }
 
 .parag {
-    margin: 10px;
+    margin: 50px;
+    margin-left: 130px;
+    margin-top: 90px;
 }
 
+.img-carousel-home {
+    width: 100%;
+    
+}
+
+#price {
+    text-align: right;
+}
+
+.card-title:hover{
+    text-decoration-line: none;
+}
