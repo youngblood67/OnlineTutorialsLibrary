@@ -26,7 +26,7 @@
                         </div>
                         <div class="col ">
                             <img class="d-block img-fluid img-carousel-home"
-                                src="<?=$headList[$i]->getVideoThumbnail($headList[$i]->urlVideo)?>" alt="First slide">
+                                src="<?=is_null($headList[$i]->urlVideo)? $headList[$i]->getYoutubeVideoThumbnail($headList[$i]->idYoutube) : $headList[$i]->getDriveVideoThumbnail($headList[$i]->urlVideo);?>" alt="First slide">
                         </div>
                     </div>
 
@@ -47,7 +47,7 @@
         </div>
 
         <div class="container">
-                        <?php var_dump($showModal);  ?>
+                        
             <div class="row">
                 <?php 
                 if(isset($_GET['searchInput'])){
@@ -59,6 +59,7 @@
                    foreach ($videoList as $vid): 
                 ?>
                 <?php
+                 //var_dump($videoList);  die();
                     $linkToVideo = "index.php?p=videos&idVideo=".$vid->idVideo;
                     if(!isset($_SESSION['con'])){
                         $showModal = "$('#connexionModal').modal('show'); return false;";
@@ -72,10 +73,11 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card h-100">
                         <a href="<?= $linkToVideo ?>"><img class="card-img-top"
-                                src="<?= $vid->getVideoThumbnail($vid->urlVideo)?>" alt="" onclick="<?= $showModal ?>"></a>
+                                src="<?=is_null($vid->urlVideo)? $vid->getYoutubeVideoThumbnail($vid->idYoutube) : $vid->getDriveVideoThumbnail($vid->urlVideo);?>
+                                " alt="" onclick="<?= $showModal ?>"></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="<?= $linkToVideo ?>"><?= $vid->titleVideo ?></a>
+                                <a href="<?= $linkToVideo ?>" onclick="<?= $showModal ?>"><?= $vid->titleVideo ?></a>
                             </h4>
 
                             <p class="card-text"> <?=$vid->descriptionVideo?></p>

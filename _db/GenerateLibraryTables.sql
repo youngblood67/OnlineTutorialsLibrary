@@ -131,8 +131,8 @@ create table VIDEO
    durationVideo             int,
    priceVideo                float,
    descriptionVideo          text,
-   urlVideo					        varchar(200) not null,
-   thumbnailVideo            varchar(200),
+   urlVideo					        varchar(200),
+   idYoutube            varchar(50),
    authorVideo               varchar(200),
    primary key (idVideo)
 );

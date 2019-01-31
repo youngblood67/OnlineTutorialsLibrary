@@ -44,11 +44,17 @@ class Video extends Table
         ",__CLASS__);
     }
 
-    public function getVideoThumbnail($videoUrl)
+    public function getYoutubeVideoThumbnail($idYoutube)
     {
-        $videoSplit =explode("/", $videoUrl);
-        $videoId = $videoSplit[4];
-        return "http://img.youtube.com/vi/".$videoId."/hqdefault.jpg";
+        
+        return "http://img.youtube.com/vi/".$idYoutube."/hqdefault.jpg";
+
+    }
+
+    public function getDriveVideoThumbnail($urlVideo)
+    {
+        
+        return "http://localhost/onlinetutorialslibrary/videos/".$urlVideo.".PNG";
 
     }
 
