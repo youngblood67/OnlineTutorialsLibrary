@@ -13,6 +13,7 @@ if(isset($_SESSION['email'])){
 
 // Initialisation des variables
 $css = "";      // stocke la feuille de style spécifique à la page en fonction de $p
+$js = "";
 $activeHome = "";  //  permet de rendre le lien actif
 $activeSearch = "";  // " "
 $msg = ""; // stocke les messages d'erreur ou de déconnexion
@@ -59,15 +60,12 @@ if ($p === 'accueil') {
     $css = '<link href="../public/ressources/css/style-accueil.css" rel="stylesheet">';
     $activeHome = "active";
     require '../view/home.php';
-} else if ($p === 'recherche') {
-    $css = '<link href="../public/ressources/css/style-recherche.css" rel="stylesheet">';
-    $activeSearch = "active";
-    require '../view/search.php';
-} else if ($p === 'videos') {
+}  else if ($p === 'videos') {
     if(isset($_GET['idVideo'])){
         $idVideo = $_GET['idVideo'];
     }
     $css = '<link href="../public/ressources/css/style-videos.css" rel="stylesheet">';
+    $js = '<script src="../public/ressources/js/scriptVideo.js"></script>';
     require '../view/videos/videos.php';
 } else if ($p === 'search') {
     require '../view/home.php';

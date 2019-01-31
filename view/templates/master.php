@@ -20,6 +20,7 @@
 
     <!-- My css files -->
     <?= $css ?>
+    <?= $js?>
 
 </head>
 
@@ -167,7 +168,7 @@
         </div>
     </div>
 
-    <script src="../public/ressources/js/script.js"></script>
+    
     <!-- Bootstrap core JavaScript -->
     <script src="../public/ressources/js/jquery/jquery.min.js"></script>
     <script src="../public/ressources/js/bootstrap/bootstrap.bundle.min.js"></script>
