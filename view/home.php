@@ -66,7 +66,7 @@
                         if (\App\Model\User::isSubscribed($_SESSION['email']) || $vid->priceVideo <= 0){
                             $showModal = "";
                         }else {
-                            $showModal = "$('#subscriptionTypeModal').modal('show'); return false;\";";
+                            $showModal = "$('#subscriptionTypeModal').modal('show'); return false;";
                         }
 
                     }

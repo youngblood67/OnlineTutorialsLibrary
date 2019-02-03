@@ -1,9 +1,9 @@
-
 footer {
     margin-top: 20px;
 }
 
 #connection-error {
+    margin-left: 10px;
     color: red;
     padding: 10px;
     border-radius: 0.25rem;
@@ -58,3 +58,5 @@ footer {
 .green{
     color: #1e7e34;
 }
+
+

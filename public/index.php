@@ -28,8 +28,9 @@ if (isset($_GET['p'])) {
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === "1") {
-        $infoCon = "<div id='connection-error' class='info-con alert-danger' data-toggle='modal'
-             data-target='#connexionModal'>Erreur de connexion ou mauvais mot de passe</div>";
+//      $js ='<script src="../public/ressources/js/scriptAlert.js"></script>';
+        $infoCon = "<div id='connection-error' data-toggle='modal'
+             data-target='#connexionModal'>Erreur de connexion</div>";
     }
 }
 if (isset($_GET['con'])) {

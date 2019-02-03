@@ -26,7 +26,7 @@
                 Profitez d'un accès visionnage illimité pendant 1 mois avec 7 jours d'essai
             </label>
         </div>
-
+        <?php var_dump($_SESSION);?>
         <div id="buy_it" class="form-check">
             <input class="form-check-input" type="radio" name="subscriptions" id="subscription3" value="0">
             <label class="form-check-label" for="subscription3">

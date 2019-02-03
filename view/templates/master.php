@@ -20,158 +20,181 @@
 
     <!-- My css files -->
     <?= $css ?>
-    <?= $js?>
+    <?= $js ?>
 
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
 
-        <a class="navbar-brand"
-            href="../public/index.php?p=accueil"><?= \App\Config::getInstance()->get('site_title') ?></a>
-        <?= $msg ?>
-        <?= $infoCon ?>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+    <a class="navbar-brand"
+       href="../public/index.php?p=accueil"><?= \App\Config::getInstance()->get('site_title') ?></a>
+    <?= $msg ?>
+    <?= $infoCon ?>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav mr-auto"></ul>
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav mr-auto"></ul>
 
-            <form class="form-inline" style="margin:auto;" action="index.php?p=search" method="get">
-                <div class="input-group">
-                    <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search" style="width:500px;" name="searchInput">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
-                    </div>
-
+        <form class="form-inline" style="margin:auto;" action="index.php?p=search" method="get">
+            <div class="input-group">
+                <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search"
+                       style="width:500px;" name="searchInput">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
                 </div>
-            </form>
 
-            <?php if (!isset($_SESSION['con'])): ?>
+            </div>
+        </form>
+
+        <?php if (!isset($_SESSION['con'])): ?>
             <button style="margin-right: 10px;" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
-                data-target="#subscribeModal">Inscription
+                    data-target="#subscribeModal">Inscription
             </button>
             <button class="btn btn-danger my-2 my-sm-0" data-toggle="modal" data-target="#connexionModal">
                 Connexion
             </button>
-            <?php elseif ($_SESSION['con'] === "loggedOn") : ?>
+        <?php elseif ($_SESSION['con'] === "loggedOn") : ?>
             <?php if (!((isset($_SESSION['status']) && (intval($_SESSION['status']) >= 1))))  : ?>
-            <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-right:10px;" data-toggle="modal"
-                data-target="#subscriptionTypeModal">
-                Abonnement
-            </button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-right:10px;" data-toggle="modal"
+                        data-target="#subscriptionTypeModal">
+                    Abonnement
+                </button>
             <?php endif; ?>
             <a href="../treatment/trtDeconnect.php">
                 <button class="btn btn-warning my-2 my-sm-0">
                     Déconnexion
                 </button>
             </a>
-            <?php endif; ?>
-        </div>
+        <?php endif; ?>
+    </div>
 
-    </nav>
+</nav>
 
-    <?= $content; ?>
-    
+<?= $content; ?>
 
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Marc & Phil 2018-2019</p>
-        </div>
-        <!-- /.container -->
-    </footer>
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Marc & Phil 2018-2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
 
-    <!-- Modal -->
-    <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="subscribeModalLabel">Inscrivez-vous !</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <?php
+<!-- Modal -->
+<div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="subscribeModalLabel">Inscrivez-vous !</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php
                 include '../view/users/createUser.php';
                 ?>
-                </div>
-
             </div>
+
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="connexionModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="connexionModalLabel">Connectez-vous !</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <?php
+<div class="modal fade" id="connexionModal" tabindex="-1" role="dialog" aria-labelledby="connexionModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="connexionModalLabel">Connectez-vous !</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php
                 include '../view/users/connectUser.php';
                 ?>
-                </div>
-
             </div>
+
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="subscriptionTypeModal" tabindex="-1" role="dialog" aria-labelledby="subscriptionTypeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="subscriptionTypeModalLabel">Choisissez votre abonnement !</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
+<div class="modal fade" id="subscriptionTypeModal" tabindex="-1" role="dialog"
+     aria-labelledby="subscriptionTypeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="subscriptionTypeModalLabel">Choisissez votre abonnement !</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
 
-                    <?php
+                <?php
                 include '../view/users/chooseSubscription.php';
                 ?>
-                </div>
-
             </div>
+
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="commentModalLabel">Laissez un commentaire !</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
+           aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="commentModalLabel">Laissez un commentaire !</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
 
-                    <?php
+                <?php
                 include '../view/users/comment.php';
                 ?>
-                </div>
-
             </div>
+
         </div>
     </div>
+</div>
 
-    
-    <!-- Bootstrap core JavaScript -->
-    <script src="../public/ressources/js/jquery/jquery.min.js"></script>
-    <script src="../public/ressources/js/bootstrap/bootstrap.bundle.min.js"></script>
+<div class="modal fade" id="connection-error" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="commentModalLabel">Laissez un commentaire !</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <?php
+//                include '../view/users/comment.php';
+                ?>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="../public/ressources/js/jquery/jquery.min.js"></script>
+<script src="../public/ressources/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../public/ressources/js/base.js"></script>
 
 </body>
 
