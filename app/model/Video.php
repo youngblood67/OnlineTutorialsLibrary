@@ -13,6 +13,10 @@ class Video extends Table
     protected $table = "video";
 
 
+    public function getVideoById($id){
+        return $this->db->querySingle("SELECT * FROM ".$this->table." WHERE idVideo = {$id}", __CLASS__);
+    }
+
     public function getLast($nb = 100)
     {
 

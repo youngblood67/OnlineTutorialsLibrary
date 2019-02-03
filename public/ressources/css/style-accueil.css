@@ -24,3 +24,12 @@
 .card-title:hover{
     text-decoration-line: none;
 }
+
+#buy_it{
+    display: none;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 5px 5px;
+    background-color: #9fcdff;
+    border: 1px white solid;
+}
