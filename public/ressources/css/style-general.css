@@ -2,16 +2,20 @@ footer {
     margin-top: 20px;
 }
 
-#connection-error {
+#connectionError {
     margin-left: 10px;
-    color: red;
+    /*color: red;*/
     padding: 10px;
     border-radius: 0.25rem;
-    border: 1px solid red;
-    background-color: #545b62
+    /*border: 1px solid red;*/
+    /*background-color: #545b62*/
+    background:#b9cd6d;
+    border: 1px solid #b9cd6d;
+    color: #FFFFFF;
+    font-weight: bold;
 }
 
-#connection-error:hover {
+#connectionError:hover {
     background-color: red;
     color: white;
 }

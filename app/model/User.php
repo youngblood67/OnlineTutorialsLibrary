@@ -61,6 +61,17 @@ class User extends Table
 
     }
 
+    public static function getAllVideosFromUserById($idUser)
+    {
+        $db = new Database();
+        $user = $db->queryAll("SELECT *
+            FROM user u,video v, video_user vu
+            WHERE u.idUser = vu.idUser
+            AND v.idVideo = vu.idVideo
+            AND u.idUser = {$idUser}", __CLASS__);
+        return $user;
+    }
+
     public static function getStatus($email = "none")
     {
         if (self::getUser($email) != null) {

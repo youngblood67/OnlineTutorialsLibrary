@@ -5,20 +5,21 @@ App\Autoloader::register();
 
 $config = \App\Config::getInstance();
 
-if(isset($_SESSION['email'])){
+if (isset($_SESSION['email'])) {
     $_SESSION['status'] = \App\Model\User::getStatus($_SESSION['email']);
-}else{
+} else {
     $_SESSION['status'] = "";
 }
 
 // Initialisation des variables
 $css = "";      // stocke la feuille de style spécifique à la page en fonction de $p
-$js = "";
+$jsUp = "";
+$jsDown = "";
 $activeHome = "";  //  permet de rendre le lien actif
 $activeSearch = "";  // " "
 $msg = ""; // stocke les messages d'erreur ou de déconnexion
 $idVideo = "";
-$infoCon="";
+$infoCon = "";
 // Récupération des paramètres
 if (isset($_GET['p'])) {
     $p = $_GET['p'];
@@ -28,19 +29,19 @@ if (isset($_GET['p'])) {
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === "1") {
-//      $js ='<script src="../public/ressources/js/scriptAlert.js"></script>';
-        $infoCon = "<div id='connection-error' data-toggle='modal'
+        $jsDown ='<script src="../public/ressources/js/scriptAlert.js"></script>';
+        $infoCon = "<div id='connectionError' title='TEST' data-toggle='modal'
              data-target='#connexionModal'>Erreur de connexion</div>";
     }
 }
 if (isset($_GET['con'])) {
     $con = $_GET['con'];
     if ($con === "deconnexion") {
+//        $js ='<script src="../public/ressources/js/scriptAlert.js"></script>';
         $infoCon = "<div id='deconnection' class='info-con alert-warning' data-toggle='modal'
              data-target='#connexionModal'>Vous vous êtes déconnectés</div>";
     }
 }
-
 
 
 if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
@@ -53,6 +54,10 @@ if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
     $msg = "<div id='isInvited'>invité</div>";
 }
 
+//Ajout d'un lien si la personne est membre
+if (isset($_SESSION['status']) && intval($_SESSION['status']) > 0) {
+    $msg = "<a href='http://localhost/onlinetutorialslibrary/public/index.php?p=profil'>".$msg."</a>";
+}
 
 
 ob_start();
@@ -61,15 +66,15 @@ if ($p === 'accueil') {
     $css = '<link href="../public/ressources/css/style-accueil.css" rel="stylesheet">';
     $activeHome = "active";
     require '../view/home.php';
-}  else if ($p === 'videos') {
-    if(isset($_GET['idVideo'])){
+} else if ($p === 'videos') {
+    if (isset($_GET['idVideo'])) {
         $idVideo = $_GET['idVideo'];
     }
     $css = '<link href="../public/ressources/css/style-videos.css" rel="stylesheet">';
-    $js = '<script src="../public/ressources/js/scriptVideo.js"></script>';
+    $jsUp = '<script src="../public/ressources/js/scriptVideo.js"></script>';
     require '../view/videos/videos.php';
-} else if ($p === 'search') {
-    require '../view/home.php';
+} else if ($p === 'profil') {
+    require '../view/users/profil.php';
 }
 $content = ob_get_clean();
 

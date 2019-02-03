@@ -167,6 +167,16 @@ create table VIDEO_THEME
    primary key (idVideo, idTheme)
 );
 
+/*==============================================================*/
+/* Table: VIDEO_USER                                          */
+/*==============================================================*/
+create table VIDEO_USER
+(
+   idVideo              int not null,
+   idUser             int not null,
+   primary key (idVideo,idUser)
+);
+
 alter table BASKET add constraint FK_USER_BASKET foreign key (idUser)
       references USER (idUser) on delete restrict on update restrict;
 
@@ -193,6 +203,12 @@ alter table VIDEO_BASKET add constraint FK_VIDEO_BASKET foreign key (idBasket)
 
 alter table VIDEO_BASKET add constraint FK_VIDEO_BASKET2 foreign key (idVideo)
       references VIDEO (idVideo) on delete restrict on update restrict;
+
+alter table VIDEO_USER add constraint FK_VIDEO_USER foreign key (idUser)
+   references USER (idUser) on delete restrict on update restrict;
+
+alter table VIDEO_USER add constraint FK_VIDEO_USER2 foreign key (idVideo)
+   references VIDEO (idVideo) on delete restrict on update restrict;
 
 alter table VIDEO_TAG add constraint FK_VIDEO_TAG foreign key (idTag)
       references TAG (idTag) on delete restrict on update restrict;
