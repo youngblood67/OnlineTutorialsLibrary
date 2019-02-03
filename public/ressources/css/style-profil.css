@@ -1,0 +1,15 @@
+.block1{
+    background:radial-gradient( #0e9eac,#ecfffd);
+    border-radius: 5px 5px;
+    border: 2px #0c5460 solid;
+    padding: 5px 20px 20px 20px;
+    margin-top: 15px;
+}
+.block2{
+    background:radial-gradient( #0e9eac,#ecfffd);
+    border-radius: 5px 5px;
+    border: 2px #333360 solid;
+    padding: 5px 20px 20px 20px;
+    margin-top: 15px;
+}
+

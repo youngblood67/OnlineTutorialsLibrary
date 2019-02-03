@@ -74,7 +74,9 @@ if ($p === 'accueil') {
     $jsUp = '<script src="../public/ressources/js/scriptVideo.js"></script>';
     require '../view/videos/videos.php';
 } else if ($p === 'profil') {
+    $css = '<link href="../public/ressources/css/style-profil.css" rel="stylesheet">';
     require '../view/users/profil.php';
+
 }
 $content = ob_get_clean();
 
