@@ -41,51 +41,51 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mr-auto"></ul>
 
-        <form class="form-inline" style="margin:auto;" action="index.php?p=search" method="get">
-            <div class="input-group">
-                <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search"
-                       style="width:500px;" name="searchInput">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+            <form class="form-inline" style="margin:auto;" action="index.php?p=search" method="get">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search" style="width:500px;" name="searchInput">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+                    </div>
+
                 </div>
+            </form>
 
-            </div>
-        </form>
-
-        <?php if (!isset($_SESSION['con'])): ?>
+            <?php if (!isset($_SESSION['con'])): ?>
             <button style="margin-right: 10px;" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal"
-                    data-target="#subscribeModal">Inscription
+                data-target="#subscribeModal">Inscription
             </button>
             <button class="btn btn-danger my-2 my-sm-0" data-toggle="modal" data-target="#connexionModal">
                 Connexion
             </button>
-        <?php elseif ($_SESSION['con'] === "loggedOn") : ?>
+            <?php elseif ($_SESSION['con'] === "loggedOn") : ?>
             <?php if (!((isset($_SESSION['status']) && (intval($_SESSION['status']) >= 1))))  : ?>
-                <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-right:10px;" data-toggle="modal"
-                        data-target="#subscriptionTypeModal">
-                    Abonnement
-                </button>
+            <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-right:10px;" data-toggle="modal"
+                data-target="#subscriptionTypeModal">
+                Abonnement
+            </button>
             <?php endif; ?>
             <a href="../treatment/trtDeconnect.php">
                 <button class="btn btn-warning my-2 my-sm-0">
                     Déconnexion
                 </button>
             </a>
-        <?php endif; ?>
-    </div>
+            <?php endif; ?>
+        </div>
 
 </nav>
 
-<?= $content; ?>
+    <?= $content; ?>
+    
 
 
-<!-- Footer -->
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Marc & Phil 2018-2019</p>
-    </div>
-    <!-- /.container -->
-</footer>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Marc & Phil 2018-2019</p>
+        </div>
+        <!-- /.container -->
+    </footer>
 
 <!-- Modal -->
 <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel"
@@ -128,18 +128,17 @@
     </div>
 </div>
 
-<div class="modal fade" id="subscriptionTypeModal" tabindex="-1" role="dialog"
-     aria-labelledby="subscriptionTypeModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="subscriptionTypeModalLabel">Choisissez votre abonnement !</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+    <div class="modal fade" id="subscriptionTypeModal" tabindex="-1" role="dialog" aria-labelledby="subscriptionTypeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="subscriptionTypeModalLabel">Choisissez votre abonnement !</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
 
                 <?php
                 include '../view/users/chooseSubscription.php';
@@ -171,12 +170,11 @@
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript -->
-<script src="../public/ressources/js/jquery/jquery.min.js"></script>
-<script src="../public/ressources/js/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="../public/ressources/js/bootstrap/bootstrap.js"></script>
-<script src="../public/ressources/js/script.js"></script>
-<?= $jsDown ?>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="../public/ressources/js/jquery/jquery.min.js"></script>
+    <script src="../public/ressources/js/bootstrap/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

@@ -28,7 +28,7 @@ footer {
     background-color: #545b62;
 }
 .info-con{
-    position: relative;
+    
     left:20px;
 }
 
@@ -38,6 +38,7 @@ footer {
 }
 
 #isConnected {
+    
     color: #9fcdff;
     padding: 5px 15px;
     border-radius: 0.25rem;
@@ -46,6 +47,7 @@ footer {
 }
 
 #isInvited{
+    
     color: #e4f0df;
     padding: 5px 15px;
     border-radius: 0.25rem;
