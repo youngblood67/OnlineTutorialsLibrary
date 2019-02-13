@@ -12,3 +12,7 @@ function $_GET(param) {
     }
     return vars;
 }
+
+$("#btn-search").click(function(){
+  $("#carouselExampleIndicators").hide();
+});

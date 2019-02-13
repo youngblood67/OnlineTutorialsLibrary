@@ -89,7 +89,8 @@
                             <div class="card-footer">
                                 <div class="row">
                                     <small class="text-muted col">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                    <div id="price col">
+
+                                    <div id="price col" class="btn btn-success">
                                         <?php if ($vid->priceVideo == 0): ?>
                                             Gratuit
                                         <?php elseif (isset($_SESSION['email']) && \App\Model\User::isSubscribed($_SESSION['email'])): ?>
