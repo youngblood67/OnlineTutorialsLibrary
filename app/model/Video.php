@@ -64,6 +64,12 @@ class Video extends Table
 
     public function getSearchContent($searchContent)
     {
+        $offset = 0;
+        while (($pos = strpos($searchContent, '\'', $offset)) !== false) {
+            $searchContent = str_replace('\'', " ", $searchContent);
+            $offset = $pos+1;
+        }
+
         $searchSplitWords = explode(" ", $searchContent);
          
         $req = "SELECT * FROM ".$this->table." 

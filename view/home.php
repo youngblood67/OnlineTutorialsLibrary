@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col" style="margin-top:0px;">
-
+    
         <?php
 
         $video = new \App\Model\Video();
@@ -8,7 +8,7 @@
         $showModal = "";
         ?>
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide mb-4" data-ride="carousel">
 
 
             <div class="carousel-inner" role="listbox">
@@ -45,10 +45,10 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        <!--<div id="search-result"></div>-->
+        <div class="container" >
 
-        <div class="container">
-
-            <div class="row">
+            <div class="row" id="search-result"> <!--
                 <?php
                 if (isset($_GET['searchInput'])) {
                     $videoList = $video->getSearchContent($_GET['searchInput']);
@@ -106,7 +106,7 @@
                         </div>
                     </div>
 
-                <?php endforeach; ?>
+                <?php endforeach; ?>-->
 
             </div>
 

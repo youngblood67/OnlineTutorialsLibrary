@@ -65,4 +65,14 @@ footer {
     color: #1e7e34;
 }
 
+#search-area{
+    width: 100%;
+    max-width:800px;
+}
+
+#search-input{
+    width:60%;
+    min-width: 220px;
+}
+
 
