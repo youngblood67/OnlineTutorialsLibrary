@@ -45,19 +45,10 @@
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mr-auto"></ul>
-
-            <form class="form-inline" action="index.php?p=search" method="get" id="search-area">
                 <div class="input-group m-lg-auto mt-2" id="search-input">
                     <input class="form-control" type="search" placeholder="Rechercher" aria-label="Search"
                         name="searchInput" id="searchInput">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="submit">Recherche</button>
-                    </div>
                 </div>
-            </form>
-
-
-
 
             <?php if (!isset($_SESSION['con'])): ?>
             <button class="btn btn-outline-success my-2 mr-2" data-toggle="modal"
@@ -149,6 +140,7 @@
                     <?php
                 include '../view/users/chooseSubscription.php';
                 ?>
+                <div id="checkSession"><?= $checkSession?></div>
                 </div>
 
             </div>
@@ -180,65 +172,8 @@
     <!-- Bootstrap core JavaScript -->
     <script src="../public/ressources/js/jquery/jquery.min.js"></script>
     <script src="../public/ressources/js/bootstrap/bootstrap.bundle.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#search-result').hide();
-        $('#searchInput').keyup(function() {
-            var value = $(this).val();
-            if (value.length > 2) {
-                $('#search-result').show();
-                //$('#search-result').text(value);
-                $.post(
-
-                    '../treatment/trtSearch.php', {
-                        q: value
-                    }, // La ressource ciblée
-
-                    function(data) {
-                        var htmlContent = "";
-                        var prix_video = "";
-                        
-                        var obj = JSON.parse(data);
-                        if(obj.length!=0)
-                        {
-                            for (var i = 0; i < obj.length; i++) {
-                            // htmlContent +=obj[i].titleVideo + "<br>";
-                            if(obj[i].priceVideo==0) prix_video = "Gratuit";
-                            else prix_video = obj[i].priceVideo + " €";
-                            htmlContent += 
-
-                                '<div class="col-lg-3 col-md-6 mb-4">'+
-                                    '<div class="card h-100">'+
-                                        '<div class="card-body">'+
-                                            '<h4 class="card-title">'+
-                                                '<a href="#">'+
-                                                obj[i].titleVideo +'</a>'+
-                                            '</h4>'+
-                                        '<p class="card-text">'+ obj[i].descriptionVideo +'</p>'+
-                                        '</div>'+
-                                        '<div class="card-footer">'+
-                                            '<div class="row">'+
-                                                
-                                                '<div id="price col">' + prix_video +                                                 
-                                                '</div>'+
-                                            '</div>'+
-                                        '</div>'+
-                                    '</div>'+
-                                '</div>';
-                            }
-                        }
-                        else
-                        htmlContent = "Aucune valeur trouvée...";
-                        $('#search-result').html(htmlContent);
-                    }
-                );
-            } else {
-                $('#search-result').hide();
-            }
-
-        })
-    });
-    </script>
+    <?=$jsDown?>
+    
 </body>
 
 </html>

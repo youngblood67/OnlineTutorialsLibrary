@@ -20,6 +20,7 @@ $activeSearch = "";  // " "
 $msg = ""; // stocke les messages d'erreur ou de déconnexion
 $idVideo = "";
 $infoCon = "";
+$checkSession = "";
 // Récupération des paramètres
 if (isset($_GET['p'])) {
     $p = $_GET['p'];
@@ -65,6 +66,7 @@ ob_start();
 if ($p === 'accueil') {
     $css = '<link href="../public/ressources/css/style-accueil.css" rel="stylesheet">';
     $activeHome = "active";
+    $jsDown = '<script src="../public/ressources/js/script.js"></script>';
     require '../view/home.php';
 } else if ($p === 'videos') {
     if (isset($_GET['idVideo'])) {

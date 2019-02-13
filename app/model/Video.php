@@ -61,7 +61,7 @@ class Video extends Table
         return "http://localhost/onlinetutorialslibrary/videos/".$urlVideo.".PNG";
 
     }
-
+    
     public function getSearchContent($searchContent)
     {
         $offset = 0;
