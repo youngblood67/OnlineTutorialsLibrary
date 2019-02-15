@@ -1,15 +1,16 @@
 <div class="row">
     <div class="col" style="margin-top:0px;">
-        <div id="checkSession"><?=$checkSession?></div>
+
         <?php
 
         $video = new \App\Model\Video();
         $headList = $video->getLast(3);
         $showModal = "";
+        $checkSession = false;
         ?>
 
         <div id="carouselHome" class="carousel slide mb-4" data-ride="carousel">
-        
+
 
             <div class="carousel-inner" role="listbox">
                 <?php
@@ -48,7 +49,7 @@
         <!--<div id="search-result"></div>-->
         <div class="container">
             <div class="row" id="search-result">
-            
+
 
             </div>
             <div class="row" id="home-page-videos">
@@ -65,15 +66,11 @@
                     $linkToVideo = "index.php?p=videos&idVideo=" . $vid->idVideo;
                     if (!isset($_SESSION['con'])) {
                         $showModal = "$('#connexionModal').modal('show'); return false;";
-                        $checkSession = 1;
+                        $sessionExists = "false";
                     } else {
-                        if (\App\Model\User::isSubscribed($_SESSION['email']) || $vid->priceVideo <= 0){
-                            $showModal = "";
-                            $checkSession = (\App\Model\User::isSubscribed($_SESSION['email'])) ? "ok" : "not ok";
-                        }else {
-                            $showModal = "$('#subscriptionTypeModal').modal('show'); return false;";
-                            $checkSession = 3;
-                        }
+                        $showModal = "";
+                        $sessionExists = "true";
+                        
 
                     }
 
@@ -125,4 +122,4 @@
 
 
 </div>
-<div id="checkSession"><?=$checkSession ?></div>
+<div id="checkSession" style="display:none"><?=$sessionExists ?></div>

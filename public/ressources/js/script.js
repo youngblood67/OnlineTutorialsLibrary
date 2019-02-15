@@ -35,13 +35,18 @@ $(document).ready(function() {
                     var htmlContent = "";
                     var prix_video = "";
                     var url = "";
+                    var launchModal = "alert($('#checkSession').html().toString());"; 
+                    if($('#checkSession').html().toString()=="false") 
+                        launchModal ="$('#connexionModal').modal('show'); return false;";
+                    else
+                        launchModal = "";//"$('#connexionModal').modal('show'); return false;";
                     
                     var obj = JSON.parse(data);
                     if(obj.length!=0)
                     {
                         
                         for (var i = 0; i < obj.length; i++) {
-                            console.debug(obj[i]);
+                            
                         // htmlContent +=obj[i].titleVideo + "<br>";
                         if(obj[i].priceVideo==0) prix_video = "Gratuit";
                         else prix_video = obj[i].priceVideo + " €";
@@ -55,10 +60,10 @@ $(document).ready(function() {
                                 '<div class="card h-100">'+
                                     '<a href="index.php?p=videos&idVideo='+obj[i].idVideo+'"><img class="card-img-top"'+
                                         'src="'+ url + 
-                                            '" alt="" ></a>'+
+                                            '" alt="" onclick="'+launchModal+'"></a>'+
                                             '<div class="card-body">'+
                                             '<h4 class="card-title">'+
-                                            '<a href="index.php?p=videos&idVideo='+obj[i].idVideo+'">'+
+                                            '<a href="index.php?p=videos&idVideo='+obj[i].idVideo+'" onclick="'+launchModal+'">'+
                                             obj[i].titleVideo +'</a>'+
                                         '</h4>'+
                                     '<p class="card-text">'+ obj[i].descriptionVideo +'</p>'+
@@ -72,7 +77,9 @@ $(document).ready(function() {
                                     '</div>'+
                                 '</div>'+
                             '</div>';
+
                         }
+                        
                     }
                     else
                     htmlContent = "Aucune valeur trouvée...";

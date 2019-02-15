@@ -2,10 +2,14 @@
     <div>
 
         <?php
-
+        if($_SESSION['con']!='loggedOn') {
+            header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil' . $error);
+        }
+       
+        $urlVideo = "";
         $video = new \App\Model\Video();
         //$vid = $video->getVideoById($idVideo);
-        $videoInfo = $video->getAllVideoInfoById($idVideo); ?>
+        $videoInfo = $video->getAllVideoInfoById($idVideo); /*var_dump($video->getAllVideoInfoById($idVideo));*/?>
 
         <div class="container">
 
@@ -32,8 +36,8 @@
 
                                 function onYouTubeIframeAPIReady() {
                                     player = new YT.Player('player', {
-                                        height: '360',
-                                        width: '640',
+                                        height: '500vh',
+                                        width: '100%',
                                         videoId: '<?=$videoInfo->idYoutube?>',
                                         events: {
                                             'onReady': onPlayerReady,
@@ -64,15 +68,15 @@
                                 }
                             </script>
                         <?php else: ?>
-                            <?php if(\App\Model\User::isSubscribed($_SESSION['email'])): ?>
-                             <video controls preload="metadata" width="60%"
+                            <?php if(\App\Model\User::isSubscribed($_SESSION['email'])){
+                                $urlVideo =  "http://localhost/onlinetutorialslibrary/videos/" . $videoInfo->urlVideo . ".mp4";
+                             } ?>
+                             <video controls preload="metadata" width="100%"
                                    poster="<?= "http://localhost/onlinetutorialslibrary/videos/" . $videoInfo->urlVideo . ".PNG" ?>">
-                                <source src="<?= "http://localhost/onlinetutorialslibrary/videos/" . $videoInfo->urlVideo . ".mp4" ?>"
+                                <source src="<?= $urlVideo ?>"
                                         type="video/mp4"/>
                             </video>
-                            <?php else: ?>
-<!--                            Verif abonnement ou achat-->
-                            <?php endif; ?>
+                            
                         <?php endif; ?>
 
 
