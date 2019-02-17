@@ -1,7 +1,9 @@
+
 <div class="container-fluid text-center">
     <div class="jumbotron">
         <h1 class="display-4">Profil</h1>
         <?php
+
         $user = \App\Model\User::getUser($_SESSION['email']);
         $subscription = \App\Model\User::getStatus($_SESSION['email'])
         ?>

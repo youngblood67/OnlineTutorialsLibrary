@@ -16,7 +16,7 @@ function $_GET(param) {
 
 
 $(document).ready(function() {
-    $('#search-result').hide();
+   // $('#search-result').hide();
     $('#searchInput').keyup(function() {
         var value = $(this).val();
         if (value.length > 2) {
@@ -39,7 +39,7 @@ $(document).ready(function() {
                     if($('#checkSession').html().toString()=="false") 
                         launchModal ="$('#connexionModal').modal('show'); return false;";
                     else
-                        launchModal = "";//"$('#connexionModal').modal('show'); return false;";
+                        launchModal = "";
                     
                     var obj = JSON.parse(data);
                     if(obj.length!=0)

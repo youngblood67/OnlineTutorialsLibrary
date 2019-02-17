@@ -30,18 +30,16 @@ if (isset($_GET['p'])) {
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === "1") {
-        $jsDown ='<script src="../public/ressources/js/scriptAlert.js"></script>';
         $infoCon = "<div id='connectionError' title='TEST' data-toggle='modal'
              data-target='#connexionModal'>Erreur de connexion</div>";
     }
 }
 if (isset($_GET['con'])) {
     $con = $_GET['con'];
-    if ($con === "deconnexion") {
-//        $js ='<script src="../public/ressources/js/scriptAlert.js"></script>';
-        $infoCon = "<div id='deconnection' class='info-con alert-warning' data-toggle='modal'
-             data-target='#connexionModal'>Vous vous êtes déconnectés</div>";
-    }
+//    if ($con === "deconnexion") {
+//        $infoCon = "<div id='deconnection' class='info-con alert-warning' data-toggle='modal'
+//             data-target='#connexionModal'>Vous vous êtes déconnectés</div>";
+//    }
 }
 
 
@@ -52,7 +50,7 @@ if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
         $msg = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>membre simple</span></div>";
     }
 } else {
-    $msg = "<div id='isInvited'>invité</div>";
+    $msg = "";
 }
 
 //Ajout d'un lien si la personne est membre
@@ -73,7 +71,6 @@ if ($p === 'accueil') {
         $idVideo = $_GET['idVideo'];
     }
     $css = '<link href="../public/ressources/css/style-videos.css" rel="stylesheet">';
-    $jsUp = '<script src="../public/ressources/js/scriptVideo.js"></script>';
     require '../view/videos/videos.php';
 } else if ($p === 'profil') {
     $css = '<link href="../public/ressources/css/style-profil.css" rel="stylesheet">';

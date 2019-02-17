@@ -2,14 +2,14 @@
     <div>
 
         <?php
-        if($_SESSION['con']!='loggedOn') {
+        if ($_SESSION['con'] != 'loggedOn') {
             header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil' . $error);
         }
-       
+
         $urlVideo = "";
         $video = new \App\Model\Video();
-        //$vid = $video->getVideoById($idVideo);
-        $videoInfo = $video->getAllVideoInfoById($idVideo); /*var_dump($video->getAllVideoInfoById($idVideo));*/?>
+        $videoInfo = $video->getAllVideoInfoById($idVideo);
+        ?>
 
         <div class="container">
 
@@ -68,15 +68,15 @@
                                 }
                             </script>
                         <?php else: ?>
-                            <?php if(\App\Model\User::isSubscribed($_SESSION['email'])){
-                                $urlVideo =  "http://localhost/onlinetutorialslibrary/videos/" . $videoInfo->urlVideo . ".mp4";
-                             } ?>
-                             <video controls preload="metadata" width="100%"
+                        <?php if (\App\Model\User::isSubscribed($_SESSION['email'])) {
+                            $urlVideo = "http://localhost/onlinetutorialslibrary/videos/" . $videoInfo->urlVideo . ".mp4";
+                        } ?>
+                            <video controls preload="metadata" width="100%"
                                    poster="<?= "http://localhost/onlinetutorialslibrary/videos/" . $videoInfo->urlVideo . ".PNG" ?>">
                                 <source src="<?= $urlVideo ?>"
                                         type="video/mp4"/>
                             </video>
-                            
+
                         <?php endif; ?>
 
 

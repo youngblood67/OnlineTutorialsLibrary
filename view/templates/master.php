@@ -33,7 +33,7 @@
             <a class="navbar-brand"
                 href="../public/index.php?p=accueil"><?= \App\Config::getInstance()->get('site_title') ?></a>
 
-            <?= $msg ?>
+            <a href="../public/index.php?p=profil"><?= $msg ?></a>
             <?= $infoCon ?>
 
         </div>
