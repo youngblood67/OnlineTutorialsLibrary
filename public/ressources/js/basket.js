@@ -1,5 +1,8 @@
 $(document).ready(function () {
     if (localStorage && localStorage.getItem('basket')) {
+        let videos= JSON.parse(localStorage.getItem('basket'));
+        let quantity = videos.length;
+        $("#quantity-in-basket").html("("+quantity+")");
         let id = $("#video").data("id");
         if (verifyPresenceInBasket(id)) {
             $("#add-to-basket").text("Ajouté");
@@ -39,9 +42,10 @@ $("#add-to-basket").click(function () {
 
 function addToBasket(video) {
     let isPresent = false;
+    let basket = [];
     // Retrieve the cart object from local storage
     if (localStorage && localStorage.getItem('basket')) {
-        let basket = JSON.parse(localStorage.getItem('basket'));
+        basket = JSON.parse(localStorage.getItem('basket'));
         for (let i = 0; i < basket.length; i++) {
             if (video["id"] === basket[i]["id"]) {
                 isPresent = true;
@@ -59,6 +63,8 @@ function addToBasket(video) {
         let basket = [];
         localStorage.setItem('basket', JSON.stringify(basket));
     }
+    let quantity = basket.length;
+    $("#quantity-in-basket").html("("+quantity+")");
 }
 
 $("#btn-basket").click(function () {

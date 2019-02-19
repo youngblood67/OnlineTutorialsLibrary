@@ -88,3 +88,8 @@ footer {
     justify-content: space-around;
     padding: 15px;
 }
+
+#quantity-in-basket{
+    font-size: 0.8em;
+    color: #48fcff;
+}
