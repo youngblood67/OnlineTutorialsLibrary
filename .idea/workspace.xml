@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b72502a3-383d-4464-8186-850771d3b639" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ressources/css/style-general.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/css/style-general.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/ressources/js/basket.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/js/basket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/master.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/master.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ressources/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/js/script.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/ressources/js/basket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+            <state relative-caret-position="342">
+              <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -73,13 +70,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/ressources/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="111" selection-start-line="15" selection-start-column="111" selection-end-line="15" selection-end-column="111" />
+            <state relative-caret-position="323">
+              <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="56" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/ressources/css/style-general.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="522">
@@ -202,11 +199,11 @@
         <option value="$PROJECT_DIR$/view/users/chooseSubscription.php" />
         <option value="$PROJECT_DIR$/view/videos/videos.php" />
         <option value="$PROJECT_DIR$/public/ressources/css/style-videos.css" />
-        <option value="$PROJECT_DIR$/public/ressources/js/script.js" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/view/templates/master.php" />
-        <option value="$PROJECT_DIR$/public/ressources/js/basket.js" />
         <option value="$PROJECT_DIR$/public/ressources/css/style-general.css" />
+        <option value="$PROJECT_DIR$/public/ressources/js/script.js" />
+        <option value="$PROJECT_DIR$/public/ressources/js/basket.js" />
       </list>
     </option>
   </component>
@@ -384,12 +381,12 @@
       <workItem from="1549199862063" duration="10836000" />
       <workItem from="1549220760016" duration="9070000" />
       <workItem from="1550048724720" duration="1893000" />
-      <workItem from="1550432414120" duration="25037000" />
+      <workItem from="1550432414120" duration="25411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177551000" />
+    <option name="totallyTimeSpent" value="177925000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -725,13 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="111" selection-start-line="15" selection-start-column="111" selection-end-line="15" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/ressources/css/style-videos.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -746,17 +736,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/basket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/ressources/css/style-general.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="94" column="30" selection-start-line="94" selection-start-column="30" selection-end-line="94" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/js/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="56" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/js/basket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="39" column="47" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
         </state>
       </provider>
     </entry>

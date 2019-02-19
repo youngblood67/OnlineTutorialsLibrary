@@ -13,6 +13,15 @@ function $_GET(param) {
     return vars;
 }
 
+$("#btn-basket").click(function () {
+    if (localStorage && localStorage.getItem('basket')) {
+        let basket = JSON.parse(localStorage.getItem('basket'));
+        if(basket.length < 1 ){
+            $("#btn-buy-basket").prop("disabled", true);
+        }
+    }
+});
+
 /////////////////////////////Sécurité : vider le panier du localstorage avant chaque connexion ou après chaque deconnexion////////////////////////////////////////////
 $("#btn-deconnexion").click(function () {
     localStorage.removeItem("basket");

@@ -37,7 +37,7 @@ $("#add-to-basket").click(function () {
     addToBasket(video);
     $(this).text("Ajouté");
     $("#add-to-basket").prop("disabled", true);
-
+    $("#btn-buy-basket").prop("disabled", false);
 });
 
 function addToBasket(video) {
