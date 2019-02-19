@@ -53,17 +53,6 @@ create table COMMENT
 );
 
 /*==============================================================*/
-/* Table: ONLINEVISUALIZATION                                   */
-/*==============================================================*/
-create table ONLINEVISUALIZATION
-(
-   idUser               int not null,
-   idVideo             int not null,
-   dateVisu             datetime,
-   primary key (idUser, idVideo)
-);
-
-/*==============================================================*/
 /* Table: SUBSCRIPTION                                          */
 /*==============================================================*/
 create table SUBSCRIPTION
@@ -138,16 +127,6 @@ create table VIDEO
 );
 
 /*==============================================================*/
-/* Table: VIDEO_BASKET                                          */
-/*==============================================================*/
-create table VIDEO_BASKET
-(
-   idBasket             int not null,
-   idVideo              int not null,
-   primary key (idBasket, idVideo)
-);
-
-/*==============================================================*/
 /* Table: VIDEO_TAG                                             */
 /*==============================================================*/
 create table VIDEO_TAG
@@ -174,11 +153,9 @@ create table VIDEO_USER
 (
    idVideo              int not null,
    idUser             int not null,
+   datePurchase      datetime,
    primary key (idVideo,idUser)
 );
-
-alter table BASKET add constraint FK_USER_BASKET foreign key (idUser)
-      references USER (idUser) on delete restrict on update restrict;
 
 alter table COMMENT add constraint FK_COMMENT_USER foreign key (idUser)
       references USER (idUser) on delete restrict on update restrict;
@@ -186,23 +163,11 @@ alter table COMMENT add constraint FK_COMMENT_USER foreign key (idUser)
 alter table COMMENT add constraint FK_VIDEO_COMMENT foreign key (idVideo)
       references VIDEO (idVideo) on delete restrict on update restrict;
 
-alter table ONLINEVISUALIZATION add constraint FK_ONLINEVISUALIZATION foreign key (idUser)
-      references USER (idUser) on delete restrict on update restrict;
-
-alter table ONLINEVISUALIZATION add constraint FK_ONLINEVISUALIZATION2 foreign key (idVideo)
-      references VIDEO (idVideo) on delete restrict on update restrict;
-
 alter table USERSUBSCRIPTION add constraint FK_USERSUBSCRIPTION_SUBSCRIPTION foreign key (idSubscription)
       references SUBSCRIPTION (idSubscription) on delete restrict on update restrict;
 
 alter table USERSUBSCRIPTION add constraint FK_USER_USERSUBSCRIPTION foreign key (idUser)
       references USER (idUser) on delete restrict on update restrict;
-
-alter table VIDEO_BASKET add constraint FK_VIDEO_BASKET foreign key (idBasket)
-      references BASKET (idBasket) on delete restrict on update restrict;
-
-alter table VIDEO_BASKET add constraint FK_VIDEO_BASKET2 foreign key (idVideo)
-      references VIDEO (idVideo) on delete restrict on update restrict;
 
 alter table VIDEO_USER add constraint FK_VIDEO_USER foreign key (idUser)
    references USER (idUser) on delete restrict on update restrict;

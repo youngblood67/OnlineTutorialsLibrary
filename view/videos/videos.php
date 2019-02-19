@@ -16,8 +16,11 @@
 
             <div class="row">
                 <div class="col">
-
+                    <div class="title-vid">
+                        <h3 class="item_name"><?= $videoInfo->titleVideo ?></h3>
+                    </div>
                     <div class="card mt-4">
+
                         <?php if ($videoInfo->urlVideo == null): ?>
                             <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
                             <div id="player"></div>
@@ -79,43 +82,40 @@
 
                         <?php endif; ?>
 
+                        <!--                        <a href="javascript:" class="simpleCart_checkout">buy with paypal</a>-->
 
-                        <div class="card-body">
-                            <h3 class="card-title"><?= $videoInfo->titleVideo ?></h3>
-                            <h4>
+                        <div class="simpleCart_shelfItem">
+                            <h4 id="video" class="item_name margin" data-id="<?= $videoInfo->idVideo ?>" data-price="<?= $videoInfo->priceVideo ?>"><?= $videoInfo->titleVideo ?></h4>
+                            <h4 class="margin">
                                 <?php if ($videoInfo->priceVideo == 0): ?>
                                     Gratuit
                                 <?php else : ?>
-                                    <?= $videoInfo->priceVideo ?>
+                                    <span id="video-price"  class="item_price"> <?= $videoInfo->priceVideo ?></span>
                                     €
                                 <?php endif; ?>
                             </h4>
-                            <p class="card-text"><?= $videoInfo->titleVideo ?></p>
-                            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                            4.0 stars
+                            <!--                            <p class="card-text">  description ???  </p>-->
+                            <div class="margin"><span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                                4.0 stars
+                            </div>
+
+                            <?php if ($videoInfo->priceVideo > 0): ?>
+                            <button data-id="<?= $videoInfo->idVideo ?>" id="add-to-basket" class="btn btn-info margin">Ajouter au panier</button>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <!-- /.card -->
 
                     <div class="card card-outline-secondary my-4">
                         <div class="card-header">
-                            Product Reviews
+
+
                         </div>
                         <div class="card-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam
-                                inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam
-                                aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                            <hr>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam
-                                inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam
-                                aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-                            <hr>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam
-                                inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam
-                                aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-                            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+                            <div id="comments-list">
+                                commentaire de Marc :
+
+                            </div>
                             <hr>
                             <button class="btn btn-success" data-toggle="modal" data-target="#commentModal">Laisser
                                 un commentaire

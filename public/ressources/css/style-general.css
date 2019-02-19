@@ -76,3 +76,15 @@ footer {
 }
 
 
+.margin{
+    margin: 20px;
+}
+.padding{
+    padding: 20px;
+}
+
+.group-btn-basket{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}

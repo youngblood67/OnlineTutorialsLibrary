@@ -17,10 +17,9 @@ $jsUp = "";
 $jsDown = "";
 $activeHome = "";  //  permet de rendre le lien actif
 $activeSearch = "";  // " "
-$msg = ""; // stocke les messages d'erreur ou de déconnexion
+$login = ""; 
 $idVideo = "";
-$infoCon = "";
-$checkSession = "";
+
 // Récupération des paramètres
 if (isset($_GET['p'])) {
     $p = $_GET['p'];
@@ -30,32 +29,28 @@ if (isset($_GET['p'])) {
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
     if ($error === "1") {
-        $infoCon = "<div id='connectionError' title='TEST' data-toggle='modal'
-             data-target='#connexionModal'>Erreur de connexion</div>";
+
     }
 }
 if (isset($_GET['con'])) {
     $con = $_GET['con'];
-//    if ($con === "deconnexion") {
-//        $infoCon = "<div id='deconnection' class='info-con alert-warning' data-toggle='modal'
-//             data-target='#connexionModal'>Vous vous êtes déconnectés</div>";
-//    }
+
 }
 
 
 if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
     if (isset($_SESSION['status']) && intval($_SESSION['status']) > 0) {
-        $msg = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>abonné cat. " . $_SESSION['status'] . "</span></div>";
+        $login = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>abonné cat. " . $_SESSION['status'] . "</span></div>";
     } else {
-        $msg = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>membre simple</span></div>";
+        $login = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>membre simple</span></div>";
     }
 } else {
-    $msg = "";
+    $login = "";
 }
 
 //Ajout d'un lien si la personne est membre
 if (isset($_SESSION['status']) && intval($_SESSION['status']) > 0) {
-    $msg = "<a href='http://localhost/onlinetutorialslibrary/public/index.php?p=profil'>".$msg."</a>";
+    $login = "<a href='http://localhost/onlinetutorialslibrary/public/index.php?p=profil'>".$login."</a>";
 }
 
 
