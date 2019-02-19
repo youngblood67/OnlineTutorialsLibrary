@@ -1,7 +1,7 @@
-#videos-buy-list{
+#buy-list{
     padding: 20px;
     border-radius: 5px 5px;
-    background-color: #d1ecf1;
+    background: linear-gradient(#b1dfbb,#d1ecf1);
     border: 1px solid blanchedalmond;
     box-shadow: 5px 5px 5px grey;
     margin-bottom: 40px;
@@ -9,7 +9,6 @@
 
 .li-video{
     list-style-type: none;
-
 }
 
 #total-achat{
