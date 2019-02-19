@@ -87,3 +87,4 @@ $("#btn-clear-basket").click(function () {
     document.location.reload();
 
 });
+

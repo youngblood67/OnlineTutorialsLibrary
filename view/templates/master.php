@@ -54,7 +54,7 @@
             <button class="btn btn-outline-success my-2 mr-2" data-toggle="modal"
                     data-target="#subscribeModal">Inscription
             </button>
-            <button class="btn btn-danger my-2 my-sm-0" data-toggle="modal" data-target="#connexionModal">
+            <button id="btn-connexion" class="btn btn-danger my-2 my-sm-0" data-toggle="modal" data-target="#connexionModal">
                 Connexion
             </button>
         <?php elseif ($_SESSION['con'] === "loggedOn") : ?>
@@ -65,7 +65,7 @@
             </button>
 
             <a href="../treatment/trtDeconnect.php">
-                <button class="btn btn-warning my-2 my-sm-0">
+                <button id="btn-deconnexion" class="btn btn-warning my-2 my-sm-0">
                     Déconnexion
                 </button>
             </a>
@@ -197,6 +197,7 @@
 <!-- Bootstrap core JavaScript -->
 <script src="../public/ressources/js/jquery/jquery.min.js"></script>
 <script src="../public/ressources/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="../public/ressources/js/script.js"></script>
 <script src="../public/ressources/js/basket.js"></script>
 <?= $jsDown ?>
 

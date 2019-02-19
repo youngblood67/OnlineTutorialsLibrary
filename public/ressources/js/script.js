@@ -13,7 +13,17 @@ function $_GET(param) {
     return vars;
 }
 
+/////////////////////////////Sécurité : vider le panier du localstorage avant chaque connexion ou après chaque deconnexion////////////////////////////////////////////
+$("#btn-deconnexion").click(function () {
+    localStorage.removeItem("basket");
+});
+$("#btn-connexion").click(function () {
+    localStorage.removeItem("basket");
+});
 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
    // $('#search-result').hide();
