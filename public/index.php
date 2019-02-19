@@ -58,7 +58,6 @@ ob_start();
 if ($p === 'accueil') {
     $css = '<link href="../public/ressources/css/style-accueil.css" rel="stylesheet">';
     $activeHome = "active";
-//    $jsDown = '<script src="../public/ressources/js/script.js"></script>';
     require '../view/home.php';
 } else if ($p === 'videos') {
     if (isset($_GET['idVideo'])) {
@@ -69,6 +68,11 @@ if ($p === 'accueil') {
 } else if ($p === 'profil') {
     $css = '<link href="../public/ressources/css/style-profil.css" rel="stylesheet">';
     require '../view/users/profil.php';
+
+}else if ($p === 'achat') {
+    $css = '<link href="../public/ressources/css/style-achat.css" rel="stylesheet">';
+    $jsDown = '<script src="../public/ressources/js/buy.js"></script>';
+    require '../view/videos/achat.php';
 
 }
 $content = ob_get_clean();

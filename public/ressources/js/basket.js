@@ -88,3 +88,6 @@ $("#btn-clear-basket").click(function () {
 
 });
 
+$("#btn-buy-basket").click(function () {
+    window.location.href = "http://localhost/onlinetutorialslibrary/public/index.php?p=achat";
+});
