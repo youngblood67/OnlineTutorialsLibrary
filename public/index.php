@@ -28,10 +28,9 @@ if (isset($_GET['p'])) {
 }
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
-    if ($error === "1") {
 
-    }
 }
+
 if (isset($_GET['con'])) {
     $con = $_GET['con'];
 

@@ -2,7 +2,7 @@ $(document).ready(function () {
     if (localStorage && localStorage.getItem('basket')) {
         let videos= JSON.parse(localStorage.getItem('basket'));
         let quantity = videos.length;
-        $("#quantity-in-basket").html("("+quantity+")");
+        $("#quantity-in-basket").html(quantity);
         let id = $("#video").data("id");
         if (verifyPresenceInBasket(id)) {
             $("#add-to-basket").text("Ajouté");
@@ -64,7 +64,7 @@ function addToBasket(video) {
         localStorage.setItem('basket', JSON.stringify(basket));
     }
     let quantity = basket.length;
-    $("#quantity-in-basket").html("("+quantity+")");
+    $("#quantity-in-basket").html(quantity);
 }
 
 $("#btn-basket").click(function () {
@@ -74,7 +74,7 @@ $("#btn-basket").click(function () {
         $("#basketList").append("vide");
     }
     for (let i = 0; i < basket.length; i++) {
-        $("#basketList").append("<p>" + basket[i]["id"] + " - " + basket[i]["name"] + " : " + basket[i]["price"] + "€" + "</p>");
+        $("#basketList").append("<p>" + basket[i]["name"] + "   " + basket[i]["price"] + "€" + "</p>");
     }
 
 });

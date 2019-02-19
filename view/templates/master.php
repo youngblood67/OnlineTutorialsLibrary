@@ -61,7 +61,7 @@
 
             <button id="btn-basket" class="btn btn-outline-primary my-2 mr-2" data-toggle="modal"
                     data-target="#basketModal">
-                Panier <span id="quantity-in-basket"></span>
+                Panier <span id="quantity-in-basket" class="badge badge-light"></span>
             </button>
 
             <a href="../treatment/trtDeconnect.php">
@@ -160,7 +160,7 @@
             </div>
             <div class="modal-body">
 
-                <span id="basketList"></span>
+                <div id="basketList"></div>
 
             </div>
             <div class="group-btn-basket">

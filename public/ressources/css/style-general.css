@@ -90,6 +90,7 @@ footer {
 }
 
 #quantity-in-basket{
-    font-size: 0.8em;
-    color: #48fcff;
+    font-size: 0.6em;
+    color: #4b21ff;
+    background-color: #9fcdff;
 }
