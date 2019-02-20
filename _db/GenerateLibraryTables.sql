@@ -4,11 +4,7 @@
 /*==============================================================*/
 
 
-drop table if exists BASKET;
-
 drop table if exists COMMENT;
-
-drop table if exists ONLINEVISUALIZATION;
 
 drop table if exists SUBSCRIPTION;
 
@@ -28,28 +24,19 @@ drop table if exists VIDEO_TAG;
 
 drop table if exists VIDEO_THEME;
 
-/*==============================================================*/
-/* Table: BASKET                                                */
-/*==============================================================*/
-create table BASKET
-(
-   idBasket             int not null AUTO_INCREMENT,
-   idUser              int not null,
-   datePurchase         datetime,
-   primary key (idBasket)
-);
+drop table if exists VIDEO_ORDER;
 
 /*==============================================================*/
 /* Table: COMMENT                                               */
 /*==============================================================*/
 create table COMMENT
 (
-   idComment            int not null AUTO_INCREMENT,
-   idVideo              int not null,
-   idUser               int not null,
-   contentComment              text,
-   ratingComment              int,
-   primary key (idComment)
+  idComment      int not null AUTO_INCREMENT,
+  idVideo        int not null,
+  idUser         int not null,
+  contentComment text,
+  ratingComment  int,
+  primary key (idComment)
 );
 
 /*==============================================================*/
@@ -57,12 +44,12 @@ create table COMMENT
 /*==============================================================*/
 create table SUBSCRIPTION
 (
-   idSubscription       int not null AUTO_INCREMENT,
-   priceSubscription                float,
-   durationSubscription             int,
-   typeSubscription                 int,
-   nbDaysTrial          int,
-   primary key (idSubscription)
+  idSubscription       int not null AUTO_INCREMENT,
+  priceSubscription    float,
+  durationSubscription int,
+  typeSubscription     int,
+  nbDaysTrial          int,
+  primary key (idSubscription)
 );
 
 /*==============================================================*/
@@ -70,9 +57,9 @@ create table SUBSCRIPTION
 /*==============================================================*/
 create table TAG
 (
-   idTag                int not null AUTO_INCREMENT,
-   titleTag               varchar(200),
-   primary key (idTag)
+  idTag    int not null AUTO_INCREMENT,
+  titleTag varchar(200),
+  primary key (idTag)
 );
 
 /*==============================================================*/
@@ -80,9 +67,9 @@ create table TAG
 /*==============================================================*/
 create table THEME
 (
-   idTheme              int not null AUTO_INCREMENT,
-   titleTheme                varchar(200),
-   primary key (idTheme)
+  idTheme    int not null AUTO_INCREMENT,
+  titleTheme varchar(200),
+  primary key (idTheme)
 );
 
 /*==============================================================*/
@@ -90,12 +77,12 @@ create table THEME
 /*==============================================================*/
 create table USER
 (
-   idUser               int not null AUTO_INCREMENT,
-   lastname            varchar(50),
-   firstname            varchar(50),
-   password            varchar(200),
-   email             varchar(50),
-   primary key (idUser)
+  idUser    int not null AUTO_INCREMENT,
+  lastname  varchar(50),
+  firstname varchar(50),
+  password  varchar(200),
+  email     varchar(50),
+  primary key (idUser)
 );
 
 /*==============================================================*/
@@ -103,11 +90,11 @@ create table USER
 /*==============================================================*/
 create table USERSUBSCRIPTION
 (
-   idUserSubscription   int not null AUTO_INCREMENT,
-   idUser               int not null,
-   idSubscription       int not null,
-   startDate            datetime,
-   primary key (idUserSubscription)
+  idUserSubscription int not null AUTO_INCREMENT,
+  idUser             int not null,
+  idSubscription     int not null,
+  startDate          datetime,
+  primary key (idUserSubscription)
 );
 
 /*==============================================================*/
@@ -115,15 +102,15 @@ create table USERSUBSCRIPTION
 /*==============================================================*/
 create table VIDEO
 (
-   idVideo              int not null AUTO_INCREMENT,
-   titleVideo                varchar(200) not null,
-   durationVideo             int,
-   priceVideo                float,
-   descriptionVideo          text,
-   urlVideo					        varchar(200),
-   idYoutube            varchar(50),
-   authorVideo               varchar(200),
-   primary key (idVideo)
+  idVideo          int          not null AUTO_INCREMENT,
+  titleVideo       varchar(200) not null,
+  durationVideo    int,
+  priceVideo       float,
+  descriptionVideo text,
+  urlVideo         varchar(200),
+  idYoutube        varchar(50),
+  authorVideo      varchar(200),
+  primary key (idVideo)
 );
 
 /*==============================================================*/
@@ -131,9 +118,9 @@ create table VIDEO
 /*==============================================================*/
 create table VIDEO_TAG
 (
-   idTag                int not null,
-   idVideo              int not null,
-   primary key (idTag, idVideo)
+  idTag   int not null,
+  idVideo int not null,
+  primary key (idTag, idVideo)
 );
 
 /*==============================================================*/
@@ -141,49 +128,60 @@ create table VIDEO_TAG
 /*==============================================================*/
 create table VIDEO_THEME
 (
-   idVideo              int not null,
-   idTheme              int not null,
-   primary key (idVideo, idTheme)
+  idVideo int not null,
+  idTheme int not null,
+  primary key (idVideo, idTheme)
 );
 
 /*==============================================================*/
-/* Table: VIDEO_USER                                          */
+/* Table: VIDEO_ORDER                                          */
 /*==============================================================*/
-create table VIDEO_USER
+create table VIDEO_ORDER
 (
-   idVideo              int not null,
-   idUser             int not null,
-   datePurchase      datetime,
-   primary key (idVideo,idUser)
+  idOrder      int not null AUTO_INCREMENT,
+  idVideo      int not null,
+  idUser       int not null,
+  datePurchase datetime,
+  primary key (idOrder)
 );
 
-alter table COMMENT add constraint FK_COMMENT_USER foreign key (idUser)
-      references USER (idUser) on delete restrict on update restrict;
+alter table COMMENT
+  add constraint FK_COMMENT_USER foreign key (idUser)
+    references USER (idUser) on delete restrict on update restrict;
 
-alter table COMMENT add constraint FK_VIDEO_COMMENT foreign key (idVideo)
-      references VIDEO (idVideo) on delete restrict on update restrict;
+alter table COMMENT
+  add constraint FK_VIDEO_COMMENT foreign key (idVideo)
+    references VIDEO (idVideo) on delete restrict on update restrict;
 
-alter table USERSUBSCRIPTION add constraint FK_USERSUBSCRIPTION_SUBSCRIPTION foreign key (idSubscription)
-      references SUBSCRIPTION (idSubscription) on delete restrict on update restrict;
+alter table USERSUBSCRIPTION
+  add constraint FK_USERSUBSCRIPTION_SUBSCRIPTION foreign key (idSubscription)
+    references SUBSCRIPTION (idSubscription) on delete restrict on update restrict;
 
-alter table USERSUBSCRIPTION add constraint FK_USER_USERSUBSCRIPTION foreign key (idUser)
-      references USER (idUser) on delete restrict on update restrict;
+alter table USERSUBSCRIPTION
+  add constraint FK_USER_USERSUBSCRIPTION foreign key (idUser)
+    references USER (idUser) on delete restrict on update restrict;
 
-alter table VIDEO_USER add constraint FK_VIDEO_USER foreign key (idUser)
-   references USER (idUser) on delete restrict on update restrict;
+alter table VIDEO_ORDER
+  add constraint FK_VIDEO_ORDER_USER foreign key (idUser)
+    references USER (idUser) on delete restrict on update restrict;
 
-alter table VIDEO_USER add constraint FK_VIDEO_USER2 foreign key (idVideo)
-   references VIDEO (idVideo) on delete restrict on update restrict;
+alter table VIDEO_ORDER
+  add constraint FK_VIDEO_ORDER_USER2 foreign key (idVideo)
+    references VIDEO (idVideo) on delete restrict on update restrict;
 
-alter table VIDEO_TAG add constraint FK_VIDEO_TAG foreign key (idTag)
-      references TAG (idTag) on delete restrict on update restrict;
+alter table VIDEO_TAG
+  add constraint FK_VIDEO_TAG foreign key (idTag)
+    references TAG (idTag) on delete restrict on update restrict;
 
-alter table VIDEO_TAG add constraint FK_VIDEO_TAG2 foreign key (idVideo)
-      references VIDEO (idVideo) on delete restrict on update restrict;
+alter table VIDEO_TAG
+  add constraint FK_VIDEO_TAG2 foreign key (idVideo)
+    references VIDEO (idVideo) on delete restrict on update restrict;
 
-alter table VIDEO_THEME add constraint FK_VIDEO_THEME foreign key (idVideo)
-      references VIDEO (idVideo) on delete restrict on update restrict;
+alter table VIDEO_THEME
+  add constraint FK_VIDEO_THEME foreign key (idVideo)
+    references VIDEO (idVideo) on delete restrict on update restrict;
 
-alter table VIDEO_THEME add constraint FK_VIDEO_THEME2 foreign key (idTheme)
-      references THEME (idTheme) on delete restrict on update restrict;
+alter table VIDEO_THEME
+  add constraint FK_VIDEO_THEME2 foreign key (idTheme)
+    references THEME (idTheme) on delete restrict on update restrict;
 
