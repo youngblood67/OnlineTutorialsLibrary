@@ -1,8 +1,9 @@
 $(document).ready(function () {
     $("#search-input").hide();
     let total = 0;
+    let basket = [];
     if (localStorage && localStorage.getItem('basket')) {
-        let basket = JSON.parse(localStorage.getItem('basket'));
+        basket = JSON.parse(localStorage.getItem('basket'));
 
         if (basket.length >= 1) {
             for (let i = 0; i < basket.length; i++) {
@@ -13,6 +14,6 @@ $(document).ready(function () {
     }
 
 
-    $("#span-total-achat").append("TOTAL : " + total + " €");
+    $("#total").append(total);
 
 });

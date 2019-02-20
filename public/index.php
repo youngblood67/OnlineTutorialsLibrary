@@ -12,13 +12,19 @@ if (isset($_SESSION['email'])) {
 }
 
 // Initialisation des variables
-$css = "";      // stocke la feuille de style spécifique à la page en fonction de $p
+$css = "";
 $jsUp = "";
 $jsDown = "";
-$activeHome = "";  //  permet de rendre le lien actif
-$activeSearch = "";  // " "
-$login = ""; 
+$jsDown2 = "";
+$activeHome = "";
+$activeSearch = "";
+$login = "";
 $idVideo = "";
+
+$paymentID = "";
+$payerID = "";
+$token = "";
+$pid = "";
 
 // Récupération des paramètres
 if (isset($_GET['p'])) {
@@ -39,9 +45,9 @@ if (isset($_GET['con'])) {
 
 if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
     if (isset($_SESSION['status']) && intval($_SESSION['status']) > 0) {
-        $login = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>abonné cat. " . $_SESSION['status'] . "</span></div>";
+        $login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span><span class='mini-logo'>abonné cat. " . $_SESSION['status'] . "</span></div>";
     } else {
-        $login = "<div id='isConnected'>" . $_SESSION['firstname'] . "<span class='mini-logo'>membre simple</span></div>";
+        $login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span><span class='mini-logo'>membre simple</span></div>";
     }
 } else {
     $login = "";
@@ -49,7 +55,7 @@ if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
 
 //Ajout d'un lien si la personne est membre
 if (isset($_SESSION['status']) && intval($_SESSION['status']) > 0) {
-    $login = "<a href='http://localhost/onlinetutorialslibrary/public/index.php?p=profil'>".$login."</a>";
+    $login = "<a href='http://localhost/onlinetutorialslibrary/public/index.php?p=profil'>" . $login . "</a>";
 }
 
 
@@ -69,10 +75,18 @@ if ($p === 'accueil') {
     $css = '<link href="../public/ressources/css/style-profil.css" rel="stylesheet">';
     require '../view/users/profil.php';
 
-}else if ($p === 'achat') {
+} else if ($p === 'achat') {
     $css = '<link href="../public/ressources/css/style-achat.css" rel="stylesheet">';
     $jsDown = '<script src="../public/ressources/js/buy.js"></script>';
     require '../view/videos/achat.php';
+} else if ($p === 'process') {
+    if (isset($_GET["paymentID"]) && isset($_GET["payerID"]) && isset($_GET["token"])) {
+        $paymentID = $_GET["paymentID"];
+        $payerID = $_GET["payerID"];
+        $token = $_GET["token"];
+        $pid = $_GET["pid"];
+    }
+    require '../view/videos/process.php';
 
 }
 $content = ob_get_clean();

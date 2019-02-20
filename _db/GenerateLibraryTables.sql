@@ -24,6 +24,8 @@ drop table if exists VIDEO_TAG;
 
 drop table if exists VIDEO_THEME;
 
+drop table if exists VIDEO_USER;
+
 drop table if exists VIDEO_ORDER;
 
 /*==============================================================*/
@@ -138,11 +140,24 @@ create table VIDEO_THEME
 /*==============================================================*/
 create table VIDEO_ORDER
 (
-  idOrder      int not null AUTO_INCREMENT,
+  pid   varchar(200),
+  idUser    int not null,
+  payerID   varchar(200),
+  paymentID varchar(200),
+  token     varchar(200),
+  created   datetime,
+  primary key (pid)
+);
+
+/*==============================================================*/
+/* Table: VIDEO_USER                                          */
+/*==============================================================*/
+create table VIDEO_USER
+(
   idVideo      int not null,
   idUser       int not null,
   datePurchase datetime,
-  primary key (idOrder)
+  primary key (idVideo, idUser)
 );
 
 alter table COMMENT
@@ -165,8 +180,12 @@ alter table VIDEO_ORDER
   add constraint FK_VIDEO_ORDER_USER foreign key (idUser)
     references USER (idUser) on delete restrict on update restrict;
 
-alter table VIDEO_ORDER
-  add constraint FK_VIDEO_ORDER_USER2 foreign key (idVideo)
+alter table VIDEO_USER
+  add constraint FK_VIDEO_USER foreign key (idUser)
+    references USER (idUser) on delete restrict on update restrict;
+
+alter table VIDEO_USER
+  add constraint FK_VIDEO_USER2 foreign key (idVideo)
     references VIDEO (idVideo) on delete restrict on update restrict;
 
 alter table VIDEO_TAG

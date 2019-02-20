@@ -26,22 +26,6 @@
 
 #grp-btn-achat{
     margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.btn-special-paypal{
-    padding : 5px;
-    border : 1px black solid;
-    box-shadow: 5px 5px 5px grey;
-    border-radius: 5px 5px;
-    background: linear-gradient(#ff8f11, #ff6028);
-}
-
-.btn-special-cb{
-    padding : 5px;
-    border : 1px black solid;
-    box-shadow: 5px 5px 5px grey;
-    border-radius: 5px 5px;
-    background: linear-gradient(#6886ff, #53ff43);
-}

@@ -5,6 +5,7 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -54,7 +55,8 @@
             <button class="btn btn-outline-success my-2 mr-2" data-toggle="modal"
                     data-target="#subscribeModal">Inscription
             </button>
-            <button id="btn-connexion" class="btn btn-danger my-2 my-sm-0" data-toggle="modal" data-target="#connexionModal">
+            <button id="btn-connexion" class="btn btn-danger my-2 my-sm-0" data-toggle="modal"
+                    data-target="#connexionModal">
                 Connexion
             </button>
         <?php elseif ($_SESSION['con'] === "loggedOn") : ?>
@@ -201,6 +203,7 @@
 <script src="../public/ressources/js/script.js"></script>
 <script src="../public/ressources/js/basket.js"></script>
 <?= $jsDown ?>
+<?= $jsDown2 ?>
 
 </body>
 

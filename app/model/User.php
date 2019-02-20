@@ -29,9 +29,6 @@ class User extends Table
         $db->closeConnection();
     }
 
-    public static function test(){
-        echo "testtesttesttest";
-    }
 
     public static function getUser($email)
     {
