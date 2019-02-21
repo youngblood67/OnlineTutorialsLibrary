@@ -29,3 +29,18 @@
     justify-content: center;
 }
 
+.row{
+    text-align: center;
+}
+
+#title{
+    margin:20px;
+}
+
+#results>ul{
+    border-radius: 5px 5px;
+    box-shadow: 5px 5px 5px grey;
+    margin-top: 20px;
+    background: linear-gradient(#defff5, #e7c5e9);
+    padding: 20px;
+}

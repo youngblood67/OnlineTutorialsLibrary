@@ -48,6 +48,16 @@ class Video extends Table
         ",__CLASS__);
     }
 
+    public function addVideoUser($idVideo,$idUser,$pid){
+        $stmt=$this->db->getPDO()->prepare("INSERT INTO video_user (idVideo, idUser, datePurchase,pid) VALUES (:idVideo, :idUser, NOW(),pid)");
+        $stmt->bindParam(':idVideo', $idVideo);
+        $stmt->bindParam(':idUser', $idUser);
+        $stmt->bindParam(':pid', $pid);
+        $stmt->execute();
+        $this->db->closeConnection();
+        return $stmt;
+    }
+
     public function getYoutubeVideoThumbnail($idYoutube)
     {
         

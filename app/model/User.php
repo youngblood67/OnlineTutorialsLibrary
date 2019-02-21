@@ -37,6 +37,14 @@ class User extends Table
         return $user;
     }
 
+    public static function getIdUser($email)
+    {
+        $db = new Database();
+        $user = $db->querySingle("SELECT * FROM user WHERE email = '" . $email . "'", __CLASS__);
+        return $user->idUser;
+    }
+
+
     public static function addSubscription($idUser, $type)
     {
         $db = new Database();

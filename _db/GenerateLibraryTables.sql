@@ -140,12 +140,13 @@ create table VIDEO_THEME
 /*==============================================================*/
 create table VIDEO_ORDER
 (
-  pid   varchar(200),
+  pid       varchar(200),
   idUser    int not null,
   payerID   varchar(200),
   paymentID varchar(200),
   token     varchar(200),
   created   datetime,
+  amount    float,
   primary key (pid)
 );
 
@@ -157,6 +158,7 @@ create table VIDEO_USER
   idVideo      int not null,
   idUser       int not null,
   datePurchase datetime,
+  pid          varchar(200),
   primary key (idVideo, idUser)
 );
 
@@ -187,6 +189,10 @@ alter table VIDEO_USER
 alter table VIDEO_USER
   add constraint FK_VIDEO_USER2 foreign key (idVideo)
     references VIDEO (idVideo) on delete restrict on update restrict;
+
+alter table VIDEO_USER
+  add constraint FK_VIDEO_USER3 foreign key (pid)
+    references VIDEO_ORDER (pid) on delete restrict on update restrict;
 
 alter table VIDEO_TAG
   add constraint FK_VIDEO_TAG foreign key (idTag)

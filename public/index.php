@@ -25,6 +25,8 @@ $paymentID = "";
 $payerID = "";
 $token = "";
 $pid = "";
+$amount = "";
+$idUser = "";
 
 // Récupération des paramètres
 if (isset($_GET['p'])) {
@@ -80,11 +82,21 @@ if ($p === 'accueil') {
     $jsDown = '<script src="../public/ressources/js/buy.js"></script>';
     require '../view/videos/achat.php';
 } else if ($p === 'process') {
-    if (isset($_GET["paymentID"]) && isset($_GET["payerID"]) && isset($_GET["token"])) {
+    $css = '<link href="../public/ressources/css/style-achat.css" rel="stylesheet">';
+    $jsDown2 = '<script src="../public/ressources/js/process.js"></script>';
+    if (isset($_GET["paymentID"]) && isset($_GET["payerID"]) && isset($_GET["token"]) && isset($_GET["amount"])) {
         $paymentID = $_GET["paymentID"];
         $payerID = $_GET["payerID"];
         $token = $_GET["token"];
         $pid = $_GET["pid"];
+        $amount = $_GET["amount"];
+        $_SESSION['paymentID'] = $paymentID;
+        $_SESSION['payerID'] = $payerID;
+        $_SESSION['token'] = $token;
+        $_SESSION['pid'] = $pid;
+        $_SESSION['amount'] = $amount;
+        $idUser = (\App\Model\User::getIdUser($_SESSION['email']));
+        $_SESSION['idUser'] =$idUser;
     }
     require '../view/videos/process.php';
 
