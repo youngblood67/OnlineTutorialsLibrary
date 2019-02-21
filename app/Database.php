@@ -41,6 +41,7 @@ class Database
 
         $datas = $req->fetchAll(PDO::FETCH_CLASS, $className);
         $this->closeConnection();
+        
         return $datas;
     }
 

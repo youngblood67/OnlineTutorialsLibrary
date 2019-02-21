@@ -2,14 +2,13 @@
 .description_box {
     background-image: linear-gradient(to right, #2784C2, #2784C2);
     color: aliceblue;
-    
-    
+       
 }
 
 .parag {
-    margin: 50px;
-    margin-left: 130px;
-    margin-top: 90px;
+    margin: 15%;
+    margin-left: 25%;
+    font-size: 2.2vw;
 }
 
 .img-carousel-home {

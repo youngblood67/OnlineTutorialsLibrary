@@ -11,6 +11,7 @@ namespace App\Model;
 class Video extends Table
 {
     protected $table = "video";
+    protected $db;
 
 
     public function getVideoById($id){
@@ -74,29 +75,38 @@ class Video extends Table
     
     public function getSearchContent($searchContent)
     {
-        $offset = 0;
-        while (($pos = strpos($searchContent, '\'', $offset)) !== false) {
-            $searchContent = str_replace('\'', " ", $searchContent);
-            $offset = $pos+1;
-        }
-
         $searchSplitWords = explode(" ", $searchContent);
-         
-        $req = "SELECT * FROM ".$this->table." 
+        $valeurs = array();
+        $req = "SELECT * FROM ".$this->table." v join video_theme vt on v.idVideo=vt.idVideo 
+        join theme t on t.idTheme=vt.idTheme 
         WHERE ";
         
         for($i=0; $i<count($searchSplitWords); $i++)
         {
             if($i==0){
-                $req.="titleVideo LIKE '%{$searchSplitWords[$i]}%'";
+                $req.="(v.titleVideo LIKE ? OR t.titleTheme LIKE ?)";
+                array_push($valeurs, "%$searchSplitWords[$i]%", "%$searchSplitWords[$i]%");
+
             }
             else {
-                $req.=" AND titleVideo LIKE '%{$searchSplitWords[$i]}%'";
+                $req.=" AND (v.titleVideo LIKE ? OR t.titleTheme LIKE ?)";
+                array_push($valeurs, "%$searchSplitWords[$i]%", "%$searchSplitWords[$i]%");
             }
-            
         }
+
+        $req .=" GROUP BY v.titleVideo ORDER BY v.titleVideo";
         
-        return $this->db->queryAll($req, __CLASS__);
+        $stmt = $this->db->getPDO()->prepare($req);
+        $stmt->execute($valeurs);
+        
+        return $stmt->fetchAll();
+
+        //SELECT v.titleVideo, t.titleTheme 
+        //FROM video v join video_theme vt on v.idVideo=vt.idVideo 
+        //join theme t on t.idTheme=vt.idTheme 
+        //where t.titleTheme like '%des%' 
+        
+        
         
     }
 }

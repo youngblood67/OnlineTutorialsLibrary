@@ -40,10 +40,13 @@ $(document).ready(function() {
         var value = $(this).val();
         if (value.length > 2) {
             
-            $('#carouselHome').slideUp("slow");
-            $('#home-page-videos').hide();
-            $('#search-result').show();
-            //$('#search-result').text(value);
+            function showSearchResult () {
+                $('#home-page-videos').hide();
+                $('#search-result').show();
+            }
+
+            $('#carouselHome').slideUp(showSearchResult);
+            //$('#search-result').text(value);*/
             $.post(
 
                 'http://localhost/onlinetutorialslibrary/treatment/trtSearch.php', {
@@ -100,15 +103,20 @@ $(document).ready(function() {
                         }
                         
                     }
-                    else
-                    htmlContent = "Aucune valeur trouvée...";
+                    else {
+                        htmlContent = "Aucun résultat trouvé...";
+                    }
+                    
                     $('#search-result').html(htmlContent);
                 }
             );
         } else {
-            $('#search-result').hide();
-            $('#carouselHome').slideDown("slow");
-            $('#home-page-videos').show();
+            function hideSearchResult() {
+                $('#search-result').hide();
+                $('#home-page-videos').show();
+            }
+            
+            $('#carouselHome').slideDown(350, "swing", hideSearchResult);
         }
 
     })

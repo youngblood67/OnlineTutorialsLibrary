@@ -14,9 +14,6 @@
     <!-- Bootstrap core CSS -->
     <link href="../public/ressources/css/bootstrap/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../public/ressources/css/shop-homepage.css" rel="stylesheet">
-
     <link href="../public/ressources/css/style-general.css" rel="stylesheet">
 
     <!-- My css files -->
