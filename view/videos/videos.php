@@ -70,6 +70,7 @@
                                     player.stopVideo();
                                 }
                             </script>
+
                         <?php else: ?>
                         <?php if (\App\Model\User::isSubscribed($_SESSION['email'])) {
                             $urlVideo = "http://localhost/onlinetutorialslibrary/videos/" . $videoInfo->urlVideo . ".mp4";

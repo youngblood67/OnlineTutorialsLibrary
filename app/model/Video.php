@@ -20,7 +20,6 @@ class Video extends Table
 
     public function getLast($nb = 100)
     {
-
         return $this->db->queryAll("SELECT * FROM ".$this->table." ORDER BY idVideo DESC LIMIT {$nb}", __CLASS__);
     }
 
