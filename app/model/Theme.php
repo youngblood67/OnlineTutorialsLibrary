@@ -13,5 +13,9 @@ class Theme extends Table
 {
     protected $table = "theme";
 
+    public function getThemesList() {
+        return $this->db->queryAll("SELECT * FROM " .$this->table, __CLASS__);
+    }
+
 
 }

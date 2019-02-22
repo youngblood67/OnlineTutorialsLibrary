@@ -11,7 +11,7 @@ namespace App\Model;
 class Video extends Table
 {
     protected $table = "video";
-    protected $db;
+    
 
 
     public function getVideoById($id){
@@ -108,5 +108,14 @@ class Video extends Table
         
         
         
+    }
+
+    public function getVideosByTheme($theme) {
+        $req = "SELECT * FROM {$this->table} 
+        v join video_theme vt on v.idVideo=vt.idVideo 
+        join theme t on t.idTheme=vt.idTheme 
+        WHERE t.titleTheme = '{$theme}'";
+
+        return $this->db->queryAll($req, __CLASS__);
     }
 }

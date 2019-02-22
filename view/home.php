@@ -6,7 +6,7 @@
         $checkSession = false;
         ?>
 
-<div id="carouselHome" class="carousel slide mb-4" data-ride="carousel">
+<div id="carouselHome" class="carousel slide" data-ride="carousel" data-interval="10000">
 
 
     <div class="carousel-inner" role="listbox">
@@ -15,7 +15,7 @@
                     ?>
         <div class="carousel-item <?php if ($i == 0): ?>active<?php endif; ?>">
             <div class="row no-gutters">
-                <div class="col-6 description_box">
+                <div class="col-3 description_box">
                     <div class="parag">
                         <?= $headList[$i]->titleVideo ?>
                     </div>
@@ -44,10 +44,7 @@
 </div>
 <!--<div id="search-result"></div>-->
 <div class="container">
-    <div class="row" id="search-result">
-
-
-    </div>
+    
     <div class="row" id="home-page-videos">
 
         <?php
@@ -66,8 +63,6 @@
                     } else {
                         $showModal = "";
                         $sessionExists = "true";
-                        
-
                     }
 
                     ?>
@@ -109,7 +104,7 @@
         <?php endforeach; ?>
 
     </div>
-
+    <div class="row" id="search-result"></div>
 
 </div>
 
