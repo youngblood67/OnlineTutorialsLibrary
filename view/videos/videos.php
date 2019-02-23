@@ -73,7 +73,7 @@
                             </script>
 
                         <?php else: ?>
-                        <?php if (\App\Model\User::isSubscribed($_SESSION['email'])) {
+                        <?php if (\App\Model\User::isSubscribed($_SESSION['email']) || $video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 1) {
                             $urlVideo = "http://localhost/onlinetutorialslibrary/videos/" . $videoInfo->urlVideo . ".mp4";
                         } ?>
                             <video controls preload="metadata" width="100%"
@@ -118,12 +118,12 @@
 
                     <div class="card card-outline-secondary my-4">
                         <div class="card-header">
-                        Commentaires :
+                            Commentaires :
 
                         </div>
                         <div class="card-body">
                             <div id="comments-list">
-                                commentaire de <?= $_SESSION['firstname']?> :
+                                commentaire de <?= $_SESSION['firstname'] ?> :
 
                             </div>
                             <hr>

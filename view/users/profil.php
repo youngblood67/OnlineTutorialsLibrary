@@ -29,7 +29,7 @@
             <h1 class="display-4">Videos achetées</h1>
         <?php elseif (sizeof($videos) == 1): ?>
             <h1 class="display-4">Video achetée</h1>
-        
+
         <?php endif; ?>
         <ul id="buy-list list-group">
             <?php foreach ($videos as $vid): ?>
