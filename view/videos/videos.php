@@ -118,12 +118,12 @@
 
                     <div class="card card-outline-secondary my-4">
                         <div class="card-header">
-
+                        Commentaires :
 
                         </div>
                         <div class="card-body">
                             <div id="comments-list">
-                                commentaire de Marc :
+                                commentaire de <?= $_SESSION['firstname']?> :
 
                             </div>
                             <hr>

@@ -2,13 +2,19 @@
 .description_box {
     background-image: linear-gradient(to right, #2784C2, #2784C2);
     color: aliceblue;
+    box-shadow: 90px 0px 50px 80px  #2784C2;
+    z-index: 10;
        
+}
+.img-carousel-home {
+    max-height: 435px;
 }
 
 .parag {
-    margin: 15%;
-    margin-left: 25%;
+    margin-top : 25%;
+    margin-left: 40%;
     font-size: 2.2vw;
+    width:90%;
 }
 
 .img-carousel-home {
@@ -34,5 +40,10 @@
 }
 
 #search-result{
+    padding-top: 20px;
+    
+}
+
+#home-page-videos{
     padding-top: 20px;
 }
