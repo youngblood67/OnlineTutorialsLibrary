@@ -29,6 +29,6 @@ $tabIdVideo = explode(",", trim($stringTabIdVideo, '\[\]'));
 for ($i = 0; $i < sizeof($tabIdVideo); $i++) {
     $idVideo = $tabIdVideo[$i];
     $video->addVideoUser($idVideo, $idUser, $pid);
-    echo "<li class='line-results'>" . $video->getVideoById($idVideo)->titleVideo . " : " . $video->getVideoById($idVideo)->priceVideo . "</li>";
+    echo "<li class='line-results'>" . $video->getVideoById($idVideo)->titleVideo . " : " . $video->getVideoById($idVideo)->priceVideo . " €</li>";
 }
 echo "</ul";
