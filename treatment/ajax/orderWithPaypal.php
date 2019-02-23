@@ -24,13 +24,12 @@ $paypalPayment->order($pid, $idUser, $payerID, $paymentID, $token, $amount);
 
 echo "<ul id='list-results'>";
 
-
-str_replace("[","",$stringTabIdVideo);
-$tabIdVideo = explode(",",$stringTabIdVideo);
+$tabIdVideo = explode(",",trim($stringTabIdVideo,'\[\]'));
 
 for ($i = 0; $i < sizeof($tabIdVideo); $i++) {
     $idVideo = $tabIdVideo[$i];
     $video->addVideoUser($idVideo, $idUser, $pid);
-    echo "<li class='line-results'>" . $video->getVideoById($idVideo)['titleVideo'] ." : ".$video->getVideoById($idVideo)['priceVideo']. "</li>";
+    //var_dump($video->getVideoById($idVideo));
+    echo "<li class='line-results'>" . $video->getVideoById($idVideo)[$i]['titleVideo'] ." : ".$video->getVideoById($idVideo)[$i]['priceVideo']. "</li>";
 }
 echo "</ul";
