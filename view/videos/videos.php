@@ -123,13 +123,20 @@
                         </div>
                         <div class="card-body">
                             <div id="comments-list">
-                                commentaire de <?= $_SESSION['firstname'] ?> :
+
 
                             </div>
-                            <hr>
-                            <button class="btn btn-success" data-toggle="modal" data-target="#commentModal">Laisser
-                                un commentaire
-                            </button>
+                            <?php if (\App\Model\User::isSubscribed($_SESSION['email']) || $video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 1): ?>
+                                <div id="user-comment">
+                                <textarea id="comment"
+                                          placeholder="commentaire de <?= $_SESSION['firstname'] ?>"></textarea>
+                                    <hr>
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#commentModal">
+                                        Laisser
+                                        un commentaire
+                                    </button>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <!-- /.card -->

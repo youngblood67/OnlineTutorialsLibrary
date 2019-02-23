@@ -5,9 +5,9 @@ require '../app/Autoloader.php';
 App\Autoloader::register();
 
 use App\Model\User;
-use App\Model\ModelComment;
+use App\Model\Comment;
 
-$comment = new ModelComment();
+$comment = new Comment();
 
 $user = User::getUser($_SESSION['email']);
 $idUser = $user->idUser;

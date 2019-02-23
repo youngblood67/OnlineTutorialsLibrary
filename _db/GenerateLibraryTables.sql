@@ -84,6 +84,7 @@ create table USER
   firstname varchar(50),
   password  varchar(200),
   email     varchar(50),
+  avatar    varchar(200),
   primary key (idUser)
 );
 

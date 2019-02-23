@@ -11,3 +11,8 @@
     background-color: darkorange;
 }
 
+textarea#comment{
+    width:100%;
+    padding: 10px;
+}
+
