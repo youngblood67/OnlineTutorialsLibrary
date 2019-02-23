@@ -1,7 +1,13 @@
+
+
 $('#btn_categories').click(function(){
     $('#div_categories').animate({width: 'toggle'});
 });
 
+
+if($_GET("p")!=="accueil"){
+    $("#search-input").hide();
+}
 
 function $_GET(param) {
     var vars = {};
