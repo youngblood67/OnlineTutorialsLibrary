@@ -7,7 +7,7 @@ $(document).ready(function () {
 
         if (basket.length >= 1) {
             for (let i = 0; i < basket.length; i++) {
-                $("#videos-buy-list").append("<li class='li-video'>" + basket[i]["name"] + "   " + basket[i]["price"] + "€" + "</li>");
+                $("#videos-buy-list").append("<li class='li-video list-group-item'>" + basket[i]["name"] + "   " + basket[i]["price"] + "€" + "</li>");
                 total += basket[i]["price"];
             }
         }

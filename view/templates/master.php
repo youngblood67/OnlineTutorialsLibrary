@@ -182,7 +182,7 @@
                 </div>
                 <div class="modal-body">
 
-                    <div id="basketList"></div>
+                    <ul id="basketList"></ul>
 
                 </div>
                 <div class="group-btn-basket">

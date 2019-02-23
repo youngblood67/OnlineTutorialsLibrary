@@ -22,13 +22,13 @@ $paypalPayment = new \App\Model\PaypalPayment();
 
 $paypalPayment->order($pid, $idUser, $payerID, $paymentID, $token, $amount);
 
-echo "<ul id='list-results'>";
+echo "<ul id='list-group'>";
 
 $tabIdVideo = explode(",", trim($stringTabIdVideo, '\[\]'));
 
 for ($i = 0; $i < sizeof($tabIdVideo); $i++) {
     $idVideo = $tabIdVideo[$i];
     $video->addVideoUser($idVideo, $idUser, $pid);
-    echo "<li class='line-results'>" . $video->getVideoById($idVideo)->titleVideo . " : " . $video->getVideoById($idVideo)->priceVideo . " €</li>";
+    echo "<li class='line-results list-group-item'>" . $video->getVideoById($idVideo)->titleVideo . " : " . $video->getVideoById($idVideo)->priceVideo . " €</li>";
 }
 echo "</ul";
