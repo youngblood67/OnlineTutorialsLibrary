@@ -95,6 +95,9 @@
     ?>
         
     </div>
+    <div id="msg-error">
+        <?= $msgError ?>
+    </div>
     <?= $content; ?>
 
     <div id="footer-container">

@@ -20,6 +20,7 @@ $activeHome = "";
 $activeSearch = "";
 $login = "";
 $idVideo = "";
+$msgError = "";
 
 $paymentID = "";
 $payerID = "";
@@ -36,13 +37,16 @@ if (isset($_GET['p'])) {
 }
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
-
+    if($error=="1"){
+        $msgError = "email déjà pris";
+    }
 }
 
 if (isset($_GET['con'])) {
     $con = $_GET['con'];
 
 }
+
 
 
 if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {

@@ -10,6 +10,11 @@
     max-height: 435px;
 }
 
+#msg-error{
+    text-align: center;
+    color: red;
+}
+
 .parag {
     margin-top : 25%;
     margin-left: 40%;

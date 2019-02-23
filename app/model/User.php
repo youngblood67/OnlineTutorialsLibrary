@@ -43,6 +43,11 @@ class User extends Table
         return $user->idUser;
     }
 
+    public static  function  verifyIfUserExist($email){
+        $db = new Database();
+        $user = $db->querySingle("SELECT count(*) as count FROM user WHERE email = '" . $email . "'", __CLASS__);
+        return $user->count;
+    }
 
     public static function addSubscription($idUser, $type)
     {

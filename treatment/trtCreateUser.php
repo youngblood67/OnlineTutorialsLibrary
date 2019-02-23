@@ -19,14 +19,16 @@ if (isset($_POST["password"])) {
 }
 
 $user = new User();
-$user->addUser($lastname, $firstname, $password, $email);
-
+if(User::verifyIfUserExist($email)== 0) {
+    $user->addUser($lastname, $firstname, $password, $email);
 $_SESSION['con'] = "loggedOn";
 $_SESSION['email'] = User::getUser($email)->email;
 $_SESSION['firstname'] = User::getUser($email)->firstname;
 $_SESSION['lastname'] = User::getUser($email)->lastname;
 $_SESSION['status'] = '0';
-
+}else{
+    $error="&error=1";
+}
 
 
 header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil' . $error);
