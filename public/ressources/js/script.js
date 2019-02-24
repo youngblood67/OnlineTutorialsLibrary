@@ -5,7 +5,7 @@ $('#btn_categories').click(function(){
 });
 
 
-if($_GET("p")!=="accueil"){
+if($_GET("p")!=="accueil" && location.href!=="http://localhost/onlinetutorialslibrary/public/"){
     $("#search-input").hide();
     $("#btn_categories").hide();
 }
