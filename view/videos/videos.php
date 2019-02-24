@@ -11,7 +11,10 @@
         $videoInfo = $video->getAllVideoInfoById($idVideo);
         $idUser = \App\Model\User::getIdUser($_SESSION['email']);
         ?>
-
+        <div class="hidden">
+            <span id="idVideo"><?= $videoInfo->idVideo ?></span>
+            <span id="idUser"><?= $idUser ?></span>
+        </div>
         <div class="container">
 
 
@@ -126,15 +129,13 @@
 
 
                             </div>
-                            <?php if (\App\Model\User::isSubscribed($_SESSION['email']) || $video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 1): ?>
+                            <?php if (\App\Model\User::isSubscribed($_SESSION['email']) || $videoInfo->priceVideo == 0 || $video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 1): ?>
                                 <div id="user-comment">
-                                <textarea id="comment"
-                                          placeholder="commentaire de <?= $_SESSION['firstname'] ?>"></textarea>
+                                    <div id="list-comments" class="margin-bottom"></div>
+                                    <textarea id="comment"
+                                              placeholder="commentaire de <?= $_SESSION['firstname'] ?>"></textarea>
                                     <hr>
-                                    <button class="btn btn-success" data-toggle="modal" data-target="#commentModal">
-                                        Laisser
-                                        un commentaire
-                                    </button>
+                                    <button id="btn-comment" class="btn btn-success">Laisser un commentaire</button>
                                 </div>
                             <?php endif; ?>
                         </div>

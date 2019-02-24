@@ -36,6 +36,13 @@ class User extends Table
         return $user;
     }
 
+    public static function getUserById($idUser)
+    {
+        $db = new Database();
+        $user = $db->querySingle("SELECT * FROM user WHERE idUser = '" . $idUser . "'", __CLASS__);
+        return $user;
+    }
+
     public static function getIdUser($email)
     {
         $db = new Database();
