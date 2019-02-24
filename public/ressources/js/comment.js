@@ -1,23 +1,71 @@
-let idVideo;
-let idUser;
-let commentContent;
-let dataComment;
+let idVideo = $('#idVideo').text();
+let idUser = $('#idUser').text();
+let dataComment ="";
+let commentContent = "";
 
-$("#btn-comment").click(function () {
-    idVideo = $("#idVideo").text();
-    idUser = $("#idUser").text();
-    commentContent = $("#comment").val();
+function addCommentWithAjax(commentContent) {
+    
     dataComment = "idVideo=" + idVideo + "&idUser=" + idUser + "&commentContent=" + commentContent;
     $.ajax({
         url: "http://localhost/onlinetutorialslibrary/treatment/ajax/addComment.php",
         type: 'POST',
         data: dataComment,
         dataType: 'html',
-        success: function (data, statut) {
-            $("#list-comments").append("<li class='list-group-item'>"+data+"</li>");
+        success: function (data) {
+            //alert(data);
         }
 
     });
+   
+}
+
+function getCommentsListWithAjax(){
+    
+    $.post(
+
+        'http://localhost/onlinetutorialslibrary/treatment/ajax/getComment.php', {
+            q: idVideo
+        }, // La ressource ciblée
+    
+        function(data) {
+           //alert(data);
+           let htmlContent =""; 
+           var obj = JSON.parse(data);
+            if(obj.length!=0)
+            {
+            
+                
+                for (var i = obj.length-1; i >=0; i--) {
+                    
+                    htmlContent += 
+                    `<div><b>${obj[i].firstname}</b> ${obj[i].dateComment}</div>
+                    <div>${obj[i].contentComment}</div>
+                    <hr>`
+                }
+            }
+            else {
+                htmlContent = "Aucun commentaire...";
+            }
+            $('#comments-list').html(htmlContent);
+        }
+    );
+}
+
+$("#btn-comment").click(function () {
+    commentContent = $("#comment").val();
+    $.ajax({
+        url:addCommentWithAjax(commentContent),
+        success:function(){
+            getCommentsListWithAjax();
+     }
+     });
+    
+    $("#comment").val("");
 });
 
-//($idVideo, $idUser, $commentContent, $commentRating)
+
+$( document ).ready(function() {
+    
+    getCommentsListWithAjax();
+    //alert ("iduser: " + idUser + " idvideo : " + idVideo);
+});

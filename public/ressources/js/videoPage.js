@@ -1,6 +1,3 @@
-
-
-
 function getCommentsListWithAjax(){
     var idVideo = $('#idVideo').text();
     $.post(

@@ -1,35 +1,39 @@
 <?php
-session_start();
+
 require '../../app/Autoloader.php';
 App\Autoloader::register();
 
+use App\Model\Comment;
 
+$comment = new Comment();
 if (isset($_POST['idVideo'])) {
     $idVideo = $_POST['idVideo'];
-} else {
-    $idVideo = "";
-
 }
 
 if (isset($_POST['idUser'])) {
     $idUser = $_POST['idUser'];
-} else {
-    $idUser = "";
 }
 
 if (isset($_POST['commentContent'])) {
     $commentContent = $_POST['commentContent'];
-} else {
-    $commentContent = "";
-}
+} 
 
-if (isset($_POST['commentRating'])) {
+/*if (isset($_POST['commentRating'])) {
     $commentRating = $_POST['commentRating'];
-} else {
-    $commentRating = "";
-}
+} */
 
-;
-$firstname = \App\Model\User::getUserById($idUser)->firstname;
+$comment->addComment($idVideo, $idUser, $commentContent);
+echo "ok";
 
-echo "<span class='name'>".$firstname ." :  </span>" . $commentContent;
+/*if(isset($_POST["q"])){
+    $videoId = $_POST["q"];
+    $comment = new Comment();
+    $commentList = $comment->getCommentsAndUserInfoByIdVideo($videoId);
+    echo json_encode($commentList);
+    
+}*/
+    
+    
+      
+   
+?>
