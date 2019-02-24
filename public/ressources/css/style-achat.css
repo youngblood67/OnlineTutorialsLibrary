@@ -1,14 +1,16 @@
 #buy-list{
     padding: 20px;
     border-radius: 5px 5px;
-    background: linear-gradient(#b1dfbb,#d1ecf1);
+    background: linear-gradient(#302b24, #2d2733);
     border: 1px solid blanchedalmond;
     box-shadow: 5px 5px 5px grey;
+    color: white;
     margin-bottom: 40px;
 }
 
 .li-video{
     list-style-type: none;
+    color: black;
 }
 
 #total-achat{
@@ -21,7 +23,7 @@
     border : 1px black solid;
     box-shadow: 5px 5px 5px grey;
     border-radius: 5px 5px;
-    background: linear-gradient(yellow,greenyellow);
+    background: linear-gradient(#f9fffb, #b4ffec);
 }
 
 #grp-btn-achat{
@@ -41,6 +43,10 @@
     border-radius: 5px 5px;
     box-shadow: 5px 5px 5px grey;
     margin-top: 20px;
-    background: linear-gradient(#defff5, #e7c5e9);
+    background: linear-gradient(#302b24, #2d2733);
     padding: 20px;
+}
+
+#results{
+    margin-bottom: 60px;
 }

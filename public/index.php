@@ -20,6 +20,7 @@ $activeHome = "";
 $activeSearch = "";
 $login = "";
 $idVideo = "";
+$msgError = "";
 
 $paymentID = "";
 $payerID = "";
@@ -36,13 +37,16 @@ if (isset($_GET['p'])) {
 }
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
-
+    if($error=="1"){
+        $msgError = "email déjà pris";
+    }
 }
 
 if (isset($_GET['con'])) {
     $con = $_GET['con'];
 
 }
+
 
 
 if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
@@ -72,7 +76,7 @@ if ($p === 'accueil') {
         $idVideo = $_GET['idVideo'];
     }
     $css = '<link href="../public/ressources/css/style-videos.css" rel="stylesheet">';
-    $jsDown = '<script src="../public/ressources/js/videoPage.js"></script>';
+    $jsDown = '<script src="ressources/js/comment.js"></script>';
     require '../view/videos/videos.php';
 } else if ($p === 'profil') {
     $css = '<link href="../public/ressources/css/style-profil.css" rel="stylesheet">';

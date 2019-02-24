@@ -4,6 +4,9 @@
         $headList = $video->getLast(3);
         $showModal = "";
         $checkSession = false;
+        if(isset($_SESSION['email'])) {
+            $idUser = \App\Model\User::getIdUser($_SESSION['email']);
+        }
         ?>
 
 <div id="carouselHome" class="carousel slide" data-ride="carousel" data-interval="10000">
@@ -89,8 +92,9 @@
                             Gratuit
                             <?php elseif (isset($_SESSION['email']) && \App\Model\User::isSubscribed($_SESSION['email'])): ?>
                             <div class="green">accès abonné</div>
+                            <?php elseif(isset($_SESSION['email']) && $video->verifyIfExistVideoUser($idUser,$vid->idVideo) > 0) : ?>
+                            achetée
                             <?php else: ?>
-
                             <?= $vid->priceVideo ?>
                             €
                             <?php endif;

@@ -29,11 +29,17 @@ class User extends Table
         $db->closeConnection();
     }
 
-
     public static function getUser($email)
     {
         $db = new Database();
         $user = $db->querySingle("SELECT * FROM user WHERE email = '" . $email . "'", __CLASS__);
+        return $user;
+    }
+
+    public static function getUserById($idUser)
+    {
+        $db = new Database();
+        $user = $db->querySingle("SELECT * FROM user WHERE idUser = '" . $idUser . "'", __CLASS__);
         return $user;
     }
 
@@ -44,6 +50,11 @@ class User extends Table
         return $user->idUser;
     }
 
+    public static  function  verifyIfUserExist($email){
+        $db = new Database();
+        $user = $db->querySingle("SELECT count(*) as count FROM user WHERE email = '" . $email . "'", __CLASS__);
+        return $user->count;
+    }
 
     public static function addSubscription($idUser, $type)
     {
@@ -67,17 +78,6 @@ class User extends Table
             return 1;
         }
 
-    }
-
-    public static function getAllVideosFromUserById($idUser)
-    {
-        $db = new Database();
-        $user = $db->queryAll("SELECT *
-            FROM user u,video v, video_user vu
-            WHERE u.idUser = vu.idUser
-            AND v.idVideo = vu.idVideo
-            AND u.idUser = {$idUser}", __CLASS__);
-        return $user;
     }
 
     public static function getStatus($email = "none")

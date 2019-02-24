@@ -28,6 +28,20 @@ drop table if exists VIDEO_USER;
 
 drop table if exists VIDEO_ORDER;
 
+drop table if exists RATING;
+
+
+/*==============================================================*/
+/* Table: RATING                                              */
+/*==============================================================*/
+create table RATING
+(
+  idVideo int not null,
+  idUser  int not null,
+  rating  int not null,
+  primary key (idVideo, idUser)
+);
+
 /*==============================================================*/
 /* Table: COMMENT                                               */
 /*==============================================================*/
@@ -84,6 +98,7 @@ create table USER
   firstname varchar(50),
   password  varchar(200),
   email     varchar(50),
+  avatar    varchar(200),
   primary key (idUser)
 );
 
@@ -193,6 +208,14 @@ alter table VIDEO_USER
 alter table VIDEO_USER
   add constraint FK_VIDEO_USER3 foreign key (pid)
     references VIDEO_ORDER (pid) on delete restrict on update restrict;
+
+alter table RATING
+  add constraint FK_RATING foreign key (idVideo)
+    references VIDEO (idVideo) on delete restrict on update restrict;
+
+alter table RATING
+  add constraint FK_RATING2 foreign key (idUser)
+    references USER (idUser) on delete restrict on update restrict;
 
 alter table VIDEO_TAG
   add constraint FK_VIDEO_TAG foreign key (idTag)

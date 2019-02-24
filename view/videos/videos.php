@@ -9,9 +9,12 @@
         $urlVideo = "";
         $video = new \App\Model\Video();
         $videoInfo = $video->getAllVideoInfoById($idVideo);
+        $idUser = \App\Model\User::getIdUser($_SESSION['email']);
         ?>
-        
-
+        <div class="hidden">
+            <span id="idVideo"><?= $videoInfo->idVideo ?></span>
+            <span id="idUser"><?= $idUser ?></span>
+        </div>
         <div class="container">
 
 
@@ -73,7 +76,7 @@
                             </script>
 
                         <?php else: ?>
-                        <?php if (\App\Model\User::isSubscribed($_SESSION['email'])) {
+                        <?php if (\App\Model\User::isSubscribed($_SESSION['email']) || $video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 1) {
                             $urlVideo = "http://localhost/onlinetutorialslibrary/videos/" . $videoInfo->urlVideo . ".mp4";
                         } ?>
                             <video controls preload="metadata" width="100%"
@@ -84,25 +87,33 @@
 
                         <?php endif; ?>
 
-                        <!--                        <a href="javascript:" class="simpleCart_checkout">buy with paypal</a>-->
 
                         <div class="simpleCart_shelfItem">
-                            <h4 id="video" class="item_name margin" data-id="<?= $videoInfo->idVideo ?>" data-price="<?= $videoInfo->priceVideo ?>"><?= $videoInfo->titleVideo ?></h4>
+                            <h4 id="video" class="item_name margin" data-id="<?= $videoInfo->idVideo ?>"
+                                data-price="<?= $videoInfo->priceVideo ?>"><?= $videoInfo->titleVideo ?></h4>
                             <h4 class="margin">
                                 <?php if ($videoInfo->priceVideo == 0): ?>
                                     Gratuit
                                 <?php else : ?>
-                                    <span id="video-price"  class="item_price"> <?= $videoInfo->priceVideo ?></span>
+                                    <span id="video-price" class="item_price"> <?= $videoInfo->priceVideo ?></span>
                                     €
                                 <?php endif; ?>
                             </h4>
                             <!--                            <p class="card-text">  description ???  </p>-->
-                            <div class="margin"><span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                            <div class="margin"><span
+                                        class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
                                 4.0 stars
                             </div>
 
                             <?php if ($videoInfo->priceVideo > 0): ?>
-                            <button data-id="<?= $videoInfo->idVideo ?>" id="add-to-basket" class="btn btn-info margin">Ajouter au panier</button>
+                                <?php if ($video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 0): ?>
+                                    <button data-id="<?= $videoInfo->idVideo ?>" id="add-to-basket"
+                                            class="btn btn-info margin">Ajouter au panier
+                                    </button>
+                                <?php else: ?>
+                                    <button class="btn btn-info margin" disabled>achetée
+                                    </button>
+                                <?php endif; ?>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -110,18 +121,23 @@
 
                     <div class="card card-outline-secondary my-4">
                         <div class="card-header">
-                        Commentaires :
+                            Commentaires :
 
                         </div>
                         <div class="card-body">
                             <div id="comments-list">
-                                commentaire de <?= $_SESSION['firstname']?> :
+
 
                             </div>
-                            <hr>
-                            <button class="btn btn-success" data-toggle="modal" data-target="#commentModal">Laisser
-                                un commentaire
-                            </button>
+                            <?php if (\App\Model\User::isSubscribed($_SESSION['email']) || $videoInfo->priceVideo == 0 || $video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 1): ?>
+                                <div id="user-comment">
+                                    <div id="list-comments" class="margin-bottom"></div>
+                                    <textarea id="comment"
+                                              placeholder="commentaire de <?= $_SESSION['firstname'] ?>"></textarea>
+                                    <hr>
+                                    <button id="btn-comment" class="btn btn-success">Laisser un commentaire</button>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                     <!-- /.card -->

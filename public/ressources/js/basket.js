@@ -74,7 +74,7 @@ $("#btn-basket").click(function () {
         $("#basketList").append("vide");
     }
     for (let i = 0; i < basket.length; i++) {
-        $("#basketList").append("<p>" + basket[i]["name"] + "   " + basket[i]["price"] + "€" + "</p>");
+        $("#basketList").append("<li class='list-group-item'>" + basket[i]["name"] + "   " + basket[i]["price"] + "€" + "</li>");
     }
 
 });

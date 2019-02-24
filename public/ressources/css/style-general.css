@@ -126,6 +126,13 @@ body {
     min-width: 220px;
 }
 
+.margin-top{
+    margin-top: 20px;
+}
+
+.margin-bottom{
+    margin-bottom: 20px;
+}
 
 .margin{
     margin: 20px;
@@ -140,8 +147,20 @@ body {
     padding: 15px;
 }
 
+#btn-basket{
+    margin: 10px;
+}
+
 #quantity-in-basket{
     font-size: 0.6em;
     color: #4b21ff;
     background-color: #9fcdff;
+}
+
+.hidden{
+    display: none;
+}
+
+.name{
+    color: #6610f2;
 }
