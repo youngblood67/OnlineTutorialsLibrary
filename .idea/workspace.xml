@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b72502a3-383d-4464-8186-850771d3b639" name="Default Changelist" comment="dossier video">
-      <change afterPath="$PROJECT_DIR$/app/model/Subscription.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ressources/css/style-subscribe.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/ressources/js/subscribe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/videos/paypalSubscriptionButton.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/videos/subscribe.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_db/LoadDatabase.sql" beforeDir="false" afterPath="$PROJECT_DIR$/_db/LoadDatabase.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/PaypalPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/PaypalPayment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ressources/css/style-general.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/css/style-general.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ressources/css/style-profil.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/css/style-profil.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/ressources/js/process.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/js/process.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/templates/master.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/master.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/users/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/users/profil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/videos/achat.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/videos/achat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/videos/paypalButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/videos/paypalBasketButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/videos/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/videos/process.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php" beforeDir="false" afterPath="$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treatment/trtGetComments.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,43 +36,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="522">
+              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_db/GenerateLibraryTables.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="46" column="65" lean-forward="true" selection-start-line="46" selection-start-column="65" selection-end-line="46" selection-end-column="65" />
+            <state relative-caret-position="433">
+              <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/Subscription.php">
+        <entry file="file://$PROJECT_DIR$/app/model/Comment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="85">
+              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="33" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/treatment/trtSearchByTheme.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/treatment/trtSearch.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/treatment/trtGetComments.php">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -109,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/model/PaypalPayment.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -193,14 +162,14 @@
         <option value="$PROJECT_DIR$/view/videos/subscribe.php" />
         <option value="$PROJECT_DIR$/public/ressources/js/process.js" />
         <option value="$PROJECT_DIR$/view/videos/paypalSubscriptionButton.php" />
-        <option value="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" />
         <option value="$PROJECT_DIR$/view/videos/process.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php" />
         <option value="$PROJECT_DIR$/app/model/Subscription.php" />
         <option value="$PROJECT_DIR$/app/model/User.php" />
         <option value="$PROJECT_DIR$/public/test.php" />
         <option value="$PROJECT_DIR$/app/model/PaypalPayment.php" />
+        <option value="$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php" />
+        <option value="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" />
       </list>
     </option>
   </component>
@@ -386,12 +355,12 @@
       <workItem from="1550651087360" duration="16142000" />
       <workItem from="1550697597304" duration="14679000" />
       <workItem from="1550833375634" duration="1085000" />
-      <workItem from="1550924646884" duration="30699000" />
+      <workItem from="1550924646884" duration="31854000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246829000" />
+    <option name="totallyTimeSpent" value="247984000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -660,13 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/model/Table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -796,13 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -810,10 +765,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_db/GenerateLibraryTables.sql">
+    <entry file="file://$PROJECT_DIR$/treatment/trtGetComments.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/PaypalPayment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="46" column="65" lean-forward="true" selection-start-line="46" selection-start-column="65" selection-end-line="46" selection-end-column="65" />
+        <state relative-caret-position="85">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -830,13 +795,17 @@
     <entry file="file://$PROJECT_DIR$/treatment/trtSearch.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/treatment/trtGetComments.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/PaypalPayment.php">
+    <entry file="file://$PROJECT_DIR$/app/model/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_db/GenerateLibraryTables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="53" column="13" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
         </state>
       </provider>
     </entry>
