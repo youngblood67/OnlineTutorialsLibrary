@@ -156,6 +156,9 @@ body {
     color: #4b21ff;
     background-color: #9fcdff;
 }
+#isConnected{
+    margin-right: 10px;
+}
 
 .valeur{
     font-style: italic;

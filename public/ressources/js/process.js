@@ -43,7 +43,7 @@ $(document).ready(function () {
 
         });
 
-        localStorage.removeItem('basket');
+        localStorage.clear();
         $("#btn-basket").hide();
     }
 })

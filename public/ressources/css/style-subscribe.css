@@ -28,3 +28,7 @@
 .list-group-item{
     margin-bottom: 20px;
 }
+
+#btn-paypal-subscription{
+    display: none;
+}

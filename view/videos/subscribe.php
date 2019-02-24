@@ -12,11 +12,14 @@ $subscriptions = $subscription->getAll();
                 <div class="form-group">
                     <?php foreach ($subscriptions as $sub) : ?>
                         <div class="radio list-group-item">
-                            <label><input type="radio" name="optradio"> <?= $sub->typeSubscription; ?></label><div class="valeur">Prix : <span id="total"> <?= $sub->priceSubscription; ?></span> €</div>
+                            <label data-price="<?= $sub->priceSubscription; ?>"><input type="radio" name="optradio"
+                                          value="<?= $sub->typeSubscription ?>"> <?= $sub->titleSubscription; ?></label>
+                            <div class="valeur">Prix : <span class="total"> <?= $sub->priceSubscription; ?></span> €</div>
                         </div>
                     <?php endforeach; ?>
-                    <div id="block-btn-subscription">
-                        <?php require "../view/videos/paypalSubscriptionButton.php"?>
+
+                    <div id="btn-paypal-subscription">
+                        <?php require "../view/videos/paypalSubscriptionButton.php" ?>
                     </div>
                 </div>
             </div>

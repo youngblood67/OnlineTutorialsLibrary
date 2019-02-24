@@ -21,6 +21,8 @@ $paypalPayment = new \App\Model\PaypalPayment();
 
 $paypalPayment->order($pid, $idUser, $payerID, $paymentID, $token, $amount);
 
+
+
 echo "<ul id='list-group'>";
 
 
@@ -29,6 +31,7 @@ echo "<ul id='list-group'>";
 \App\Model\User::addSubscription($idUser,$idSubscription);
 $sub = new \App\Model\Subscription();
 $subscription= $sub->getSubscriptionById($idSubscription);
-echo "<li class='line-results list-group-item'>" . $subscription->typeSubscription . "  :  ".$amount." €</li>";
+$_SESSION['status'] = $subscription->typeSubscription;
+echo "<li class='line-results list-group-item'>" . $subscription->titleSubscription . "  :  ".$amount." €</li>";
 
 echo "</ul";
