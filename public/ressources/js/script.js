@@ -7,6 +7,7 @@ $('#btn_categories').click(function(){
 
 if($_GET("p")!=="accueil"){
     $("#search-input").hide();
+    $("#btn_categories").hide();
 }
 
 function $_GET(param) {

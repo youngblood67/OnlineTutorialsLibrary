@@ -131,11 +131,12 @@
                             </div>
                             <?php if (\App\Model\User::isSubscribed($_SESSION['email']) || $videoInfo->priceVideo == 0 || $video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 1): ?>
                                 <div id="user-comment">
-                                    <div id="list-comments" class="margin-bottom"></div>
+
                                     <textarea id="comment"
                                               placeholder="commentaire de <?= $_SESSION['firstname'] ?>"></textarea>
                                     <hr>
                                     <button id="btn-comment" class="btn btn-success">Laisser un commentaire</button>
+                                    <div id="list-comments" class="margin-bottom"></div>
                                 </div>
                             <?php endif; ?>
                         </div>
