@@ -90,6 +90,7 @@
     <div id="category" name="<?=$tl->titleTheme?>" onclick="getThemeName(this.attributes['name'].value)">
         <div id="category_text"><h5><?=$tl->titleTheme?></h5></div>
     </div>
+    
     <?php
         endforeach;
     ?>

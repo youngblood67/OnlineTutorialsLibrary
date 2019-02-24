@@ -38,6 +38,7 @@ body {
     padding-top: 12px;
     color : #6C757D;
     transition: background-color 0.15s;
+    border-bottom: 1px solid #6C757D;
 }
 
 #category:hover {

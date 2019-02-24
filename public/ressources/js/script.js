@@ -154,3 +154,4 @@ function getThemeName(name) {
     $('#carouselHome').slideUp(showSearchResult);
     getSearchWithAjax(path, name);
 }
+

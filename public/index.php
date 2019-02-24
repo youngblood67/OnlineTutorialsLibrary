@@ -72,6 +72,7 @@ if ($p === 'accueil') {
         $idVideo = $_GET['idVideo'];
     }
     $css = '<link href="../public/ressources/css/style-videos.css" rel="stylesheet">';
+    $jsDown = '<script src="../public/ressources/js/videoPage.js"></script>';
     require '../view/videos/videos.php';
 } else if ($p === 'profil') {
     $css = '<link href="../public/ressources/css/style-profil.css" rel="stylesheet">';

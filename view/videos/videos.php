@@ -10,6 +10,7 @@
         $video = new \App\Model\Video();
         $videoInfo = $video->getAllVideoInfoById($idVideo);
         ?>
+        
 
         <div class="container">
 
@@ -135,3 +136,4 @@
 
     </div>
 </div>
+<div id="idVideo" hidden><?=$idVideo?></div>
