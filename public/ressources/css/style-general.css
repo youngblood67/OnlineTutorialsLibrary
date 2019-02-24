@@ -157,6 +157,12 @@ body {
     background-color: #9fcdff;
 }
 
+.valeur{
+    font-style: italic;
+    font-size: 0.8em;
+    color: #323a49;
+}
+
 .hidden{
     display: none;
 }

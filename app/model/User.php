@@ -47,24 +47,41 @@ class User extends Table
     {
         $db = new Database();
         $user = $db->querySingle("SELECT * FROM user WHERE email = '" . $email . "'", __CLASS__);
+        $db->closeConnection();
         return $user->idUser;
     }
 
-    public static  function  verifyIfUserExist($email){
+    public static function verifyIfUserExist($email)
+    {
         $db = new Database();
         $user = $db->querySingle("SELECT count(*) as count FROM user WHERE email = '" . $email . "'", __CLASS__);
+        $db->closeConnection();
+        return $user->count;
+    }
+
+    public static function verifyIfUserSubscribed($idUser)
+    {
+        $db = new Database();
+        $user = $db->querySingle("SELECT count(*) as count FROM usersubscription WHERE idUser = '" . $idUser . "'", __CLASS__);
+        $db->closeConnection();
         return $user->count;
     }
 
     public static function addSubscription($idUser, $type)
     {
-        $db = new Database();
-        $stmt = $db->getPDO()->prepare("INSERT INTO usersubscription (idSubscription, idUser, startDate) VALUES (:idSubscription, :idUser, NOW())");
-        $stmt->bindParam(':idSubscription', $type);
-        $stmt->bindParam(':idUser', $idUser);
-        $stmt->execute();
-        $db->closeConnection();
-        return $type;
+        if (self::verifyIfUserSubscribed($idUser) == 0) {
+            $db = new Database();
+            $stmt = $db->getPDO()->prepare("INSERT INTO usersubscription (idSubscription, idUser, startDate) VALUES (:idSubscription, :idUser, NOW())");
+            $stmt->bindParam(':idSubscription', $type);
+            $stmt->bindParam(':idUser', $idUser);
+            $stmt->execute();
+            $db->closeConnection();
+            return $type;
+        }else{
+            return 0;
+        }
+
+
     }
 
     public static function isSubscribed($email)
@@ -72,6 +89,7 @@ class User extends Table
         $idUser = self::getUser($email)->idUser;
         $db = new Database();
         $query = $db->queryAll("SELECT * FROM usersubscription WHERE idUser = {$idUser}", __CLASS__);
+        $db->closeConnection();
         if (empty($query)) {
             return 0;
         } else {
@@ -96,7 +114,7 @@ class User extends Table
                 return $query->typeSubscription;
             }
         } else {
-           session_destroy();
+            session_destroy();
             return 0;
         }
 

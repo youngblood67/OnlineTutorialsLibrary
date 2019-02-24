@@ -5,7 +5,7 @@
 <span id="id-paymentID" class="d-none"><?= $paymentID ?></span>
 <span id="id-token" class="d-none"><?= $token ?></span>
 <span id="id-amount" class="d-none"><?= $amount ?></span>
-
+<span id="id-subscription" class="d-none"><?= $idSubscription ?></span>
 
 <div class="container">
     <div class="row">

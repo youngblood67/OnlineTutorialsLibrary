@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b72502a3-383d-4464-8186-850771d3b639" name="Default Changelist" comment="dossier video">
-      <change beforePath="$PROJECT_DIR$/public/ressources/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/model/Subscription.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/ressources/css/style-subscribe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/ressources/js/subscribe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/videos/paypalSubscriptionButton.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/videos/subscribe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_db/LoadDatabase.sql" beforeDir="false" afterPath="$PROJECT_DIR$/_db/LoadDatabase.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/PaypalPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/PaypalPayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/model/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/model/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ressources/css/style-general.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/css/style-general.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ressources/css/style-profil.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/css/style-profil.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ressources/js/process.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ressources/js/process.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/templates/master.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/templates/master.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/users/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/users/profil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/videos/achat.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/videos/achat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/videos/paypalButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/videos/paypalBasketButton.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/videos/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/videos/process.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,19 +50,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/treatment/ajax/addComment.php">
+        <entry file="file://$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/treatment/trtCreateUser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+            <state relative-caret-position="352">
+              <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -51,53 +61,41 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_db/GenerateLibraryTables.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3367">
-              <caret line="213" column="64" selection-start-line="213" selection-start-column="64" selection-end-line="213" selection-end-column="64" />
+            <state relative-caret-position="-5">
+              <caret line="46" column="65" lean-forward="true" selection-start-line="46" selection-start-column="65" selection-end-line="46" selection-end-column="65" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/model/Subscription.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/treatment/trtSearchByTheme.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/treatment/trtSearch.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/treatment/trtGetComments.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/model/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/videos/videos.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1925">
-              <caret line="138" column="88" selection-start-line="138" selection-start-column="88" selection-end-line="138" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/ressources/js/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/Comment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/ressources/js/comment.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+            <state relative-caret-position="385">
+              <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -105,8 +103,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1159">
-              <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="27" />
+            <state relative-caret-position="430">
+              <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/model/PaypalPayment.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -117,8 +124,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -143,15 +150,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/treatment/trtDeconnect.php" />
-        <option value="$PROJECT_DIR$/app/model/Table.php" />
-        <option value="$PROJECT_DIR$/view/videos/video.php" />
-        <option value="$PROJECT_DIR$/view/search.php" />
-        <option value="$PROJECT_DIR$/app/Database.php" />
-        <option value="$PROJECT_DIR$/treatment/trtConnect.php" />
-        <option value="$PROJECT_DIR$/public/ressources/js/base.js" />
         <option value="$PROJECT_DIR$/public/ressources/js/scriptConnexion.js" />
-        <option value="$PROJECT_DIR$/public/ressources/css/style-profil.css" />
         <option value="$PROJECT_DIR$/public/ressources/js/scriptVideo.js" />
         <option value="$PROJECT_DIR$/public/ressources/js/scriptAlert.js" />
         <option value="$PROJECT_DIR$/view/users/chooseSubscription.php" />
@@ -160,20 +159,14 @@
         <option value="$PROJECT_DIR$/treatment/trtChooseSubscription.php" />
         <option value="$PROJECT_DIR$/config/config.php" />
         <option value="$PROJECT_DIR$/treatment/ajax/trtOrderWithPaypal.php" />
-        <option value="$PROJECT_DIR$/app/model/PaypalPayment.php" />
         <option value="$PROJECT_DIR$/view/videos/paypalButton.php" />
-        <option value="$PROJECT_DIR$/public/ressources/js/process.js" />
-        <option value="$PROJECT_DIR$/view/videos/process.php" />
-        <option value="$PROJECT_DIR$/view/videos/achat.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/public/test.php" />
         <option value="$PROJECT_DIR$/app/model/Video.php" />
         <option value="$PROJECT_DIR$/public/ressources/js/basket.js" />
         <option value="$PROJECT_DIR$/public/ressources/js/buy.js" />
         <option value="$PROJECT_DIR$/public/ressources/css/style-modals.css" />
         <option value="$PROJECT_DIR$/treatment/ajax/orderWithPaypal.php" />
         <option value="$PROJECT_DIR$/public/ressources/css/style-achat.css" />
-        <option value="$PROJECT_DIR$/view/users/profil.php" />
         <option value="$PROJECT_DIR$/view/home.php" />
         <option value="$PROJECT_DIR$/view/users/connectUser.php" />
         <option value="$PROJECT_DIR$/public/ressources/js/video.js" />
@@ -181,23 +174,37 @@
         <option value="$PROJECT_DIR$/view/users/createUser.php" />
         <option value="$PROJECT_DIR$/treatment/trtCreateUser.php" />
         <option value="$PROJECT_DIR$/public/ressources/css/style-videos.css" />
-        <option value="$PROJECT_DIR$/view/templates/master.php" />
         <option value="$PROJECT_DIR$/view/users/comment.php" />
-        <option value="$PROJECT_DIR$/_db/LoadDatabase.sql" />
         <option value="$PROJECT_DIR$/public/ressources/js/comments.js" />
-        <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/app/model/User.php" />
         <option value="$PROJECT_DIR$/app/model/Comment.php" />
-        <option value="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" />
-        <option value="$PROJECT_DIR$/public/ressources/css/style-general.css" />
         <option value="$PROJECT_DIR$/treatment/ajax/addComment.php" />
         <option value="$PROJECT_DIR$/view/videos/videos.php" />
         <option value="$PROJECT_DIR$/public/ressources/js/comment.js" />
         <option value="$PROJECT_DIR$/public/ressources/js/script.js" />
+        <option value="$PROJECT_DIR$/view/videos/achat.php" />
+        <option value="$PROJECT_DIR$/public/ressources/css/style-profil.css" />
+        <option value="$PROJECT_DIR$/view/templates/master.php" />
+        <option value="$PROJECT_DIR$/view/users/profil.php" />
+        <option value="$PROJECT_DIR$/public/ressources/js/subscribe.js" />
+        <option value="$PROJECT_DIR$/public/ressources/css/subscribe.css" />
+        <option value="$PROJECT_DIR$/_db/LoadDatabase.sql" />
+        <option value="$PROJECT_DIR$/public/ressources/css/style-subscribe.css" />
+        <option value="$PROJECT_DIR$/public/ressources/css/style-general.css" />
+        <option value="$PROJECT_DIR$/view/videos/subscribe.php" />
+        <option value="$PROJECT_DIR$/public/ressources/js/process.js" />
+        <option value="$PROJECT_DIR$/view/videos/paypalSubscriptionButton.php" />
+        <option value="$PROJECT_DIR$/_db/GenerateLibraryTables.sql" />
+        <option value="$PROJECT_DIR$/view/videos/process.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php" />
+        <option value="$PROJECT_DIR$/app/model/Subscription.php" />
+        <option value="$PROJECT_DIR$/app/model/User.php" />
+        <option value="$PROJECT_DIR$/public/test.php" />
+        <option value="$PROJECT_DIR$/app/model/PaypalPayment.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="638" />
     <option name="width" value="697" />
     <option name="height" value="745" />
@@ -314,6 +321,7 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="SQL Dialects" />
   </component>
   <component name="RecentsManager">
@@ -378,12 +386,12 @@
       <workItem from="1550651087360" duration="16142000" />
       <workItem from="1550697597304" duration="14679000" />
       <workItem from="1550833375634" duration="1085000" />
-      <workItem from="1550924646884" duration="19569000" />
+      <workItem from="1550924646884" duration="30699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235699000" />
+    <option name="totallyTimeSpent" value="246829000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -498,41 +506,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/ressources/css/style-profil.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/scriptVideo.js" />
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/scriptConnexion.js" />
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/scriptAlert.js" />
-    <entry file="file://$PROJECT_DIR$/pages/search.php" />
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/simpleCart.min.js" />
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/simpleCart.js" />
-    <entry file="file://$PROJECT_DIR$/app/PayPal/Api/Tax.php" />
-    <entry file="file://$PROJECT_DIR$/view/users/chooseSubscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Theme.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -555,13 +528,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/ressources/js/paypal.js" />
-    <entry file="file://$PROJECT_DIR$/treatment/trtChooseSubscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/treatment/trtDeconnect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -569,69 +535,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/videos/achat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/videos/paypalButton.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="238" selection-start-line="27" selection-start-column="238" selection-end-line="27" selection-end-column="238" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/videos/process.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/PaypalPayment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding>
-            <element signature="e#112#127#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/treatment/ajax/orderWithPaypal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="24" column="14" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/css/style-achat.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/users/profil.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
@@ -687,79 +594,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_db/LoadDatabase.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="52" column="63" lean-forward="true" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Video.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="59" column="28" lean-forward="true" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/treatment/trtComment.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/templates/master.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="200" selection-start-line="200" selection-end-line="200" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/buy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="81" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/css/style-general.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="132" column="23" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/basket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="916">
-          <caret line="76" column="59" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/process.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/treatment/ajax/addComment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/model/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -770,13 +611,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1159">
-          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/ressources/js/comment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -784,24 +618,225 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_db/GenerateLibraryTables.sql">
+    <entry file="file://$PROJECT_DIR$/public/ressources/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3367">
-          <caret line="213" column="64" selection-start-line="213" selection-start-column="64" selection-end-line="213" selection-end-column="64" />
+        <state relative-caret-position="119">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/videos/videos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1925">
+        <state relative-caret-position="894">
           <caret line="138" column="88" selection-start-line="138" selection-start-column="88" selection-end-line="138" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/ressources/js/script.js">
+    <entry file="file://$PROJECT_DIR$/view/templates/master.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/js/buy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="81" selection-start-line="9" selection-start-column="81" selection-end-line="9" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/js/basket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="90" selection-start-line="90" selection-end-line="92" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/css/style-achat.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/js/subscribe.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <caret line="1" column="96" selection-start-line="1" selection-start-column="96" selection-end-line="1" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treatment/trtChooseSubscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/css/style-general.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/css/style-profil.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_db/LoadDatabase.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="200" column="168" selection-start-line="200" selection-start-column="168" selection-end-line="200" selection-end-column="168" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/users/profil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/videos/achat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/videos/paypalBasketButton.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/css/style-subscribe.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treatment/ajax/orderWithPaypal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="24" column="14" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Video.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/videos/paypalSubscriptionButton.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/videos/subscribe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="195" selection-start-line="14" selection-start-column="195" selection-end-line="14" selection-end-column="195" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/videos/process.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="71" lean-forward="true" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/ressources/js/process.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="119" column="54" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treatment/ajax/subscribeWithPaypal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_db/GenerateLibraryTables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="46" column="65" lean-forward="true" selection-start-line="46" selection-start-column="65" selection-end-line="46" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/Subscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treatment/trtSearchByTheme.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treatment/trtSearch.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/treatment/trtGetComments.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/model/PaypalPayment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>

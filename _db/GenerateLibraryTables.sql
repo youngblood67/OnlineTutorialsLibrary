@@ -51,7 +51,6 @@ create table COMMENT
   idVideo        int not null,
   idUser         int not null,
   contentComment text,
-  ratingComment  int,
   primary key (idComment)
 );
 
@@ -64,6 +63,7 @@ create table SUBSCRIPTION
   priceSubscription    float,
   durationSubscription int,
   typeSubscription     int,
+  titleSubscription    varchar(100),
   nbDaysTrial          int,
   primary key (idSubscription)
 );

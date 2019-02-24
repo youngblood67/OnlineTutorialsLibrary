@@ -196,6 +196,6 @@ INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('28', '4');
 INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('29', '4');
 
 /*****************************ABONNEMENTS**********************************************/
-INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `nbDaysTrial`) VALUES ('10', '30','1', NULL);
-INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `nbDaysTrial`) VALUES ('20', '60','2', NULL);
-INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `nbDaysTrial`) VALUES ('30', '90','3', NULL);
+INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `titleSubscription`, `nbDaysTrial`) VALUES ('10', '30','1','One Month', NULL);
+INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `titleSubscription`, `nbDaysTrial`) VALUES ('20', '60','2', 'Two Months', NULL);
+INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `titleSubscription`, `nbDaysTrial`) VALUES ('30', '90','3', 'Three Months', NULL);

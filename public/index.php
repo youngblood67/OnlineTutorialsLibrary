@@ -22,12 +22,14 @@ $login = "";
 $idVideo = "";
 $msgError = "";
 
+
 $paymentID = "";
 $payerID = "";
 $token = "";
 $pid = "";
 $amount = "";
 $idUser = "";
+$idSubscription = "";
 
 // Récupération des paramètres
 if (isset($_GET['p'])) {
@@ -37,7 +39,7 @@ if (isset($_GET['p'])) {
 }
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
-    if($error=="1"){
+    if ($error == "1") {
         $msgError = "email déjà pris";
     }
 }
@@ -46,7 +48,6 @@ if (isset($_GET['con'])) {
     $con = $_GET['con'];
 
 }
-
 
 
 if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
@@ -86,9 +87,13 @@ if ($p === 'accueil') {
     $css = '<link href="../public/ressources/css/style-achat.css" rel="stylesheet">';
     $jsDown = '<script src="../public/ressources/js/buy.js"></script>';
     require '../view/videos/achat.php';
+} else if ($p === 'subscribe') {
+    $css = '<link href="../public/ressources/css/style-subscribe.css" rel="stylesheet">';
+    require '../view/videos/subscribe.php';
 } else if ($p === 'process') {
     $css = '<link href="../public/ressources/css/style-achat.css" rel="stylesheet">';
     $jsDown2 = '<script src="../public/ressources/js/process.js"></script>';
+
     if (isset($_GET["paymentID"]) && isset($_GET["payerID"]) && isset($_GET["token"]) && isset($_GET["amount"])) {
         $paymentID = $_GET["paymentID"];
         $payerID = $_GET["payerID"];
@@ -101,7 +106,21 @@ if ($p === 'accueil') {
         $_SESSION['pid'] = $pid;
         $_SESSION['amount'] = $amount;
         $idUser = (\App\Model\User::getIdUser($_SESSION['email']));
-        $_SESSION['idUser'] =$idUser;
+        $_SESSION['idUser'] = $idUser;
+    } else {
+        $paymentID = "";
+        $payerID = "";
+        $token = "";
+        $pid = "";
+        $amount = "";
+    }
+
+    if (isset($_GET['sub'])) {
+        $idSubscription = $_GET['sub'];
+        $_SESSION['idSubscription'] = $idSubscription;
+    } else {
+
+        $idSubscription = "no";
     }
     require '../view/videos/process.php';
 

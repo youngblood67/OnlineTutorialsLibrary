@@ -13,3 +13,14 @@
     margin-top: 15px;
 }
 
+.border1{
+    border-radius: 5px 5px;
+    border: 2px #0c5460 solid;
+    margin:10px;
+}
+
+.valeur{
+    font-style: italic;
+    font-size: 0.8em;
+    color: #323a49;
+}

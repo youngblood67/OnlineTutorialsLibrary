@@ -1,0 +1,30 @@
+#main-subscription{
+    text-align: center;
+
+}
+.form-group{
+    margin:auto;
+}
+.jumbotron{
+    padding: 5px !important;
+}
+.radio{
+    padding:10px;
+}
+
+#block-btn-subscription{
+    text-align: center;
+}
+
+.radio>label{
+    padding: 5px;
+}
+
+.list-group-item:hover{
+    background: linear-gradient(#323a49, #06080b);
+    color:white;
+}
+
+.list-group-item{
+    margin-bottom: 20px;
+}

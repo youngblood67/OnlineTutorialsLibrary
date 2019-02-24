@@ -206,6 +206,7 @@
 
     <script src="../public/ressources/js/script.js"></script>
     <script src="../public/ressources/js/basket.js"></script>
+    <script src="../public/ressources/js/subscribe.js"></script>
     <?= $jsDown ?>
     <?= $jsDown2 ?>
 

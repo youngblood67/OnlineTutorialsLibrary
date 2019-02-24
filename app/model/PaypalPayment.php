@@ -9,7 +9,7 @@
 namespace App\Model;
 
 
-use App\Config;
+
 use App\Database;
 
 class PaypalPayment

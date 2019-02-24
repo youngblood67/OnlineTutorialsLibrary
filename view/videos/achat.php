@@ -2,7 +2,7 @@
     <div class="jumbotron">
         <div id="buy-list">
 
-            <h4>Confirmation de l'achat des vidéos</h4>
+            <h4>Confirmation de l'achat</h4>
             <ul id="videos-buy-list">
 
             </ul>
@@ -13,7 +13,7 @@
             <div id="grp-btn-achat">
 
 
-                <?php require "../view/videos/paypalButton.php"?>
+                <?php require "../view/videos/paypalBasketButton.php"?>
 
 
 
