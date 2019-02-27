@@ -16,3 +16,8 @@ textarea#comment{
     padding: 10px;
 }
 
+#stars {
+    font-size: 30px !important;
+    
+}
+

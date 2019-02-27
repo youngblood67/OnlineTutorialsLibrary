@@ -1,3 +1,17 @@
+var purchasedVideosIds =[];
+$(document).ready(function() {
+    if($_GET("p")=="accueil" || location.href=="http://localhost/OnlineTutorialsLibrary/public/"){
+    //alert($('#userVideoList').html());
+    var userVideoList = JSON.parse($('#userVideoList').html());
+    
+    for(var i = 0; i<userVideoList.length; i++) 
+    purchasedVideosIds.push(userVideoList[i].idVideo);
+}
+    
+    
+    
+});
+
 
 
 $('#btn_categories').click(function(){
@@ -5,7 +19,7 @@ $('#btn_categories').click(function(){
 });
 
 
-if($_GET("p")!=="accueil" && location.href!=="http://localhost/onlinetutorialslibrary/public/"){
+if($_GET("p")!=="accueil" && location.href!=="http://localhost/OnlineTutorialsLibrary/public/"){
     $("#search-input").hide();
     $("#btn_categories").hide();
 }
@@ -47,8 +61,10 @@ $("#btn-connexion").click(function () {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function() {
+   
    // $('#search-result').hide();
     $('#searchInput').keyup(function() {
+        
         var value = $(this).val();
         var path = 'http://localhost/onlinetutorialslibrary/treatment/trtSearch.php';
         if (value.length > 2) {
@@ -87,6 +103,7 @@ $(document).ready(function() {
 });
 
 function getSearchWithAjax(path, value) {
+    
     $.post(
 
         path, {
@@ -98,45 +115,67 @@ function getSearchWithAjax(path, value) {
             var prix_video = "";
             var url = "";
             var launchModal = "alert($('#checkSession').html().toString());"; 
+            var checkSubscription ="";
             if($('#checkSession').html().toString()=="false") 
                 launchModal ="$('#connexionModal').modal('show'); return false;";
             else
                 launchModal = "";
             
-            var obj = JSON.parse(data);
-            if(obj.length!=0)
+            var obj;
+            if(data!="" && data!=null)
+            obj = JSON.parse(data);
+            else 
+            obj = "";
+            
+            if(obj.length!=0 )
             {
                 
                 for (var i = 0; i < obj.length; i++) {
                     
-                // htmlContent +=obj[i].titleVideo + "<br>";
-                if(obj[i].priceVideo==0) prix_video = "Gratuit";
-                else prix_video = obj[i].priceVideo + " €";
-
-                if(obj[i].urlVideo == null) url= "http://img.youtube.com/vi/"+obj[i].idYoutube+"/hqdefault.jpg"; 
-                else url= "http://localhost/onlinetutorialslibrary/videos/"+obj[i].urlVideo+".PNG";
-
-                htmlContent += 
+                    
+                    if(obj[i].priceVideo==0) {
+                        prix_video = "Gratuit";
+                    }
+                    else if($('#checkSubscription').html().toString()=="true") {
+                        prix_video = "accès abonné";
+                    }   
+                    else if($.inArray(obj[i].idVideo, purchasedVideosIds) != -1) {
+                        prix_video = "achetée";
+                    } 
+                    else {
+                        prix_video = obj[i].priceVideo + " €";       
+                    }
+                    
                 
-                    `<div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card h-100">
-                            <a href="index.php?p=videos&idVideo=${obj[i].idVideo}"><img class="card-img-top"
-                            src="${url}" alt="" onclick="${launchModal}"></a>
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                <a href="index.php?p=videos&idVideo=${obj[i].idVideo}" onclick="${launchModal}">
-                                ${obj[i].titleVideo}</a>
-                                </h4>
-                                <p class="card-text">${obj[i].descriptionVideo}</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div id="price col">${prix_video}                                                 
+                    
+                    // htmlContent +=obj[i].titleVideo + "<br>";
+                    
+
+                    if(obj[i].urlVideo == null) url= "http://img.youtube.com/vi/"+obj[i].idYoutube+"/hqdefault.jpg"; 
+                    else url= "http://localhost/onlinetutorialslibrary/videos/"+obj[i].urlVideo+".PNG";
+
+                    htmlContent += 
+                    
+                        `<div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card h-100 shadow">
+                                <a href="index.php?p=videos&idVideo=${obj[i].idVideo}"><img class="card-img-top"
+                                src="${url}" alt="" onclick="${launchModal}"></a>
+                                <div class="card-body">
+                                    <h6 class="card-title">
+                                    <a href="index.php?p=videos&idVideo=${obj[i].idVideo}" onclick="${launchModal}"><b>
+                                    ${obj[i].titleVideo}</a></b>
+                                    </h6>
+                                    <p class="card-text">${obj[i].descriptionVideo}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row">
+                                    <h5 class="text-warning col">&#9733; &#9733; &#9733; &#9733; &#9734;</h5>
+                                        <div id="price col"><h5>${prix_video}</h5>                                                 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>`;
+                        </div>`;
 
                 }
                 
@@ -161,4 +200,30 @@ function getThemeName(name) {
     $('#carouselHome').slideUp(showSearchResult);
     getSearchWithAjax(path, name);
 }
+
+function getFreeVideosWithAjax() {
+    var path = 'http://localhost/onlinetutorialslibrary/treatment/ajax/getFreeVideo.php';
+    $('#div_categories').animate({width: 'toggle'});
+    function showSearchResult () {
+        $('#home-page-videos').hide();
+        $('#search-result').show();
+    }
+    $('#carouselHome').slideUp(showSearchResult);
+    getSearchWithAjax(path, null);
+}
+
+function getPurchasedVideosWithAjax(userId) {
+    var path = 'http://localhost/onlinetutorialslibrary/treatment/ajax/getPurchasedVideos.php';
+    $('#div_categories').animate({width: 'toggle'});
+    function showSearchResult () {
+        $('#home-page-videos').hide();
+        $('#search-result').show();
+    }
+    $('#carouselHome').slideUp(showSearchResult);
+    getSearchWithAjax(path, userId);
+}
+
+
+
+
 

@@ -83,10 +83,11 @@ class Video extends Table
 
     }
 
+    
     public function getYoutubeVideoThumbnail($idYoutube)
     {
 
-        return "http://img.youtube.com/vi/" . $idYoutube . "/hqdefault.jpg";
+        return "http://img.youtube.com/vi/" . $idYoutube . "/maxresdefault.jpg";
 
     }
 
@@ -138,4 +139,21 @@ class Video extends Table
 
         return $this->db->queryAll($req, __CLASS__);
     }
+
+    public function getFreeVideo()
+    {
+        return $this->db->queryAll("SELECT * FROM " . $this->table . " WHERE priceVideo = 0", __CLASS__);
+    }
+
+    public function getPurchasedVideos($userId) {
+        $req = "SELECT * FROM {$this->table} v 
+        join video_user vu on v.idVideo=vu.idVideo 
+        join user u on u.idUser = vu.idUser
+        WHERE u.idUser = '{$userId}'";
+
+        return $this->db->queryAll($req, __CLASS__);
+    }
+
+    
+
 }

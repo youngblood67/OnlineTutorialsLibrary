@@ -2,11 +2,15 @@
     width:400px;
 }
 
-.modal-header{
+.btn-modal {
+    width: 100%;
+}
+
+/*.modal-header{
     background: linear-gradient(#302b24, #2d2733);
     color: white;
 }
 
 .modal-body,.group-btn-basket{
     background: linear-gradient(#302b24, #2d2733);
-}
+}*/

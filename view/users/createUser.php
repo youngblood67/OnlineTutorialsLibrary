@@ -20,7 +20,7 @@
                 <input type="password" class="form-control" id="password" placeholder="Mot de passe" name="password">
             </div>
             <div class="form-group ">
-                <button type="submit" class="btn btn-primary ">S'enregistrer</button>
+                <button type="submit" class="btn btn-danger btn-modal">S'inscrire</button>
             </div>
             
         </form>

@@ -51,11 +51,13 @@ if (isset($_GET['con'])) {
 
 
 if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
-    if (isset($_SESSION['status']) && intval($_SESSION['status']) > 0) {
-        $login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span><span class='mini-logo'><sup>". $_SESSION['status']."</sup></span></div>";
+    $login = "<div id='isConnected'><b>" . strtoupper($_SESSION['firstname'][0].$_SESSION['lastname'][0]) ."</b></div>";
+    /*if (isset($_SESSION['status']) && intval($_SESSION['status']) > 0) {
+        //$login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span><span class='mini-logo'>abonné cat. " . $_SESSION['status'] . "</span></div>";
+        $login = "<div id='isConnected' class='mr-2'>" . strtoupper($_SESSION['firstname'][0].$_SESSION['lastname'][0]) ."</div>";
     } else {
-        $login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span></div>";
-    }
+        $login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span><span class='mini-logo'>membre simple</span></div>";
+    }*/
 } else {
     $login = "";
 }

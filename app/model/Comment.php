@@ -37,7 +37,8 @@ class Comment extends Table
         return $this->db->queryAll("SELECT c.*, u.firstname, u.lastname 
         FROM ".$this->table." c
         JOIN user u on c.idUser = u.idUser
-        WHERE idVideo = {$idVideo}", __CLASS__);
+        WHERE idVideo = {$idVideo}
+        ORDER BY c.idComment desc", __CLASS__);
     }
 }
 

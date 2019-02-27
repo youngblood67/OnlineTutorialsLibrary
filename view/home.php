@@ -1,32 +1,54 @@
 <?php
 
         $video = new \App\Model\Video();
-        $headList = $video->getLast(3);
+        $headList = $video->getFreeVideo();
         $showModal = "";
+        $sessionExists ="";
+        $userSubscribed ="";
+        $userVideoList ="";
+
         $checkSession = false;
         if(isset($_SESSION['email'])) {
             $idUser = \App\Model\User::getIdUser($_SESSION['email']);
+            $userVideoList = $video->getPurchasedVideos($idUser);
+            
+
+        }
+
+        if(isset($_SESSION['email']) && \App\Model\User::isSubscribed($_SESSION['email'])) {
+            $userSubscribed = "true";
+        }
+        else {
+            $userSubscribed = "false";
+        }
+
+        if (!isset($_SESSION['con'])) {
+            $showModal = "$('#connexionModal').modal('show'); return false;";
+            $sessionExists = "false";
+        } else {
+            $showModal = "";
+            $sessionExists = "true";
         }
         ?>
 
 <div id="carouselHome" class="carousel slide" data-ride="carousel" data-interval="10000">
-
-
     <div class="carousel-inner" role="listbox">
         <?php
                 for ($i = 0; $i < count($headList); $i++):
                     ?>
         <div class="carousel-item <?php if ($i == 0): ?>active<?php endif; ?>">
             <div class="row no-gutters">
-                <div class="col-3 description_box">
+                <div class="col-6 description_box">
                     <div class="parag">
                         <?= $headList[$i]->titleVideo ?>
                     </div>
                 </div>
                 <div class="col ">
+                <a href="index.php?p=videos&idVideo=<?=$headList[$i]->idVideo?>" onclick="<?= $showModal ?>">
                     <img class="d-block img-fluid img-carousel-home"
                         src="<?= is_null($headList[$i]->urlVideo) ? $headList[$i]->getYoutubeVideoThumbnail($headList[$i]->idYoutube) : $headList[$i]->getDriveVideoThumbnail($headList[$i]->urlVideo); ?>"
                         alt="First slide">
+                </a>
                 </div>
             </div>
 
@@ -60,45 +82,39 @@
 //                    var_dump($videoList);  die();
                     
                     $linkToVideo = "index.php?p=videos&idVideo=" . $vid->idVideo;
-                    if (!isset($_SESSION['con'])) {
-                        $showModal = "$('#connexionModal').modal('show'); return false;";
-                        $sessionExists = "false";
-                    } else {
-                        $showModal = "";
-                        $sessionExists = "true";
-                    }
+                    
 
                     ?>
 
         <div class="col-lg-3 col-md-6 mb-4">
-            <div class="card h-100">
+            <div class="card h-100 shadow">
                 <a href="<?= $linkToVideo ?>"><img class="card-img-top"
                         src="<?= is_null($vid->urlVideo) ? $vid->getYoutubeVideoThumbnail($vid->idYoutube) : $vid->getDriveVideoThumbnail($vid->urlVideo); ?>
                                 "
                         alt="" onclick="<?= $showModal ?>"></a>
                 <div class="card-body">
-                    <h4 class="card-title">
-                        <a href="<?= $linkToVideo ?>" onclick="<?= $showModal ?>"><?= $vid->titleVideo ?></a>
-                    </h4>
+                    <h6 class="card-title">
+                        <a href="<?= $linkToVideo ?>" onclick="<?= $showModal ?>"><b><?= $vid->titleVideo ?></b></a>
+                    </h6>
 
                     <p class="card-text"> <?= $vid->descriptionVideo ?></p>
                 </div>
                 <div class="card-footer">
                     <div class="row">
-                        <small class="text-muted col">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                        <h5 class="text-warning col">&#9733; &#9733; &#9733; &#9733; &#9734;</h5>
 
-                        <div id="price col" class="btn btn-success">
+                        <div id="price col"><h5>
                             <?php if ($vid->priceVideo == 0): ?>
                             Gratuit
                             <?php elseif (isset($_SESSION['email']) && \App\Model\User::isSubscribed($_SESSION['email'])): ?>
-                            <div class="green">accès abonné</div>
+                            <div>accès abonné</div>
                             <?php elseif(isset($_SESSION['email']) && $video->verifyIfExistVideoUser($idUser,$vid->idVideo) > 0) : ?>
                             achetée
                             <?php else: ?>
                             <?= $vid->priceVideo ?>
                             €
-                            <?php endif;
-                                        ?>
+                            <?php endif;?>
+                            </h5>
                         </div>
                     </div>
                 </div>
@@ -115,3 +131,5 @@
 
 
 <div id="checkSession" style="display:none"><?=$sessionExists ?></div>
+<div id="checkSubscription" style="display:none"><?=$userSubscribed ?></div>
+<div id="userVideoList" style="display:none"><?=json_encode($userVideoList)?></div>

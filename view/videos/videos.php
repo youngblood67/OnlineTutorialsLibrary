@@ -101,7 +101,7 @@
                             </h4>
                             <!--                            <p class="card-text">  description ???  </p>-->
                             <div class="margin"><span
-                                        class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+                                        class="text-warning" id="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</span>
                                 4.0 stars
                             </div>
 

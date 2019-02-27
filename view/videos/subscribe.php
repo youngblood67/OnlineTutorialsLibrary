@@ -37,9 +37,8 @@ $subscriptions = $subscription->getAll();
                             </div>
                         </div>
                     <?php endforeach; ?>
-
-                    <div id="btn-paypal-subscription">
-                        <?php require "../view/videos/paypalSubscriptionButton.php" ?>
+                    <div id="block-btn-subscription">
+                        <?php require "../view/videos/paypalSubscriptionButton.php"?>
                     </div>
                 </div>
             </div>

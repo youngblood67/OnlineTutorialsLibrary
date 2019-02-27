@@ -51,7 +51,6 @@ create table COMMENT
   idVideo        int not null,
   idUser         int not null,
   contentComment text,
-  dateComment    datetime,
   primary key (idComment)
 );
 

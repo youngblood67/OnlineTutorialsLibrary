@@ -11,8 +11,9 @@ function addCommentWithAjax(commentContent) {
         type: 'POST',
         data: dataComment,
         dataType: 'html',
-        success: function (data) {
-            //alert(data);
+        success: function () {
+            getCommentsListWithAjax();
+            $("#comment").val("");
         }
 
     });
@@ -31,14 +32,19 @@ function getCommentsListWithAjax(){
            //alert(data);
            let htmlContent =""; 
            var obj = JSON.parse(data);
+           
             if(obj.length!=0)
             {
-            
                 
-                for (var i = obj.length-1; i >=0; i--) {
+                
+                for (var i = 0; i < obj.length; i++) {
+                    let dateAndTime = obj[i].dateComment.split(" ");
+                    let dateSplit = dateAndTime[0].split("-");
+                    let dateComment = dateSplit[2] + "/" + dateSplit[1] +"/" +dateSplit[0];  
+                    let timeComment = dateAndTime[1];
                     
                     htmlContent += 
-                    `<div><b>${obj[i].firstname}</b> ${obj[i].dateComment}</div>
+                    `<div><b>${obj[i].firstname}</b> le ${dateComment} à ${timeComment}</div>
                     <div>${obj[i].contentComment}</div>
                     <hr>`
                 }
@@ -53,14 +59,8 @@ function getCommentsListWithAjax(){
 
 $("#btn-comment").click(function () {
     commentContent = $("#comment").val();
-    $.ajax({
-        url:addCommentWithAjax(commentContent),
-        success:function(){
-            getCommentsListWithAjax();
-     }
-     });
+    addCommentWithAjax(commentContent);
     
-    $("#comment").val("");
 });
 
 

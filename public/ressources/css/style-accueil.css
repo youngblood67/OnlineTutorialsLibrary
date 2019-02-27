@@ -1,13 +1,13 @@
 
 .description_box {
-    background-image: linear-gradient(to right, #2784C2, #2784C2);
+    background-color:#282d31;
     color: aliceblue;
-    box-shadow: 90px 0px 50px 80px  #2784C2;
+    box-shadow: 90px 0px 100px 100px #282d31;/*#282d31; /* #2784C2;*/
     z-index: 10;
        
 }
 .img-carousel-home {
-    max-height: 435px;
+    max-height: 378px;
 }
 
 #msg-error{
@@ -16,10 +16,10 @@
 }
 
 .parag {
-    margin-top : 25%;
-    margin-left: 40%;
+    margin-top : 15%;
+    margin-left: 20%;
     font-size: 2.2vw;
-    width:90%;
+    width:80%;
 }
 
 .img-carousel-home {

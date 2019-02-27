@@ -1,6 +1,6 @@
-<div class="container-fluid text-center">
+<div class="container text-center">
     <div class="jumbotron">
-        <div class="row">
+        <div class="row row-profil">
             <div class="col-md-6">
                 <?php
 
@@ -29,7 +29,14 @@
                     <li class="col-12 list-group-item">
                         <span class="valeur">Email : </span> <?= $user->email ?>
                     </li>
+
                 </ul>
+                <a href="../treatment/trtDeconnect.php" class="mt-2">
+                    <button id="btn-deconnexion" class="btn btn-danger my-2 my-sm-0">
+                        Se déconnecter
+                    </button>
+                </a>
+
             </div>
             <div class="col-md-6">
                 <ul id="ul-member"><h4 class="border1">Abonnement</h4>
@@ -71,8 +78,9 @@
             </div>
         </div>
         <hr class="my-4">
-        <div class="row">
-            <div class="col-md-12">   <?php
+        <div class="row row-profil">
+            <div class="col-md-12">
+                <?php
                 $idUser = \App\Model\User::getUser($_SESSION['email'])->idUser;
                 $videos = $video->getAllVideosFromUserById($idUser); ?>
                 <?php if (sizeof($videos) > 1): ?>
@@ -84,9 +92,9 @@
                 <ul id="buy-list list-group">
                     <?php $cpt = 0; ?>
                     <?php foreach ($videos as $vid): ?>
-                        <?php $cpt++; ?>
-                        <li class="list-group-item"><span
-                                    class="valeur">vidéo n°<?= $cpt ?> : &nbsp;</span><?= $vid->titleVideo ?></li>
+                    <?php $cpt++; ?>
+                    <li class="list-group-item"><span class="valeur">vidéo n°<?= $cpt ?> :
+                            &nbsp;</span><?= $vid->titleVideo ?></li>
 
                     <?php endforeach; ?>
                 </ul>
@@ -95,7 +103,4 @@
 
 
     </div>
-
-
-
-
+</div>
