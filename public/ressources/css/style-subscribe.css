@@ -25,7 +25,8 @@
 
 .list-group-item:hover {
     background: linear-gradient(#f8fbeb, #bcbdbd);
-    border:0 solid white ;
+    border:1px solid white ;
+    border-top : 0;
 }
 
 .list-group-item {
