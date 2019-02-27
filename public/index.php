@@ -42,6 +42,12 @@ if (isset($_GET['error'])) {
     if ($error == "1") {
         $msgError = "email déjà pris";
     }
+    else if ($error == "2") {
+        $msgError = "les mots de passe ne sont pas identiques...";
+    }
+    else if ($error == "3") {
+        $msgError = "Votre login ou votre mot de passse sont incorrect...";
+    }
 }
 
 if (isset($_GET['con'])) {

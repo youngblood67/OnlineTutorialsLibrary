@@ -20,6 +20,10 @@
                 <input type="password" class="form-control" id="password" placeholder="Mot de passe" name="password">
             </div>
             <div class="form-group ">
+
+                <input type="password" class="form-control" id="passwordVerif" placeholder="Confirmation" name="passwordVerif">
+            </div>
+            <div class="form-group ">
                 <button type="submit" class="btn btn-danger btn-modal">S'inscrire</button>
             </div>
             

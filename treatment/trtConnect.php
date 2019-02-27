@@ -22,7 +22,7 @@ if (!isset($_SESSION['con'])) {
         $_SESSION['lastname'] = User::getUser($email)->lastname;
         $_SESSION['status'] = User::getStatus($email);
     } else {
-        $error = "&error=1";
+        $error = "&error=3";
     }
     header('Location: http://localhost/onlinetutorialslibrary/public/index.php?p=accueil' . $error);
 }
