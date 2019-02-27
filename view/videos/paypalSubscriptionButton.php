@@ -1,9 +1,6 @@
 <div id="paypal-button-container"></div>
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 <script>
-    let selectedSubscription = "1";
-    // let selectedSubscription = $("input[name='optradio']:checked").val();
-    // alert(selectedSubscription);
 
     paypal.Button.render({
         env: 'sandbox',
@@ -28,7 +25,7 @@
         onAuthorize: function (data, actions) {
             return actions.payment.execute().then(function () {
                 console.log("Payment complete");
-                window.location = "http://localhost/onlinetutorialslibrary/public/index.php?p=process&sub="+selectedSubscription+"&paymentID="+data.paymentID+"&payerID="+data.payerID+"&token="+data.paymentToken+"&pid="+makeid()+"&amount="+priceSubscription ;
+                window.location = "http://localhost/onlinetutorialslibrary/public/index.php?p=process&sub="+parseInt(localStorage.getItem("subscription"))+"&paymentID="+data.paymentID+"&payerID="+data.payerID+"&token="+data.paymentToken+"&pid="+makeid()+"&amount="+parseInt(localStorage.getItem("priceSubscription")) ;
             })
         }
     },'#paypal-button-container');
