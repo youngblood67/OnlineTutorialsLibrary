@@ -60,12 +60,13 @@ create table COMMENT
 /*==============================================================*/
 create table SUBSCRIPTION
 (
-  idSubscription       int not null AUTO_INCREMENT,
-  priceSubscription    float,
-  durationSubscription int,
-  typeSubscription     int,
-  titleSubscription    varchar(100),
-  nbDaysTrial          int,
+  idSubscription          int not null AUTO_INCREMENT,
+  priceSubscription       float,
+  durationSubscription    int,
+  typeSubscription        int,
+  titleSubscription       varchar(100),
+  descriptionSubscription text,
+  nbDaysTrial             int,
   primary key (idSubscription)
 );
 
@@ -112,6 +113,7 @@ create table USERSUBSCRIPTION
   idUser             int not null,
   idSubscription     int not null,
   startDate          datetime,
+  endDate            datetime,
   primary key (idUserSubscription)
 );
 

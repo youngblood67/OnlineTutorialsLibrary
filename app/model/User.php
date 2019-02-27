@@ -51,6 +51,14 @@ class User extends Table
         return $user->idUser;
     }
 
+    public static function getUserSubscription($idUser)
+    {
+        $db = new Database();
+        $query = $db->querySingle("SELECT * FROM usersubscription WHERE idUser = '" . $idUser . "'", __CLASS__);
+        $db->closeConnection();
+        return $query;
+    }
+
     public static function verifyIfUserExist($email)
     {
         $db = new Database();
@@ -70,10 +78,23 @@ class User extends Table
     public static function addSubscription($idUser, $type)
     {
         if (self::verifyIfUserSubscribed($idUser) == 0) {
+            $day = "";
+            switch($type){
+                case '1':
+                    $day = 7;
+                    break;
+                case '2':
+                    $day = 14;
+                    break;
+                case '3':
+                    $day = 30;
+                    break;
+            }
             $db = new Database();
-            $stmt = $db->getPDO()->prepare("INSERT INTO usersubscription (idSubscription, idUser, startDate) VALUES (:idSubscription, :idUser, NOW())");
+            $stmt = $db->getPDO()->prepare("INSERT INTO usersubscription (idSubscription, idUser, startDate,endDate) VALUES (:idSubscription, :idUser, CURRENT_DATE(), ADDDATE(CURRENT_DATE(),:nbDay))");
             $stmt->bindParam(':idSubscription', $type);
             $stmt->bindParam(':idUser', $idUser);
+            $stmt->bindParam(':nbDay', $day);
             $stmt->execute();
             $db->closeConnection();
             return $type;

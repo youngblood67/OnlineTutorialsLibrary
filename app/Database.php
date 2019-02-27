@@ -55,6 +55,12 @@ class Database
         else return $datas[0];
     }
 
+    public function delete($sql){
+        $pdo = $this->getPDO();
+        $pdo->exec($sql);
+        return 1;
+    }
+
     public function closeConnection()
     {
         $this->pdo = null;

@@ -52,9 +52,9 @@ if (isset($_GET['con'])) {
 
 if (isset($_SESSION['con']) && $_SESSION['con'] === 'loggedOn') {
     if (isset($_SESSION['status']) && intval($_SESSION['status']) > 0) {
-        $login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span><span class='mini-logo'>abonné cat. " . $_SESSION['status'] . "</span></div>";
+        $login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span><span class='mini-logo'><sup>". $_SESSION['status']."</sup></span></div>";
     } else {
-        $login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span><span class='mini-logo'>membre simple</span></div>";
+        $login = "<div id='isConnected'><span id='name'>" . $_SESSION['firstname'] . "</span></div>";
     }
 } else {
     $login = "";
@@ -80,6 +80,7 @@ if ($p === 'accueil') {
     $jsDown = '<script src="ressources/js/comment.js"></script>';
     require '../view/videos/videos.php';
 } else if ($p === 'profil') {
+    $jsDown = '<script src="../public/ressources/js/profil.js"></script>';
     $css = '<link href="../public/ressources/css/style-profil.css" rel="stylesheet">';
     require '../view/users/profil.php';
 

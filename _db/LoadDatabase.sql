@@ -196,6 +196,6 @@ INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('28', '4');
 INSERT INTO `video_theme` (`idVideo`, `idTheme`) VALUES ('29', '4');
 
 /*****************************ABONNEMENTS**********************************************/
-INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `titleSubscription`, `nbDaysTrial`) VALUES ('10', '30','1','One Month', NULL);
-INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `titleSubscription`, `nbDaysTrial`) VALUES ('20', '60','2', 'Two Months', NULL);
-INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `titleSubscription`, `nbDaysTrial`) VALUES ('30', '90','3', 'Three Months', NULL);
+INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `titleSubscription`,`descriptionSubscription` ,`nbDaysTrial`) VALUES ('10', '30','1','ON\'DAY','Profitez d\'une journée de visionnage intensif', NULL);
+INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `titleSubscription`,`descriptionSubscription` , `nbDaysTrial`) VALUES ('20', '60','2', 'ON\'WEEK','Une semaine complète d\'accès à tout les tutos du site', NULL);
+INSERT INTO `subscription` (`priceSubscription`, `durationSubscription`, `typeSubscription`, `titleSubscription`,`descriptionSubscription` , `nbDaysTrial`) VALUES ('30', '90','3', 'ON\'MONTH','Offre spéciale : un mois d\'accès à tous les tutoriels avec 7 jours d\'essais', 7);

@@ -18,4 +18,21 @@ class Subscription extends Table
         return $this->db->querySingle("SELECT * FROM " . $this->table . " WHERE typeSubscription = {$id}", __CLASS__);
     }
 
+    public function getUserSubscriptionEndDate($idUser)
+    {
+        $sql = $this->db->querySingle("SELECT endDate FROM usersubscription WHERE idUser = {$idUser}", __CLASS__);
+        return $sql->endDate;
+    }
+
+    public function getUserSubscriptionDayLeft($idUser)
+    {
+        $sql = $this->db->querySingle("SELECT datediff(us.endDate,us.startDate) as dayLeft from usersubscription us where idUser = {$idUser}", __CLASS__);
+        return $sql->dayLeft;
+    }
+
+    public function deleteSubscriptionFromUser($idUser)
+    {
+        $this->db->delete("DELETE FROM usersubscription WHERE idUser = ".$idUser);
+    }
+
 }

@@ -1,34 +1,43 @@
-#main-subscription{
+#main-subscription {
     text-align: center;
 
 }
-.form-group{
-    margin:auto;
+
+.form-group {
+    margin: auto;
 }
-.jumbotron{
+
+.jumbotron {
     padding: 5px !important;
 }
-.radio{
-    padding:10px;
+
+.radio {
+    padding: 10px;
 }
 
-#block-btn-subscription{
+#block-btn-subscription {
     text-align: center;
 }
 
-.radio>label{
+.radio > label {
     padding: 5px;
 }
 
-.list-group-item:hover{
-    background: linear-gradient(#323a49, #06080b);
-    color:white;
+.list-group-item:hover {
+    background: linear-gradient(#f8fbeb, #bcbdbd);
+    border:0 solid white ;
 }
 
-.list-group-item{
+.list-group-item {
     margin-bottom: 20px;
 }
 
-#btn-paypal-subscription{
+#btn-paypal-subscription {
     display: none;
+}
+
+.subscription-description {
+    font-size: 1em;
+    color: #302b24;
+    font-style: italic;
 }

@@ -14,13 +14,21 @@
 }
 
 .border1{
-    border-radius: 5px 5px;
-    border: 2px #0c5460 solid;
-    margin:10px;
+    /*border-radius: 5px 5px;*/
+    /*border: 2px #0c5460 solid;*/
+    margin-bottom: 10px;
+}
+
+.jumbotron{
+    padding: 30px !important;
 }
 
 .valeur{
     font-style: italic;
     font-size: 0.8em;
+    color: #323a49;
+}
+.description{
+    font-style: italic;
     color: #323a49;
 }

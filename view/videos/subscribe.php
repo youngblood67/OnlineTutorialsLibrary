@@ -12,9 +12,29 @@ $subscriptions = $subscription->getAll();
                 <div class="form-group">
                     <?php foreach ($subscriptions as $sub) : ?>
                         <div class="radio list-group-item">
-                            <label data-price="<?= $sub->priceSubscription; ?>"><input type="radio" name="optradio"
-                                          value="<?= $sub->typeSubscription ?>"> <?= $sub->titleSubscription; ?></label>
-                            <div class="valeur">Prix : <span class="total"> <?= $sub->priceSubscription; ?></span> €</div>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <label><input type="radio"
+                                                  name="optradio"
+                                                  data-price="<?= $sub->priceSubscription; ?>"
+                                                  value="<?= $sub->typeSubscription ?>"> <?= $sub->titleSubscription; ?>
+                                    </label>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="subscription-description">
+                                        "<?= $sub->descriptionSubscription ?>"
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="valeur">Prix : <span
+                                                class="total"> <?= $sub->priceSubscription; ?></span> €
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     <?php endforeach; ?>
 
