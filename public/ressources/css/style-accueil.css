@@ -17,8 +17,8 @@
 
 .parag {
     margin-top : 15%;
-    margin-left: 20%;
-    font-size: 2.2vw;
+    margin-left: 25%;
+    font-size: 1.8vw;
     width:80%;
 }
 
@@ -52,3 +52,11 @@
 #home-page-videos{
     padding-top: 20px;
 }
+
+#freeVid {
+    padding-top: 5%;
+    margin-left: 25%;
+    font-size: 1.5vw;
+    width:80%;
+}
+

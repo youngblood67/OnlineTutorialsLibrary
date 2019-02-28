@@ -154,6 +154,15 @@ class Video extends Table
         return $this->db->queryAll($req, __CLASS__);
     }
 
+    public function getRating($idVideo) {
+        $req = "SELECT rating FROM rating  
+        WHERE idVideo = '{$idVideo}'";
+
+        return $this->db->queryAll($req, __CLASS__);
+    }
+
+    
+
     
 
 }

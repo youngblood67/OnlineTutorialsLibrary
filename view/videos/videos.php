@@ -7,6 +7,7 @@
         }
 
         $urlVideo = "";
+        $canRate = "false";
         $video = new \App\Model\Video();
         $videoInfo = $video->getAllVideoInfoById($idVideo);
         $idUser = \App\Model\User::getIdUser($_SESSION['email']);
@@ -100,9 +101,9 @@
                                 <?php endif; ?>
                             </h4>
                             <!--                            <p class="card-text">  description ???  </p>-->
-                            <div class="margin"><span
-                                        class="text-warning" id="stars"> &#9733; &#9733; &#9733; &#9733; &#9734;</span>
-                                4.0 stars
+                            <div class="margin" id="starsRating"><span
+                                         id="stars"> </span>
+                                
                             </div>
 
                             <?php if ($videoInfo->priceVideo > 0): ?>
@@ -126,6 +127,7 @@
                         </div>
                         <div class="card-body">
                             <?php if (\App\Model\User::isSubscribed($_SESSION['email']) || $videoInfo->priceVideo == 0 || $video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 1): ?>
+                            <?php $canRate="true";?>
                                 <div id="user-comment">
 
                                     <textarea id="comment" class="form-control" rows="3"
@@ -149,3 +151,9 @@
 
     </div>
 </div>
+<?php 
+if (\App\Model\User::isSubscribed($_SESSION['email']) || $videoInfo->priceVideo == 0 || $video->verifyIfExistVideoUser($idUser, $videoInfo->idVideo) == 1)
+$canRate="true";
+ ?>
+                            
+<div id="canRate" style="display:none;"><?=$canRate?></div>

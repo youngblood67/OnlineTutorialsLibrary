@@ -23,7 +23,7 @@ if (isset($_POST['commentContent'])) {
 } */
 
 $comment->addComment($idVideo, $idUser, $commentContent);
-echo "ok";
+//echo "ok";
 
 /*if(isset($_POST["q"])){
     $videoId = $_POST["q"];

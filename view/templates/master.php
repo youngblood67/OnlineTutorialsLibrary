@@ -49,26 +49,25 @@
                     name="searchInput" id="searchInput">
             </div>
 
-            
+
             <?php if (!isset($_SESSION['con'])): ?>
-            
+
             <button id="btn-connexion" class="btn btn-primary my-2 my-sm-0 mr-2" data-toggle="modal"
                 data-target="#connexionModal">
                 Connexion
             </button>
-            <button class="btn btn-danger my-2 mr-3" data-toggle="modal"
-                data-target="#subscribeModal">Inscription
+            <button class="btn btn-danger my-2 mr-3" data-toggle="modal" data-target="#subscribeModal">Inscription
             </button>
             <?php elseif ($_SESSION['con'] === "loggedOn") : ?>
             <div class="row mr-3 ">
-            <button id="btn-basket" class="btn btn-outline-primary my-2 mr-2" data-toggle="modal"
-                data-target="#basketModal">
-                Panier <span id="quantity-in-basket" class="badge badge-light"></span>
-            </button>
-            <a href="../public/index.php?p=profil"><?= $login ?></a>
+                <button id="btn-basket" class="btn btn-outline-primary my-2 mr-2" data-toggle="modal"
+                    data-target="#basketModal">
+                    Panier <span id="quantity-in-basket" class="badge badge-light"></span>
+                </button>
+                <a href="../public/index.php?p=profil"><?= $login ?></a>
             </div>
             <?php endif; ?>
-            
+
 
 
 
@@ -104,6 +103,7 @@
                 </h5>
             </div>
         </div>
+        <?php if (isset($_SESSION['con'])): ?>
         <div id="category" onclick="getPurchasedVideosWithAjax(<?=$idUser?>)">
             <div id="category_text">
                 <h5>
@@ -111,6 +111,7 @@
                 </h5>
             </div>
         </div>
+        <?php endif; ?>
 
     </div>
     <div id="msg-error">
@@ -122,7 +123,8 @@
         <!-- Footer -->
         <footer class="py-3 bg-dark">
 
-            <p class="m-0 text-center text-white">Copyright &copy; Marc & Phil 2018-2019</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Marc & Phil 2018-2019 -<small class="ml-2"
+                    id="cgv" data-toggle="modal" data-target="#cgvModal">Conditions générales de vente</small></p>
 
             <!-- /.container -->
         </footer>
@@ -216,6 +218,84 @@
         </div>
     </div>
 
+    <div class="modal fade" id="ratingModal" tabindex="-1" role="dialog" aria-labelledby="ratingModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="ratingModalTitle">Donnez une note à la vidéo</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="ratingModalBody">
+                        <div id="ratingStars" class="row"></div>
+                        <h1 class='text-warning col'>
+                            <span id="star0" class="star">&#9734;</span>
+                            <span id="star1" class="star">&#9734;</span>
+                            <span id="star2" class="star">&#9734;</span>
+                            <span id="star3" class="star"> &#9734;</span>
+                            <span id="star4" class="star">&#9734;</span>
+                        </h1>
+
+                        <button id="btn-rating" type="button" class="btn btn-primary mt-3 mb-3"
+                            data-dismiss="modal">Noter la vidéo</button>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="cgvModal" tabindex="-1" role="dialog" aria-labelledby=""
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cgvTitle">Conditions générales de vente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                Article 1 - Objet
+
+Les présentes conditions régissent les ventes par la société TutosVideos de vidéos de tutoriels informatiques. 
+
+Article 2 - Prix
+
+Les prix de nos produits sont indiqués en euros toutes taxes comprises (TVA et autres taxes applicables au jour de la commande), sauf indication contraire et hors frais de traitement et d'expédition. 
+
+En cas de commande vers un pays autre que la France métropolitaine vous êtes l'importateur du ou des produits concernés. Des droits de douane ou autres taxes locales ou droits d'importation ou taxes d'état sont susceptibles d'être exigibles. Ces droits et sommes ne relèvent pas du ressort de la société 
+
+.........(dénomination sociale). Ils seront à votre charge et relèvent de votre entière responsabilité, tant en termes de déclarations que de paiements aux autorités et organismes compétents de votre pays. Nous vous conseillons de vous renseigner sur ces aspects auprès de vos autorités locales. 
+
+Toutes les commandes quelle que soit leur origine sont payables en euros.  
+
+La société ......... (dénomination sociale) se réserve le droit de modifier ses prix à tout moment, mais le produit sera facturé sur la base du tarif en vigueur au moment de la validation de la commande et sous réserve de disponibilité. 
+
+Les produits demeurent la propriété de la société ......... (dénomination sociale) jusqu'au paiement complet du prix.  
+
+Attention : dès que vous prenez possession physiquement des produits commandés, les risques de perte ou d'endommagement des produits vous sont transférés. 
+
+Article 3 - Commandes
+
+ ......... (dénomination sociale) se réserve le droit de refuser les commandes de ......... (nombre) articles identiques. 
+ Blah blah blah...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Bien lu !</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="../public/ressources/js/jquery/jquery.min.js"></script>
@@ -224,6 +304,7 @@
     <script src="../public/ressources/js/script.js"></script>
     <script src="../public/ressources/js/basket.js"></script>
     <script src="../public/ressources/js/subscribe.js"></script>
+    <script src="../public/ressources/js/rating.js"></script>
     <?= $jsDown ?>
     <?= $jsDown2 ?>
 

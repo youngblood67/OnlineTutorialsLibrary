@@ -64,8 +64,4 @@ $("#btn-comment").click(function () {
 });
 
 
-$( document ).ready(function() {
-    
-    getCommentsListWithAjax();
-    //alert ("iduser: " + idUser + " idvideo : " + idVideo);
-});
+

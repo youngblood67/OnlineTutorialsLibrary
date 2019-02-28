@@ -137,10 +137,10 @@ function getSearchWithAjax(path, value) {
                         prix_video = "Gratuit";
                     }
                     else if($('#checkSubscription').html().toString()=="true") {
-                        prix_video = "accès abonné";
+                        prix_video = "Accès abonné";
                     }   
                     else if($.inArray(obj[i].idVideo, purchasedVideosIds) != -1) {
-                        prix_video = "achetée";
+                        prix_video = "Achetée";
                     } 
                     else {
                         prix_video = obj[i].priceVideo + " €";       
@@ -169,8 +169,8 @@ function getSearchWithAjax(path, value) {
                                 </div>
                                 <div class="card-footer">
                                     <div class="row">
-                                    <h5 class="text-warning col">&#9733; &#9733; &#9733; &#9733; &#9734;</h5>
-                                        <div id="price col"><h5>${prix_video}</h5>                                                 
+                                    
+                                        <div id="price col"><h6>${prix_video}</h6>                                                 
                                         </div>
                                     </div>
                                 </div>

@@ -41,7 +41,7 @@ body {
     height: 50px;
     width:100%;
     padding-top: 12px;
-    color : #6C757D;
+    color : white;
     transition: background-color 0.15s;
     border-bottom: 1px solid #6C757D;
 }
@@ -177,4 +177,8 @@ body {
 
 .name{
     color: #6610f2;
+}
+
+#cgv:hover {
+    cursor: pointer;
 }

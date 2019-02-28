@@ -6,6 +6,24 @@
     width: 100%;
 }
 
+#ratingModalBody{
+    text-align: center;
+}
+
+#btn-rating {
+    width: 60%;
+}
+
+#ratingStars{
+    padding-left: 60px;
+    padding-right: 60px;
+    
+}
+
+.star:hover{
+    cursor: pointer;
+}
+
 /*.modal-header{
     background: linear-gradient(#302b24, #2d2733);
     color: white;

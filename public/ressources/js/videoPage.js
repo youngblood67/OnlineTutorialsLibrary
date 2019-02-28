@@ -1,4 +1,4 @@
-function getCommentsListWithAjax(){
+/*function getCommentsListWithAjax(){
     var idVideo = $('#idVideo').text();
     $.post(
 
@@ -13,5 +13,15 @@ function getCommentsListWithAjax(){
 }
 
 $( document ).ready(function() {
+    
     getCommentsListWithAjax();
-});
+
+    
+
+    
+});*/
+
+
+
+
+

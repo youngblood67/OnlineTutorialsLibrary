@@ -16,8 +16,22 @@ textarea#comment{
     padding: 10px;
 }
 
-#stars {
-    font-size: 30px !important;
+.starsR {
+    font-size: 40px !important;
     
+    
+}
+
+.starsR:hover {
+    cursor: pointer;
+}
+
+.noRate:hover {
+    cursor: pointer;
+}
+
+.rateNb {
+    
+    font-size: 30px !important;
 }
 
