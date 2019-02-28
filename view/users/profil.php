@@ -27,8 +27,12 @@
                         <span class="valeur">Prénom : </span> <?= $user->firstname ?>
                     </li>
                     <li class="col-12 list-group-item">
-                        <span class="valeur">Email : </span> <?= $user->email ?>
+                        <span class="valeur">Email : </span> <span id="the-real-email"><?= $user->email ?></span>
+
+                        <button id="email-update" class="btn-sm" type="button" data-toggle="modal"
+                                data-target="#updateEmailModal">Modifier</button>
                     </li>
+
 
                     <li class="list-group-item">
                         <a href="../treatment/trtDeconnect.php" class="mt-2">
@@ -107,7 +111,32 @@
                 </ul>
             </div>
         </div>
+        <li class="col-12 list-group-item" style="background-color: #dae3f2">
+            <a href="http://localhost/onlinetutorialslibrary/treatment/ajax/deleteAccount.php"><button id="delete-account" class="btn-sm btn-warning" type="button" >Supprimer compte</button></a>
+        </li>
 
 
+
+    </div>
+</div>
+
+
+<div class="modal fade" id="updateEmailModal" tabindex="-1" role="dialog" aria-labelledby="updateEmailModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="updateEmailModalLabel">Nouvel email !</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <?php
+                include '../view/users/updateEmail.php';
+                ?>
+            </div>
+
+        </div>
     </div>
 </div>

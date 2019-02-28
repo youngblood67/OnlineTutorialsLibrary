@@ -16,6 +16,27 @@ class User extends Table
     protected $table = "user";
     protected $db;
 
+
+    public function updateEmail($oldEmail,$newEmail){
+        $db = new Database();
+        $stmt = $db->getPDO()->prepare("UPDATE " . $this->table . "  SET email = :newEmail WHERE email = :oldEmail");
+        $stmt->bindParam(':oldEmail', $oldEmail);
+        $stmt->bindParam(':newEmail', $newEmail);
+        $stmt->execute();
+        $db->closeConnection();
+    }
+
+    public function deleteAccount($idUser){
+        $db = new Database();
+        $stmt = $db->getPDO()->prepare("DELETE FROM " . $this->table . "  WHERE idUser = :idUser");
+        $stmt->bindParam(':idUser', $idUser);
+        $stmt->execute();
+        $stmtBis = $db->getPDO()->prepare("DELETE FROM comment  WHERE idUser = :idUser");
+        $stmtBis->bindParam(':idUser', $idUser);
+        $stmtBis->execute();
+        $db->closeConnection();
+    }
+
     public function addUser($lastname, $firstname, $password, $email)
     {
         $db = new Database();
@@ -151,6 +172,6 @@ class User extends Table
 
     }
 
-    
+
 
 }
